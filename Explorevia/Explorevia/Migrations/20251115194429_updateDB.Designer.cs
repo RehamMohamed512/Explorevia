@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Explorevia.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20251113130524_Db")]
-    partial class Db
+    [Migration("20251115194429_updateDB")]
+    partial class updateDB
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -33,12 +33,11 @@ namespace Explorevia.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<string>("BookingCode")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<DateTime>("EndDate")
                         .HasColumnType("datetime2");
+
+                    b.Property<int>("HotelId")
+                        .HasColumnType("int");
 
                     b.Property<int>("RoomId")
                         .HasColumnType("int");
@@ -58,6 +57,8 @@ namespace Explorevia.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("HotelId");
+
                     b.HasIndex("RoomId");
 
                     b.HasIndex("UserId");
@@ -73,9 +74,6 @@ namespace Explorevia.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<decimal>("BasePrice")
-                        .HasColumnType("decimal(18,2)");
-
                     b.Property<string>("Description")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -90,10 +88,18 @@ namespace Explorevia.Migrations
                         .HasMaxLength(200)
                         .HasColumnType("nvarchar(200)");
 
+                    b.Property<int>("OwnerId")
+                        .HasColumnType("int");
+
+                    b.Property<decimal>("PricePerNight")
+                        .HasColumnType("decimal(10,2)");
+
                     b.Property<double>("Rating")
                         .HasColumnType("float");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("OwnerId");
 
                     b.ToTable("Hotels");
                 });
@@ -143,8 +149,7 @@ namespace Explorevia.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("BookingId")
-                        .IsUnique();
+                    b.HasIndex("BookingId");
 
                     b.ToTable("Payments");
                 });
@@ -201,7 +206,7 @@ namespace Explorevia.Migrations
                         .HasColumnType("bit");
 
                     b.Property<decimal>("Price")
-                        .HasColumnType("decimal(18,2)");
+                        .HasColumnType("decimal(10,2)");
 
                     b.Property<string>("RoomType")
                         .IsRequired()
@@ -248,6 +253,12 @@ namespace Explorevia.Migrations
 
             modelBuilder.Entity("Explorevia.Models.Booking", b =>
                 {
+                    b.HasOne("Explorevia.Models.Hotel", "Hotel")
+                        .WithMany("Bookings")
+                        .HasForeignKey("HotelId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.HasOne("Explorevia.Models.Room", "Room")
                         .WithMany("Bookings")
                         .HasForeignKey("RoomId")
@@ -260,9 +271,22 @@ namespace Explorevia.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.Navigation("Hotel");
+
                     b.Navigation("Room");
 
                     b.Navigation("User");
+                });
+
+            modelBuilder.Entity("Explorevia.Models.Hotel", b =>
+                {
+                    b.HasOne("Explorevia.Models.User", "Owner")
+                        .WithMany()
+                        .HasForeignKey("OwnerId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Owner");
                 });
 
             modelBuilder.Entity("Explorevia.Models.HotelImage", b =>
@@ -279,8 +303,8 @@ namespace Explorevia.Migrations
             modelBuilder.Entity("Explorevia.Models.Payment", b =>
                 {
                     b.HasOne("Explorevia.Models.Booking", "Booking")
-                        .WithOne("Payment")
-                        .HasForeignKey("Explorevia.Models.Payment", "BookingId")
+                        .WithMany()
+                        .HasForeignKey("BookingId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -317,14 +341,10 @@ namespace Explorevia.Migrations
                     b.Navigation("Hotel");
                 });
 
-            modelBuilder.Entity("Explorevia.Models.Booking", b =>
-                {
-                    b.Navigation("Payment")
-                        .IsRequired();
-                });
-
             modelBuilder.Entity("Explorevia.Models.Hotel", b =>
                 {
+                    b.Navigation("Bookings");
+
                     b.Navigation("HotelImages");
 
                     b.Navigation("Reviews");

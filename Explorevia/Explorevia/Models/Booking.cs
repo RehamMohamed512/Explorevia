@@ -5,6 +5,7 @@ namespace Explorevia.Models
 {
     public class Booking
     {
+        [Key]
         public int Id { get; set; }
 
         [Required]
@@ -13,22 +14,21 @@ namespace Explorevia.Models
         [Required]
         public DateTime EndDate { get; set; }
 
-        [Required]
+        [Required,Column(TypeName = "decimal(18,2)")]
         public decimal TotalPrice { get; set; }
 
-        [Required]
         public string Status { get; set; } = "Pending"; // Pending, Confirmed, Cancelled
 
         [ForeignKey("User")]
         public int UserId { get; set; }
-        public User User { get; set; }
+        public User User { get; set; } 
 
         [ForeignKey("Room")]
         public int RoomId { get; set; }
-        public Room Room { get; set; }
+        public Room Room { get; set; } 
 
-        public Payment Payment { get; set; }
-
-        public string BookingCode { get; set; } = Guid.NewGuid().ToString().Substring(0, 8).ToUpper();
+        [ForeignKey("Hotel")]
+        public int HotelId { get; set; }
+        public Hotel Hotel { get; set; } 
     }
 }
