@@ -1,5 +1,4 @@
-﻿using Explorevia.Data;
-using Explorevia.Models;
+﻿using Explorevia.Models;
 using Microsoft.EntityFrameworkCore;
 
 

@@ -1,5 +1,5 @@
-﻿using Explorevia.Data;
-using Explorevia.Helpers;
+﻿using Explorevia.Helpers;
+using Explorevia.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 

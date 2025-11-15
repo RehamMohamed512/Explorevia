@@ -5,12 +5,13 @@ namespace Explorevia.Models
 {
     public class Room
     {
+        [Key]
         public int Id { get; set; }
 
         [Required, MaxLength(100)]
         public string RoomType { get; set; }
 
-        [Required]
+        [Required,Column(TypeName = "decimal(10,2)")]
         public decimal Price { get; set; }
 
         public bool IsAvailable { get; set; } = true;

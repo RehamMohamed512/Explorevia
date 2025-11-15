@@ -5,9 +5,10 @@ namespace Explorevia.Models
 {
     public class Review
     {
+        [Key]
         public int Id { get; set; }
 
-        [Range(1, 5)]
+        [Range(1, 5),Required]
         public int Rating { get; set; }
 
         [MaxLength(500)]
