@@ -1,0 +1,22 @@
+﻿@* Views/Shared/_HotelCard.cshtml *@
+@model dynamic 
+
+
+<div class="card hotel-card mb-3" style="min-height:220px;">
+<div class="row g-0">
+<div class="col-4">
+<img src="@Model.ImageUrl" class="img-fluid rounded-start" alt="@Model.Name" style="height:100%; object-fit:cover;" />
+</div>
+<div class="col-8">
+<div class="card-body">
+<h5 class="card-title" style="color:#0b2b4a;">@Model.Name</h5>
+<p class="card-text mb-1">@Model.Location</p>
+<p class="card-text"><strong>@Model.Rate</strong> / night</p>
+<div class="d-flex gap-2">
+<a href="/Home/Details/@Model.Id" class="btn btn-sm btn-primary">details</a>
+<a href="/Home/Book/@Model.Id" class="btn btn-sm btn-outline-secondary">Book</a>
+</div>
+</div>
+</div>
+</div>
+</div>
