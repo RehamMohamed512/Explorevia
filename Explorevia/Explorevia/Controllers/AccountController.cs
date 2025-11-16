@@ -1,54 +1,74 @@
-﻿//using Explorevia.Helpers;
-//using Explorevia.Services;
-//using ExploreVia.Services;
-//using Microsoft.AspNetCore.Authentication;
-//using Microsoft.AspNetCore.Authentication.Cookies;
-//using Microsoft.AspNetCore.Mvc;
-//using System.Security.Claims;
+﻿using Explorevia.DTOs;
+using Explorevia.Helpers;
+using Explorevia.IRepository;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 
-//namespace Explorevia.Controllers
-//{
-//    public class AccountController : Controller
-//    {
-//        private readonly IUserService _userService;
+namespace Explorevia.Controllers
+{
+    public class AccountController : Controller
+    {
+        IAuthRepository _authRepository;
+        public AccountController(IAuthRepository authRepository)
+        {
+            _authRepository = authRepository;
+        }
+        // Register
+        [HttpGet]
+        public IActionResult Register() => View("Register");
 
-//        public AccountController(IUserService userService) { _userService = userService; }
 
-//        [HttpGet] public IActionResult Login() => View();
-//        [HttpPost]
-//        public async Task<IActionResult> Login(string email, string password)
-//        {
-//            var user = await _userService.LoginAsync(email, password);
-//            if (user == null) { NotificationHelper.Error(this, "Invalid credentials!"); return View(); }
+        [HttpPost]
+        public async Task<IActionResult> Register(RegisterDTO registerDto)
+        {
+            if (ModelState.IsValid)
+            {
+                var user = await _authRepository.RegisterUser(registerDto);
+                if (!user)
+                {
+                    NotificationHelper.Error(this, "Registration failed, Email already exist");
+                    return View("Register");
+                }
+                NotificationHelper.Success(this, "Registration Successful, Please login");
+                return View("Login");
+            }
+            else
+            {
+                NotificationHelper.Error(this, "Registration failed, Please fill all the required fields");
+                return View("Register");
+            }
+        }
 
-//            var claims = new List<Claim>{
-//                new Claim(ClaimTypes.NameIdentifier,user.Id.ToString()),
-//                new Claim(ClaimTypes.Name,user.Name),
-//                new Claim(ClaimTypes.Email,user.Email),
-//                new Claim(ClaimTypes.Role,user.Role)
-//            };
-//            var identity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
-//            await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, new ClaimsPrincipal(identity));
-//            NotificationHelper.Success(this, "Login successful!");
-//            return RedirectToAction("Index", "Home");
-//        }
+        // Login
+        [HttpGet]
+        public IActionResult Login() => View("Login");
 
-//        [HttpGet] public IActionResult Register() => View();
-//        [HttpPost]
-//        public async Task<IActionResult> Register(string name, string email, string password)
-//        {
-//            var user = await _userService.RegisterAsync(name, email, password);
-//            if (user == null) { NotificationHelper.Error(this, "Registration failed!"); return View(); }
-//            NotificationHelper.Success(this, "Registration successful! Please login.");
-//            return RedirectToAction("Login");
-//        }
+        [HttpPost]
+        [Authorize]
+        public async Task<IActionResult> Login(LoginDTO loginDTO)
+        {
+            if (ModelState.IsValid)
+            {
+                var login = await _authRepository.Login(loginDTO);
+                if (!login)
+                {
+                    NotificationHelper.Error(this, "Login failed, Invalid email or password");
+                    return View("Login");
+                }
+                else
+                {
+                    NotificationHelper.Success(this, "Login Successful");
+                    return RedirectToAction("Index", "Home");
+                }
+            }
+            else
+            {
+                NotificationHelper.Error(this, "Login failed, Please fill all the required fields");
+                return Unauthorized();
+            }
 
-//        [HttpPost]
-//        public async Task<IActionResult> Logout()
-//        {
-//            await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
-//            NotificationHelper.Success(this, "Logged out successfully!");
-//            return RedirectToAction("Index", "Home");
-//        }
-//    }
-//}
+        }
+
+
+    }
+}
