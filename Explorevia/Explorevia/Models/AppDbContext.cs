@@ -42,12 +42,13 @@ namespace Explorevia.Models
 
         }
 
-        public DbSet<User> Users { get; set; }
-        public DbSet<Hotel> Hotels { get; set; }
-        public DbSet<Room> Rooms { get; set; }
-        public DbSet<Booking> Bookings { get; set; }
-        public DbSet<Payment> Payments { get; set; }
-        public DbSet<Review> Reviews { get; set; }
-        public DbSet<HotelImage> HotelImages { get; set; }
+        public virtual DbSet<User> Users { get; set; }
+        public virtual DbSet<Hotel> Hotels { get; set; }
+        public virtual DbSet<Room> Rooms { get; set; }
+        public virtual DbSet<Booking> Bookings { get; set; }
+        public virtual DbSet<Payment> Payments { get; set; }
+        public virtual DbSet<Review> Reviews { get; set; }
+        public virtual DbSet<HotelImage> HotelImages { get; set; }
+        public virtual DbSet<HotelRegistrationRequest> HotelRegistrationRequests { get; set; }
     }
 }
