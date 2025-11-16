@@ -11,7 +11,7 @@ namespace Explorevia.Models
 
         [ForeignKey("Hotel")]
         public int HotelId { get; set; }
-        public Hotel Hotel { get; set; }
+        public virtual Hotel? Hotel { get; set; }
     }
 
 }
