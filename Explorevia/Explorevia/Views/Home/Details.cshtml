@@ -1,0 +1,16 @@
+﻿@* Views/Home/Details.cshtml *@
+@model dynamic
+
+
+<div class="card">
+    <img src="@Model.ImageUrl" class="card-img-top" alt="@Model.Name" />
+    <div class="card-body">
+        <h3 style="color:#0b2b4a;">@Model.Name</h3>
+        <p>@Model.Description</p>
+        <p><strong>الموقع:</strong> @Model.Location</p>
+        <p><strong>السعر:</strong> @Model.Rate / night</p>
+
+
+        <a href="/Home/Book/@Model.Id" class="btn btn-primary">Book Now</a>
+    </div>
+</div>

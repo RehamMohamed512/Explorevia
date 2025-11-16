@@ -1,4 +1,4 @@
-html {
+﻿html {
   font-size: 14px;
 }
 
@@ -19,4 +19,32 @@ html {
 
 body {
   margin-bottom: 60px;
+}
+:root {
+    --navy: #0b2b4a; /* كحلي */
+    --beige: #f5efe6; /* خلفية بيج فاتح */
+}
+
+body {
+    background: var(--beige);
+    color: var(--navy);
+    font-family: "Arial", sans-serif;
+}
+
+.card.hotel-card {
+    border-radius: 12px;
+}
+
+.navbar-brand span {
+    color: var(--navy);
+}
+
+.btn-primary {
+    background: var(--navy);
+    border-color: var(--navy);
+}
+
+.btn-outline-secondary {
+    color: var(--navy);
+    border-color: var(--navy);
 }
