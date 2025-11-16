@@ -21,14 +21,14 @@ namespace Explorevia.Models
 
         [ForeignKey("User")]
         public int UserId { get; set; }
-        public User User { get; set; } 
+        public virtual User? User { get; set; } 
 
         [ForeignKey("Room")]
         public int RoomId { get; set; }
-        public Room Room { get; set; } 
+        public virtual Room? Room { get; set; } 
 
         [ForeignKey("Hotel")]
         public int HotelId { get; set; }
-        public Hotel Hotel { get; set; } 
+        public virtual Hotel? Hotel { get; set; }
     }
 }

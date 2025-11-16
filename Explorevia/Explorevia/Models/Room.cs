@@ -18,8 +18,8 @@ namespace Explorevia.Models
 
         [ForeignKey("Hotel")]
         public int HotelId { get; set; }
-        public Hotel Hotel { get; set; }
+        public  virtual Hotel? Hotel { get; set; }
 
-        public ICollection<Booking> Bookings { get; set; }
+        public virtual ICollection<Booking>? Bookings { get; set; }
     }
 }

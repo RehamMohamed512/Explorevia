@@ -20,8 +20,8 @@ namespace Explorevia.Models
         [Required]
         public string Role { get; set; } = "User"; // User or Admin or HotelOwner
 
-        public ICollection<Booking> Bookings { get; set; }
-        public ICollection<Review> Reviews { get; set; }
+        public virtual ICollection<Booking>? Bookings { get; set; }
+        public virtual ICollection<Review>? Reviews { get; set; }
 
     }
 }

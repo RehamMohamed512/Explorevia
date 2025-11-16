@@ -5,11 +5,19 @@
 namespace Explorevia.Migrations
 {
     /// <inheritdoc />
-    public partial class updateDB : Migration
+    public partial class fDB : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.DropForeignKey(
+                name: "FK_Bookings_Rooms_RoomId",
+                table: "Bookings");
+
+            migrationBuilder.DropForeignKey(
+                name: "FK_Bookings_Users_UserId",
+                table: "Bookings");
+
             migrationBuilder.DropIndex(
                 name: "IX_Payments_BookingId",
                 table: "Payments");
@@ -71,16 +79,28 @@ namespace Explorevia.Migrations
                 table: "Bookings",
                 column: "HotelId",
                 principalTable: "Hotels",
-                principalColumn: "Id",
-                onDelete: ReferentialAction.Cascade);
+                principalColumn: "Id");
+
+            migrationBuilder.AddForeignKey(
+                name: "FK_Bookings_Rooms_RoomId",
+                table: "Bookings",
+                column: "RoomId",
+                principalTable: "Rooms",
+                principalColumn: "Id");
+
+            migrationBuilder.AddForeignKey(
+                name: "FK_Bookings_Users_UserId",
+                table: "Bookings",
+                column: "UserId",
+                principalTable: "Users",
+                principalColumn: "Id");
 
             migrationBuilder.AddForeignKey(
                 name: "FK_Hotels_Users_OwnerId",
                 table: "Hotels",
                 column: "OwnerId",
                 principalTable: "Users",
-                principalColumn: "Id",
-                onDelete: ReferentialAction.Cascade);
+                principalColumn: "Id");
         }
 
         /// <inheritdoc />
@@ -88,6 +108,14 @@ namespace Explorevia.Migrations
         {
             migrationBuilder.DropForeignKey(
                 name: "FK_Bookings_Hotels_HotelId",
+                table: "Bookings");
+
+            migrationBuilder.DropForeignKey(
+                name: "FK_Bookings_Rooms_RoomId",
+                table: "Bookings");
+
+            migrationBuilder.DropForeignKey(
+                name: "FK_Bookings_Users_UserId",
                 table: "Bookings");
 
             migrationBuilder.DropForeignKey(
@@ -145,6 +173,22 @@ namespace Explorevia.Migrations
                 table: "Payments",
                 column: "BookingId",
                 unique: true);
+
+            migrationBuilder.AddForeignKey(
+                name: "FK_Bookings_Rooms_RoomId",
+                table: "Bookings",
+                column: "RoomId",
+                principalTable: "Rooms",
+                principalColumn: "Id",
+                onDelete: ReferentialAction.Cascade);
+
+            migrationBuilder.AddForeignKey(
+                name: "FK_Bookings_Users_UserId",
+                table: "Bookings",
+                column: "UserId",
+                principalTable: "Users",
+                principalColumn: "Id",
+                onDelete: ReferentialAction.Cascade);
         }
     }
 }
