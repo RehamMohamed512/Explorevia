@@ -3,6 +3,10 @@ using Explorevia.Helpers;
 using Explorevia.IRepository;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.IdentityModel.Tokens;
+using System.IdentityModel.Tokens.Jwt;
+using System.Security.Claims;
+using System.Text;
 
 namespace Explorevia.Controllers
 {
@@ -46,7 +50,7 @@ namespace Explorevia.Controllers
         [HttpPost]
         [Authorize]
         public async Task<IActionResult> Login(LoginDTO loginDTO)
-        {
+        { 
             if (ModelState.IsValid)
             {
                 var login = await _authRepository.Login(loginDTO);
@@ -57,8 +61,22 @@ namespace Explorevia.Controllers
                 }
                 else
                 {
+                    string key = "team R2M2 in depi explorevia project";
+                    var securityKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes(key));
+                    var signCred = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256);
+                    List<Claim> claims = new List<Claim>();
+                    claims.Add(new Claim("Email", "RmRm@gmail.com"));
+
+                    var token = new JwtSecurityToken(
+                        claims: claims,
+                        expires: DateTime.Now.AddDays(1),
+                        signingCredentials:signCred ) ;
+
+                    var stringToken = new JwtSecurityTokenHandler().WriteToken(token);
+                   
+
                     NotificationHelper.Success(this, "Login Successful");
-                    return RedirectToAction("Index", "Home");
+                    return Ok( RedirectToAction("Index", "Home"));
                 }
             }
             else
