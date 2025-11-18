@@ -2,7 +2,7 @@
 
 namespace Explorevia.DTOs
 {
-    public class RegisterDTO
+    public class RegisterViewModel
     {
         [Required,MaxLength(30)]
         public string Name { get; set; }

@@ -30,7 +30,7 @@ namespace Explorevia.Controllers
             var review = new Review
             {
                 HotelId = hotelId,
-                UserId = int.Parse(User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier).Value),
+                UserId = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier).Value,
                 Rating = rating,
                 Comment = comment
             };

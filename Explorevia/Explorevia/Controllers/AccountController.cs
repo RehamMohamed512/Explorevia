@@ -2,7 +2,12 @@
 using Explorevia.Helpers;
 using Explorevia.IRepository;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.IdentityModel.Tokens;
+using System.IdentityModel.Tokens.Jwt;
+using System.Security.Claims;
+using System.Text;
 
 namespace Explorevia.Controllers
 {
@@ -19,7 +24,7 @@ namespace Explorevia.Controllers
 
 
         [HttpPost]
-        public async Task<IActionResult> Register(RegisterDTO registerDto)
+        public async Task<IActionResult> Register(RegisterViewModel registerDto)
         {
             if (ModelState.IsValid)
             {
@@ -45,8 +50,8 @@ namespace Explorevia.Controllers
 
         [HttpPost]
         [Authorize]
-        public async Task<IActionResult> Login(LoginDTO loginDTO)
-        {
+        public async Task<IActionResult> Login(LoginViewModel loginDTO)
+        { 
             if (ModelState.IsValid)
             {
                 var login = await _authRepository.Login(loginDTO);
@@ -58,16 +63,36 @@ namespace Explorevia.Controllers
                 else
                 {
                     NotificationHelper.Success(this, "Login Successful");
+                    Console.WriteLine("Login Successfully");
                     return RedirectToAction("Index", "Home");
+
+
                 }
             }
             else
             {
                 NotificationHelper.Error(this, "Login failed, Please fill all the required fields");
-                return Unauthorized();
+                return View("Login");
+                
             }
+           
 
         }
+  
+        public async Task<IActionResult> Logout()
+        {
+           var result =  _authRepository.LogoutAsync();
+            if (result != null)
+                return RedirectToAction("Login", "Account");
+            else
+            {
+                ModelState.AddModelError("", "Logout failed");
+                return View();
+            }
+               
+
+        }
+
 
 
     }

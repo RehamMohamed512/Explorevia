@@ -5,6 +5,7 @@ using ExploreVia.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Hosting;
+using System.Security.Claims;
 
 namespace Explorevia.Controllers
 {
@@ -37,7 +38,7 @@ namespace Explorevia.Controllers
             var booking = new Booking
             {
                 RoomId = roomId,
-                UserId = int.Parse(User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier).Value),
+                UserId  = User.FindFirst(ClaimTypes.NameIdentifier).Value,
                 StartDate = startDate,
                 EndDate = endDate,
                 TotalPrice = totalPrice,
@@ -51,8 +52,8 @@ namespace Explorevia.Controllers
         // User: My bookings
         public IActionResult MyBookings()
         {
-            int userId = int.Parse(User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier).Value);
-            var bookings = _bookingService.GetAllBookings().Where(b => b.UserId == userId);
+            string userId = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier).Value;
+            var bookings = _bookingService.GetAllBookings().Where(b => b.UserId.Equals(userId));
             return View(bookings);
         }
 
