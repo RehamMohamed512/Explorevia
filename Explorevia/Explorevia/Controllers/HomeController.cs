@@ -31,6 +31,11 @@ namespace Explorevia.Controllers
            
             return View(); 
         }
+        public IActionResult Bookings()
+        {
+           
+            return View(); 
+        }
 
         //  Hotel Details Page
         public async Task<IActionResult> Details(int id)
