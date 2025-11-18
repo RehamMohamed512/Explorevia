@@ -1,6 +1,136 @@
-﻿@* Views/Account/Login.cshtml *@
-<form method="post" action="/Account/Login">
-    <div class="mb-2"><label>Email</label><input name="Email" class="form-control" required /></div>
-    <div class="mb-2"><label>password</label><input type="password" name="Password" class="form-control" required /></div>
-    <button class="btn btn-primary">Login</button>
-</form>
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>ExploreVia | Login</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+
+    <style>
+        body {
+            /* Full-page background image */
+            background: url('/images/background.png') no-repeat center center;
+            background-size: cover;
+            height: 100vh;
+            font-family: 'Segoe UI', sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .login-card {
+            width: 400px;
+            background: rgba(17, 17, 17, 0.9); /* slightly transparent black */
+            border-radius: 20px;
+            padding: 35px;
+            box-shadow: 0 0 20px rgba(255, 215, 0, 0.25);
+            color: #fff;
+            border: 1px solid rgba(255, 215, 0, 0.25);
+        }
+
+        .brand img {
+            width: 95px;
+            height: 95px;
+            border-radius: 50%;
+            border: 3px solid gold;
+            box-shadow: 0 0 15px gold;
+            display: block;
+            margin: 0 auto 15px;
+        }
+
+        .login-title {
+            text-align: center;
+            font-size: 28px;
+            color: gold;
+            margin-bottom: 25px;
+            letter-spacing: 1px;
+        }
+
+        .form-control {
+            background: #222;
+            border: 2px solid #444;
+            color: #fff;
+        }
+
+            .form-control:focus {
+                border-color: gold;
+                box-shadow: 0 0 5px gold;
+                background: #222;
+                color: #fff;
+            }
+
+        label {
+            color: gold;
+            font-weight: 600;
+        }
+
+        .btn-gold {
+            background: gold;
+            color: #000;
+            font-weight: bold;
+            width: 100%;
+            padding: 12px;
+            border-radius: 8px;
+            transition: 0.3s;
+        }
+
+            .btn-gold:hover {
+                background: #e6c200;
+                color: #000;
+                box-shadow: 0 0 15px gold;
+            }
+
+        .footer-text {
+            text-align: center;
+            margin-top: 20px;
+            color: #bbb;
+        }
+
+            .footer-text a {
+                color: gold;
+                font-weight: 600;
+            }
+    </style>
+
+</head>
+<body>
+
+    <div class="login-card">
+        <div class="brand">
+            <img src="/img/logo.jpg" alt="logo" />
+        </div>
+
+        <h3 class="login-title">ExploreVia Login</h3>
+
+        <form asp-action="Login" method="post">
+            <div class="form-group">
+                <label>Email Address</label>
+                <input type="email" name="Email" class="form-control" required />
+            </div>
+
+            <div class="form-group">
+                <label>Password</label>
+                <input type="password" name="Password" class="form-control" required />
+            </div>
+
+            <button type="submit" class="btn btn-gold mt-3">Login</button>
+
+            <div class="footer-text">
+                Don’t have an account?
+                <a href="/Account/Register">Create One</a>
+            </div>
+            <div class="footer-text">
+                Are you a hotel owner ?
+                <a href="/Account/Register">Register Here!</a>
+                @* /*redirect to upload hotel documents change url to /account/registerhotel page */ *@
+            </div>
+        </form>
+
+    </div>
+
+</body>
+</html>

@@ -23,7 +23,13 @@ namespace Explorevia.Controllers
                 .Take(6)
                 .ToListAsync();
 
-            return View(featuredHotels);
+            return View();
+        }
+        // view explore now (apply filters +hotels)
+        public IActionResult Explore()
+        {
+           
+            return View(); 
         }
 
         //  Hotel Details Page
@@ -48,6 +54,7 @@ namespace Explorevia.Controllers
         {
             return View();
         }
+
 
     }
 }

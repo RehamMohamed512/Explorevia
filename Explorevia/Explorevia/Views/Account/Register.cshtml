@@ -1,8 +1,156 @@
-﻿@* Views/Account/Register.cshtml *@
-<form method="post" action="/Account/Register">
-    <div class="mb-2"><label>Name</label><input name="Name" class="form-control" required /></div>
-    <div class="mb-2"><label> Email</label><input name="Email" class="form-control" required /></div>
-    <div class="mb-2"><label>Password </label><input type="password" name="Password" class="form-control" required /></div>
-    <div class="mb-2"><label>Confirm Password </label><input type="password" name="ConfirmPassword" class="form-control" required /></div>
-    <button class="btn btn-success"> Create Account</button>
-</form>
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>ExploreVia | Register</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+
+    <style>
+        /* Full-page background image */
+        body {
+            background: url('/images/background.png') no-repeat center center;
+            background-size: cover;
+            height: 100vh;
+            font-family: 'Segoe UI', sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Card styling */
+        .register-card {
+            width: 400px;
+            background: rgba(17, 17, 17, 0.9); /* transparent black */
+            border-radius: 20px;
+            padding: 35px;
+            box-shadow: 0 0 20px rgba(255, 215, 0, 0.25);
+            color: #fff;
+            border: 1px solid rgba(255, 215, 0, 0.25);
+        }
+
+        .brand img {
+            width: 95px;
+            height: 95px;
+            border-radius: 50%;
+            border: 3px solid gold;
+            box-shadow: 0 0 15px gold;
+            display: block;
+            margin: 0 auto 15px;
+        }
+
+        .register-title {
+            text-align: center;
+            font-size: 28px;
+            color: gold;
+            margin-bottom: 25px;
+            letter-spacing: 1px;
+        }
+
+        .form-control {
+            background: #222;
+            border: 2px solid #444;
+            color: #fff;
+        }
+
+            .form-control:focus {
+                border-color: gold;
+                box-shadow: 0 0 5px gold;
+                background: #222;
+                color: #fff;
+            }
+
+        label {
+            color: gold;
+            font-weight: 600;
+        }
+
+        .btn-gold {
+            background: gold;
+            color: #000;
+            font-weight: bold;
+            width: 100%;
+            padding: 12px;
+            border-radius: 8px;
+            transition: 0.3s;
+        }
+
+            .btn-gold:hover {
+                background: #e6c200;
+                color: #000;
+                box-shadow: 0 0 15px gold;
+            }
+
+        .footer-text {
+            text-align: center;
+            margin-top: 20px;
+            color: #bbb;
+        }
+
+            .footer-text a {
+                color: gold;
+                font-weight: 600;
+            }
+
+        .custom-control-label a {
+            color: gold;
+            text-decoration: underline;
+        }
+    </style>
+
+</head>
+<body>
+
+    <div class="register-card">
+        <div class="brand">
+            <img src="/img/logo.jpg" alt="logo" />
+        </div>
+
+        <h3 class="register-title">ExploreVia Register</h3>
+
+        <form asp-action="Register" method="post" class="my-login-validation" novalidate>
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input id="name" type="text" class="form-control" name="Name" required autofocus />
+                <div class="invalid-feedback">What's your name?</div>
+            </div>
+
+            <div class="form-group">
+                <label for="email">E-Mail Address</label>
+                <input id="email" type="email" class="form-control" name="Email" required />
+                <div class="invalid-feedback">Your email is invalid</div>
+            </div>
+
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input id="password" type="password" class="form-control" name="Password" required />
+                <div class="invalid-feedback">Password is required</div>
+            </div>
+
+            <div class="form-group">
+                <div class="custom-control custom-checkbox">
+                    <input type="checkbox" name="Agree" id="agree" class="custom-control-input" required />
+                    <label for="agree" class="custom-control-label">
+                        I agree to the <a href="#">Terms and Conditions</a>
+                    </label>
+                    <div class="invalid-feedback">
+                        You must agree with our Terms and Conditions
+                    </div>
+                </div>
+            </div>
+
+            <button type="submit" class="btn btn-gold mt-3">Register</button>
+
+            <div class="footer-text">
+                Already have an account? <a href="/Account/Login">Login</a>
+            </div>
+        </form>
+
+    </div>
+
+</body>
+</html>
