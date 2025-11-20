@@ -31,7 +31,17 @@ namespace Explorevia.Controllers
            
             return View(); 
         }
+        public ActionResult UploadDocs()
+        {
+            return View("~/Views/Owner/UploadDocs.cshtml");
+        }
 
+
+
+        public ActionResult Profile()
+        {
+            return View();
+        }
         //  Hotel Details Page
         public async Task<IActionResult> Details(int id)
         {

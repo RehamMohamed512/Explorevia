@@ -7,29 +7,60 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        .navbar-transparent {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            z-index: 50;
-            background: rgba(0, 0, 0, 0.25); /* light transparency */
-            backdrop-filter: blur(6px);
+        body {
+            margin: 0;
+            padding: 0;
         }
-
         /* Hero Section */
         .hero-section {
-            background: url('/images/banner.jpg');
+            background: url('/images/bannner.jpg');
             background-size: cover;
             background-position: center;
-            height: 360px; /* luxury height */
+            height: 550px;
+            width: 100%;
             display: flex;
             align-items: center;
             justify-content: center;
         }
 
+        #home {
+            margin: 0;
+            padding: 0;
+        }
+
+        .Explore-btn{
+            background-color: rgba(255, 252, 240, 0.7);
+            color: #003459;
+            padding:15px;
+            border-radius: 15px;
+            transition : all 0.5s ;
+        }
+
+        .search-btn {
+            background-color: #003459;
+            color: rgba(255, 252, 240);
+            padding: 10px;
+            width: 100px;
+            border-radius: 15px;
+            transition: all 0.5s;
+        }
+
+        .search-btn:hover {
+                background-color: rgba(0,52,89,0.7);
+            padding: 10px;
+            width: 105px;
+        }
+
+        .Explore-btn:hover {
+            background-color: rgba(255, 252, 240);
+            color: #003459;
+            padding: 15px;
+            border-radius: 10px;
+        }
         .search-card {
-            margin-top: -40px; /* pull search box up */
+            margin-top: -60px; /* pull search box up */
+            color: #003459;
+            background-color: rgba(255, 252, 240);
         }
 
         .result-card {
@@ -43,29 +74,23 @@
     </style>
 </head>
 <body class="bg-gray-50 min-h-screen">
-    <!-- Navigation -->
-    <nav class="navbar-transparent text-white px-8 py-4 flex justify-between items-center">
-        <h1 class="text-2xl font-bold">Explorevia</h1>
-        <ul class="flex gap-8 text-lg">
-            <li><a href="/" class="hover:text-yellow-300">Home</a></li>
-            <li><a href="/Explore" class="hover:text-yellow-300">Explore</a></li>
-            <li><a href="/Account/Login" class="hover:text-yellow-300">Login</a></li>
-        </ul>
-    </nav>
 
+    @{
+        Layout = "~/Views/Shared/_Layout.cshtml";
+    }
     <!-- HERO SECTION -->
-    <section id="home">
 
-        <div class="hero-section">
-            <div class="text-white text-center px-4">
-                <h2 class="text-4xl md:text-5xl font-bold mb-6">Discover Your Next Adventure</h2>
-                <p class="text-xl md:text-2xl mb-8">Find the perfect flights and hotels for your dream vacation</p>
+        <section id="home" class="hero-section">
+            <div class="text-white text-center">
+                <h2 class="text-4xl md:text-5xl font-bold mb-6">Discover Actual Egypt</h2>
+                <p class="text-xl md:text-2xl mb-8">Find the perfect Destination and hotels for your dream vacation</p>
+                <button class="Explore-btn">Explore NOW!</button>
             </div>
-        </div>
+        </section>
 
         <!-- Search Card -->
-        <div class="bg-white rounded-2xl shadow-xl p-8 mb-16 max-w-4xl mx-auto search-card">
-            <h3 class="text-2xl font-semibold text-center mb-8 text-gray-800">Search for Your Perfect Trip</h3>
+        <div class=" rounded-2xl shadow-xl p-6 mb-16 max-w-5xl mx-auto search-card">
+            <h3 class="text-2xl font-semibold text-center mb-8 ">Search for Your Perfect Trip</h3>
 
             <form>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -87,8 +112,8 @@
 
                 </div>
 
-                <div class="text-center mt-8">
-                    <button class="px-10 py-3 bg-black text-white text-lg rounded-lg hover:bg-gray-800 transition">
+                <div class="text-center mt-2">
+                    <button class="search-btn">
                         Search
                     </button>
                 </div>
@@ -186,45 +211,6 @@
 
     </section>
 
-    <!-- Footer -->
-    <footer class="bg-gray-800 text-white py-12">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-                <div>
-                    <h4 class="text-xl font-semibold mb-4">TravelBook</h4>
-                    <p class="text-gray-400">Your trusted partner for unforgettable travel experiences around the world.</p>
-                </div>
-                <div>
-                    <h4 class="text-lg font-semibold mb-4">Services</h4>
-                    <ul class="space-y-2">
-                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Flights</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Hotels</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Vacation Packages</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="text-lg font-semibold mb-4">Support</h4>
-                    <ul class="space-y-2">
-                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Help Center</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Contact Us</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">FAQs</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="text-lg font-semibold mb-4">Connect</h4>
-                    <div class="flex space-x-4">
-                        <a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fab fa-linkedin-in"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
-                <p>© 2025 Explorevia. All rights reserved. Demo project for portfolio purposes.</p>
-            </div>
-        </div>
-    </footer>
 </body>
 </html>
 
