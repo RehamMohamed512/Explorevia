@@ -10,6 +10,7 @@ using System.Text;
 
 namespace Explorevia.Controllers
 {
+    [Authorize]
     public class AccountController : Controller
     {
         IAuthRepository _authRepository;
@@ -23,6 +24,7 @@ namespace Explorevia.Controllers
 
 
         [HttpPost]
+        [AllowAnonymous]
         public async Task<IActionResult> Register(RegisterDTO registerDto)
         {
             if (ModelState.IsValid)

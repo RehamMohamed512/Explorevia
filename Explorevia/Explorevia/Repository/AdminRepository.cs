@@ -6,6 +6,7 @@ namespace Explorevia.Repository
     public class AdminRepository : IAdminRepository
     {
         //DI
+
         private readonly AppDbContext _context;
         public AdminRepository(AppDbContext context)
         {

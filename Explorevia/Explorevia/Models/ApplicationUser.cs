@@ -6,7 +6,7 @@ namespace Explorevia.Models
 {
     public class ApplicationUser : IdentityUser
     {
-        public int Id { get; set; }
+        //public int Id { get; set; }
         /*  [Key]
 
 

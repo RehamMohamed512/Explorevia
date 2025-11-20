@@ -2,6 +2,7 @@
 using Explorevia.IRepository;
 using Explorevia.Models;
 using Microsoft.AspNetCore.Http.HttpResults;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.CodeAnalysis.Scripting;
 using Microsoft.EntityFrameworkCore;
@@ -14,9 +15,11 @@ namespace Explorevia.Repository
     {
         //DI
         private readonly AppDbContext _context;
-        public AuthRepository(AppDbContext context)
+        private readonly UserManager<ApplicationUser> _applicationUser;
+        public AuthRepository(AppDbContext context, UserManager<ApplicationUser> applicationUser)
         {
             _context = context;
+            _applicationUser = applicationUser;
         }
 
         public async Task<bool> Login(LoginDTO ldto)
@@ -44,9 +47,9 @@ namespace Explorevia.Repository
             }
         
 
-            var newUser = new User
+            var newUser = new ApplicationUser
             {
-                Name = rdto.Name,
+                UserName = rdto.Name,
                 Email = rdto.Email,
                 PasswordHash = BCrypt.Net.BCrypt.HashPassword(rdto.Password),
                 Role = "User"
@@ -67,14 +70,15 @@ namespace Explorevia.Repository
             }
 
 
-            var newUser = new User
+            var newUser = new ApplicationUser
             {
-                Name = rdto.Name,
+                UserName = rdto.Name,
                 Email = rdto.Email,
                 PasswordHash = BCrypt.Net.BCrypt.HashPassword(rdto.Password),
                 Role = "Hotel Owner"
             };
-            _context.Users.Add(newUser);
+            //_context.Users.Add(newUser);
+            await _applicationUser.CreateAsync(newUser);
             await _context.SaveChangesAsync();
             return true;
         }
