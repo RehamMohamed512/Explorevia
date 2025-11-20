@@ -20,8 +20,8 @@ namespace Explorevia.Models
         public string Status { get; set; } = "Pending"; // Pending, Confirmed, Cancelled
 
         [ForeignKey("User")]
-        public int UserId { get; set; }
-        public virtual User? User { get; set; } 
+        public string UserId { get; set; }
+        public virtual ApplicationUser? User { get; set; } 
 
         [ForeignKey("Room")]
         public int RoomId { get; set; }

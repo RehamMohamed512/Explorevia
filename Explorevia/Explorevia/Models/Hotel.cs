@@ -25,8 +25,8 @@ namespace Explorevia.Models
         public decimal PricePerNight { get; set; }
 
         [ForeignKey("User")]
-        public int OwnerId { get; set; }
-        public virtual User? Owner { get; set; }
+        public string OwnerId { get; set; }
+        public virtual ApplicationUser? Owner { get; set; }
 
         public virtual ICollection<Room>? Rooms { get; set; }
         public virtual ICollection<Booking>? Bookings { get; set; }

@@ -1,8 +1,9 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 
 namespace Explorevia.Models
 {
-    public class AppDbContext : DbContext
+    public class AppDbContext : IdentityDbContext<ApplicationUser>
     {
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
         {
@@ -26,23 +27,14 @@ namespace Explorevia.Models
                 .HasForeignKey(b => b.RoomId)
                 .OnDelete(DeleteBehavior.NoAction);
 
-            // Booking → User
-            modelBuilder.Entity<Booking>()
-                .HasOne(b => b.User)
-                .WithMany(u => u.Bookings)
-                .HasForeignKey(b => b.UserId)
-                .OnDelete(DeleteBehavior.NoAction);
-
-            // Hotel → User (Owner)
-            modelBuilder.Entity<Hotel>()
-              .HasOne(h => h.Owner)
-              .WithMany()
-              .HasForeignKey(h => h.OwnerId)
-              .OnDelete(DeleteBehavior.NoAction);
-
+            modelBuilder.Entity<Review>()
+             .HasOne(r => r.User)
+             .WithMany(u => u.Reviews)
+             .HasForeignKey(r => r.UserId)
+             .OnDelete(DeleteBehavior.NoAction);
         }
 
-        public virtual DbSet<User> Users { get; set; }
+        public virtual DbSet<ApplicationUser> Users { get; set; }
         public virtual DbSet<Hotel> Hotels { get; set; }
         public virtual DbSet<Room> Rooms { get; set; }
         public virtual DbSet<Booking> Bookings { get; set; }
