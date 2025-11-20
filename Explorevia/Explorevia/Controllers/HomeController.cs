@@ -31,11 +31,11 @@ namespace Explorevia.Controllers
            
             return View(); 
         }
-        public ActionResult UploadDocs()
+        public IActionResult Bookings()
         {
-            return View("~/Views/Owner/UploadDocs.cshtml");
+           
+            return View(); 
         }
-
 
 
         public ActionResult Profile()
