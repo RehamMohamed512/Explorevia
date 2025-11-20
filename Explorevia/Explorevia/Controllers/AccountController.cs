@@ -50,7 +50,11 @@ namespace Explorevia.Controllers
 
         [HttpPost]
         [Authorize]
+<<<<<<< HEAD
         public async Task<IActionResult> Login(LoginViewModel loginDTO)
+=======
+        public async Task<IActionResult> Login(LoginDTO loginDTO)
+>>>>>>> 371f56d96280209b8db5c5c7f6bac9aa137b8cfb
         { 
             if (ModelState.IsValid)
             {
@@ -62,11 +66,29 @@ namespace Explorevia.Controllers
                 }
                 else
                 {
+                    string key = "team R2M2 in depi explorevia project";
+                    var securityKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes(key));
+                    var signCred = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256);
+                    List<Claim> claims = new List<Claim>();
+                    claims.Add(new Claim("Email", "RmRm@gmail.com"));
+
+                    var token = new JwtSecurityToken(
+                        claims: claims,
+                        expires: DateTime.Now.AddDays(1),
+                        signingCredentials:signCred ) ;
+
+                    var stringToken = new JwtSecurityTokenHandler().WriteToken(token);
+                   
+
                     NotificationHelper.Success(this, "Login Successful");
+<<<<<<< HEAD
                     Console.WriteLine("Login Successfully");
                     return RedirectToAction("Index", "Home");
 
 
+=======
+                    return Ok( RedirectToAction("Index", "Home"));
+>>>>>>> 371f56d96280209b8db5c5c7f6bac9aa137b8cfb
                 }
             }
             else

@@ -6,7 +6,11 @@ namespace Explorevia.Models
 {
     public class ApplicationUser : IdentityUser
     {
+<<<<<<< HEAD
         // public int Id { get; set; }
+=======
+        public int Id { get; set; }
+>>>>>>> 371f56d96280209b8db5c5c7f6bac9aa137b8cfb
         /*  [Key]
 
 
@@ -22,7 +26,10 @@ namespace Explorevia.Models
         [Required]
         public string Role { get; set; } = "User"; // User or Admin or HotelOwner
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 371f56d96280209b8db5c5c7f6bac9aa137b8cfb
         public virtual ICollection<Booking>? Bookings { get; set; }
         public virtual ICollection<Review>? Reviews { get; set; }
 
