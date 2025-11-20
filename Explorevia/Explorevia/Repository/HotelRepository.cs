@@ -1,23 +1,12 @@
 ﻿using Explorevia.Models;
 using Microsoft.EntityFrameworkCore;
 
-
-namespace ExploreVia.Services
+namespace Explorevia.Repository
 {
-    public interface IHotelService
-    {
-        IEnumerable<Hotel> GetAll();
-        Hotel GetById(int id);
-        void AddHotel(Hotel hotel);
-        void UpdateHotel(Hotel hotel);
-        void DeleteHotel(int id);
-        void AddHotelImage(HotelImage image);
-    }
-
-    public class HotelService : IHotelService
+    public class HotelRepository
     {
         private readonly AppDbContext _context;
-        public HotelService(AppDbContext context) => _context = context;
+        public HotelRepository(AppDbContext context) => _context = context;
 
         public IEnumerable<Hotel> GetAll() => _context.Hotels.Include(h => h.HotelImages).Include(h => h.Reviews).ToList();
 
@@ -48,4 +37,3 @@ namespace ExploreVia.Services
         }
     }
 }
-
