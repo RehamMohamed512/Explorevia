@@ -1,12 +1,97 @@
-﻿@* Views/Home/Index.cshtml *@
-@model IEnumerable<dynamic>
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Booking</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .navbar-transparent {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 50;
+            background: rgba(0, 0, 0, 0.25); /* light transparency */
+            backdrop-filter: blur(6px);
+        }
 
+        /* Hero Section */
+        .hero-section {
+            background: url('/images/banner.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 360px; /* luxury height */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
 
+        .search-card {
+            margin-top: -40px; /* pull search box up */
+        }
+
+        .result-card {
+            transition: all 0.3s ease;
+        }
+
+            .result-card:hover {
+                transform: translateY(-3px);
+                box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+            }
+    </style>
+</head>
+<body class="bg-gray-50 min-h-screen">
+    <!-- Navigation -->
+    <nav class="navbar-transparent text-white px-8 py-4 flex justify-between items-center">
+        <h1 class="text-2xl font-bold">Explorevia</h1>
+        <ul class="flex gap-8 text-lg">
+            <li><a href="/" class="hover:text-yellow-300">Home</a></li>
+            <li><a href="/Explore" class="hover:text-yellow-300">Explore</a></li>
+            <li><a href="/Account/Login" class="hover:text-yellow-300">Login</a></li>
+        </ul>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section id="home">
+
+        <div class="hero-section">
+            <div class="text-white text-center px-4">
+                <h2 class="text-4xl md:text-5xl font-bold mb-6">Discover Your Next Adventure</h2>
+                <p class="text-xl md:text-2xl mb-8">Find the perfect flights and hotels for your dream vacation</p>
+            </div>
+        </div>
+
+        <!-- Search Card -->
+        <div class="bg-white rounded-2xl shadow-xl p-8 mb-16 max-w-4xl mx-auto search-card">
+            <h3 class="text-2xl font-semibold text-center mb-8 text-gray-800">Search for Your Perfect Trip</h3>
+
+            <form>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+                    <div>
+                        <label class="block font-medium mb-2">Destination</label>
+                        <input type="text" class="w-full p-3 border rounded-lg" placeholder="Where to?" />
+                    </div>
+
+                    <div>
+                        <label class="block font-medium mb-2">Check-in</label>
+                        <input type="date" class="w-full p-3 border rounded-lg" />
+                    </div>
+
+                    <div>
+                        <label class="block font-medium mb-2">Check-out</label>
+                        <input type="date" class="w-full p-3 border rounded-lg" />
+                    </div>
+
+<<<<<<< HEAD
+=======
 <div class="row">
     <aside class="col-lg-3 mb-4">
         <div class="card p-3">
             <h6>Filters</h6>
-            <form method="get" action="/Home/Index">
+            <form method="get" asp-action="/Home/Index">
                 <div class="mb-2">
                     <label>Country</label>
                     <select name="governorate" class="form-select">
@@ -15,32 +100,147 @@
                         <option>Alex</option>
                         <option>Giza</option>
                     </select>
+>>>>>>> identity
                 </div>
-                <div class="mb-2">
-                    <label>Price per night</label>
-                    <input name="minPrice" class="form-control mb-1" placeholder="from" />
-                    <input name="maxPrice" class="form-control" placeholder="to" />
+
+                <div class="text-center mt-8">
+                    <button class="px-10 py-3 bg-black text-white text-lg rounded-lg hover:bg-gray-800 transition">
+                        Search
+                    </button>
                 </div>
-                <button class="btn btn-primary mt-2" type="submit">Submit</button>
             </form>
         </div>
 
-
-        <div class="mt-3">
-            <h6>About</h6>
-            <p>ExploreVia .</p>
-        </div>
-    </aside>
-
-
-    <section class="col-lg-9">
-        <div class="row">
-            @foreach (var hotel in Model)
-            {
-                <div class="col-md-6">
-                    @@Html.Partial("_HotelCard", hotel)
+    </section>
+            <!-- Featured Destinations -->
+            <div class="mb-16">
+                <h3 class="text-2xl font-semibold text-center mb-8 text-gray-800">Popular Destinations</h3>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="relative rounded-2xl overflow-hidden group">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/f59fd879-d9de-401a-8ab9-91359447f98b.png" alt="Paris cityscape with Eiffel Tower and charming streets in golden hour lighting" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110">
+                        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-6">
+                            <h4 class="text-white text-xl font-semibold">Paris, France</h4>
+                            <p class="text-gray-200">From $499</p>
+                        </div>
+                    </div>
+                    <div class="relative rounded-2xl overflow-hidden group">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/1f773186-8225-45a2-b93e-678e5602eeec.png" alt="Tokyo city skyline with modern skyscrapers and traditional temples blending together" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110">
+                        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-6">
+                            <h4 class="text-white text-xl font-semibold">Tokyo, Japan</h4>
+                            <p class="text-gray-200">From $899</p>
+                        </div>
+                    </div>
+                    <div class="relative rounded-2xl overflow-hidden group">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/9f265e00-c58a-474f-b0dd-670418598aee.png" alt="Bali tropical beach with white sand, palm trees, and turquoise ocean waters" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110">
+                        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-6">
+                            <h4 class="text-white text-xl font-semibold">Bali, Indonesia</h4>
+                            <p class="text-gray-200">From $699</p>
+                        </div>
+                    </div>
                 </div>
-            }
+            </div>
         </div>
     </section>
-</div>
+
+            <!-- Hotels Results -->
+            <div class="mb-12">
+                <h3 class="text-2xl font-semibold mb-6 text-gray-800 flex items-center">
+                    <i class="fas fa-hotel mr-3 text-green-600"></i>Available Hotels
+                </h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <!-- Hotel Card 1 -->
+                    <div class="bg-white rounded-2xl shadow-md overflow-hidden result-card">
+                        <div class="h-48 bg-gray-200">
+                            <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/15965795-c32c-4967-8e18-b79d11c034e6.png" alt="Luxury hotel in Paris with elegant facade, marble entrance, and beautiful flower arrangements" class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-6">
+                            <h4 class="font-semibold text-lg mb-2">Grand Paris Hotel</h4>
+                            <p class="text-gray-600 mb-3">Champs-Élysées, Paris</p>
+                            <div class="flex items-center justify-between mb-4">
+                                <div class="flex items-center text-yellow-400">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <span class="ml-2 text-gray-600">4.8/5</span>
+                                </div>
+                                <span class="text-2xl font-bold text-green-600">$189<small class="text-sm font-normal text-gray-600">/night</small></span>
+                            </div>
+                            <button class="w-full bg-green-600 hover:bg-green-700 text-white font-semibold py-3 rounded-lg transition-colors">
+                                Book Now
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Hotel Card 2 -->
+                    <div class="bg-white rounded-2xl shadow-md overflow-hidden result-card">
+                        <div class="h-48 bg-gray-200">
+                            <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/cc27b37f-0b74-4ac4-8d2c-f0073c43ddbd.png" alt="Boutique hotel with charming Parisian architecture, cozy rooms, and rooftop terrace views" class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-6">
+                            <h4 class="font-semibold text-lg mb-2">Riverside Boutique</h4>
+                            <p class="text-gray-600 mb-3">Seine River, Paris</p>
+                            <div class="flex items-center justify-between mb-4">
+                                <div class="flex items-center text-yellow-400">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                    <span class="ml-2 text-gray-600">4.5/5</span>
+                                </div>
+                                <span class="text-2xl font-bold text-green-600">$129<small class="text-sm font-normal text-gray-600">/night</small></span>
+                            </div>
+                            <button class="w-full bg-green-600 hover:bg-green-700 text-white font-semibold py-3 rounded-lg transition-colors">
+                                Book Now
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h4 class="text-xl font-semibold mb-4">TravelBook</h4>
+                    <p class="text-gray-400">Your trusted partner for unforgettable travel experiences around the world.</p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Services</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Flights</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Hotels</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Vacation Packages</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Support</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Help Center</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Contact Us</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">FAQs</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Connect</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                <p>© 2025 Explorevia. All rights reserved. Demo project for portfolio purposes.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
+

@@ -2,6 +2,7 @@
 using Explorevia.Helpers;
 using Explorevia.IRepository;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
@@ -25,7 +26,10 @@ namespace Explorevia.Controllers
 
 
         [HttpPost]
+<<<<<<< HEAD
         [AllowAnonymous]
+=======
+>>>>>>> 5dcde25b1f1c760085716d479c40839990988c32
         public async Task<IActionResult> Register(RegisterViewModel registerDto)
         {
             if (ModelState.IsValid)
@@ -52,8 +56,17 @@ namespace Explorevia.Controllers
 
         [HttpPost]
         [Authorize]
+<<<<<<< HEAD
         public async Task<IActionResult> Login(LoginViewModel loginDTO)
         {
+=======
+<<<<<<< HEAD
+        public async Task<IActionResult> Login(LoginViewModel loginDTO)
+=======
+        public async Task<IActionResult> Login(LoginDTO loginDTO)
+>>>>>>> 371f56d96280209b8db5c5c7f6bac9aa137b8cfb
+        { 
+>>>>>>> 5dcde25b1f1c760085716d479c40839990988c32
             if (ModelState.IsValid)
             {
                 var login = await _authRepository.Login(loginDTO);
@@ -78,16 +91,47 @@ namespace Explorevia.Controllers
 
                     //var stringToken = new JwtSecurityTokenHandler().WriteToken(token);
 
+<<<<<<< HEAD
 
                     //NotificationHelper.Success(this, "Login Successful");
                     //return Ok(RedirectToAction("Index", "Home"));
+=======
+                    NotificationHelper.Success(this, "Login Successful");
+<<<<<<< HEAD
+                    Console.WriteLine("Login Successfully");
+                    return RedirectToAction("Index", "Home");
+
+
+=======
+                    return Ok( RedirectToAction("Index", "Home"));
+>>>>>>> 371f56d96280209b8db5c5c7f6bac9aa137b8cfb
+>>>>>>> 5dcde25b1f1c760085716d479c40839990988c32
                 }
             }
             else
             {
                 NotificationHelper.Error(this, "Login failed, Please fill all the required fields");
                 return View("Login");
+<<<<<<< HEAD
+=======
+                
+>>>>>>> 5dcde25b1f1c760085716d479c40839990988c32
             }
+           
+
+        }
+  
+        public async Task<IActionResult> Logout()
+        {
+           var result =  _authRepository.LogoutAsync();
+            if (result != null)
+                return RedirectToAction("Login", "Account");
+            else
+            {
+                ModelState.AddModelError("", "Logout failed");
+                return View();
+            }
+               
 
         }
 
@@ -105,6 +149,9 @@ namespace Explorevia.Controllers
             return View("Login");
 
 
+<<<<<<< HEAD
         }
+=======
+>>>>>>> 5dcde25b1f1c760085716d479c40839990988c32
     }
 }

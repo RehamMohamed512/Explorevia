@@ -28,6 +28,10 @@ namespace Explorevia.Models
         [ForeignKey("User")]
         public string OwnerId { get; set; }
         public virtual ApplicationUser? Owner { get; set; }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 5dcde25b1f1c760085716d479c40839990988c32
         public virtual ICollection<Room>? Rooms { get; set; }
         public virtual ICollection<Booking>? Bookings { get; set; }
         public virtual ICollection<Review>? Reviews { get; set; }

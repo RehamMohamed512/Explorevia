@@ -32,9 +32,15 @@ namespace Explorevia.Models
              .WithMany(u => u.Reviews)
              .HasForeignKey(r => r.UserId)
              .OnDelete(DeleteBehavior.NoAction);
+<<<<<<< HEAD
 
         }
 
+=======
+        }
+
+        public virtual DbSet<ApplicationUser> Users { get; set; }
+>>>>>>> 5dcde25b1f1c760085716d479c40839990988c32
         public virtual DbSet<Hotel> Hotels { get; set; }
         public virtual DbSet<Room> Rooms { get; set; }
         public virtual DbSet<Booking> Bookings { get; set; }

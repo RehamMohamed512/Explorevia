@@ -13,7 +13,7 @@ namespace Explorevia.Controllers
         {
             _context = context;
         }
-
+        [HttpGet]
         // Home Page — Featured Hotels
         public async Task<IActionResult> Index()
         {
@@ -23,9 +23,20 @@ namespace Explorevia.Controllers
                 .Take(6)
                 .ToListAsync();
 
-            return View(featuredHotels);
+            return View();
         }
-
+        // view explore now (apply filters +hotels)
+        public IActionResult Explore()
+        {
+           
+            return View(); 
+        }
+        public IActionResult Bookings()
+        {
+           
+            return View(); 
+        }
+        [HttpGet("/")]
         //  Hotel Details Page
         public async Task<IActionResult> Details(int id)
         {
@@ -48,6 +59,7 @@ namespace Explorevia.Controllers
         {
             return View();
         }
+
 
     }
 }
