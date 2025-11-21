@@ -31,11 +31,25 @@ namespace Explorevia.Controllers
            
             return View(); 
         }
-        public IActionResult Bookings()
-        {
+//<<<<<<< HEAD
+//        public ActionResult UploadDocs()
+//        {
+//            return View("~/Views/Owner/UploadDocs.cshtml");
+//=======
+//        public IActionResult Bookings()
+//        {
            
-            return View(); 
+//            return View(); 
+//>>>>>>> 62cf56971b9b75605cfd198d1861ce7687c25c08
+//        }
+
+
+
+        public ActionResult Profile()
+        {
+            return View();
         }
+
         [HttpGet("/")]
         //  Hotel Details Page
         public async Task<IActionResult> Details(int id)
