@@ -1,6 +1,11 @@
-<<<<<<< HEAD
-﻿@{
+using Explorevia.ViewModels;
+using Explorevia.DTOs
+@* <!--@model Explorevia.ViewModels.RegisterViewModel *@
+
+
+@{
     Layout = null;
+    ViewData["Title"] = "Register";
 }
 
 <!DOCTYPE html>
@@ -12,7 +17,6 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
 
     <style>
-        /* Full-page background image */
         body {
             background: url('/images/bg5.webp') no-repeat center center;
             background-size: cover;
@@ -23,10 +27,9 @@
             justify-content: center;
         }
 
-        /* Card styling */
         .register-card {
             width: 400px;
-            background: rgba(255, 252, 240, 0.7); /* transparent black */
+            background: rgba(255, 252, 240, 0.7);
             border-radius: 20px;
             padding: 35px;
             box-shadow: 0 0 20px #003459;
@@ -54,14 +57,14 @@
         .form-control {
             background: rgba(255, 252, 240);
             border: 2px solid #444;
-            color: #fff;
+            color: #003459;
         }
 
             .form-control:focus {
                 border-color: #003459;
                 box-shadow: 0 0 5px #003459;
                 background: rgba(255, 252, 240);
-                color: #fff;
+                color: #003459;
             }
 
         label {
@@ -101,7 +104,6 @@
             text-decoration: underline;
         }
     </style>
-
 </head>
 <body>
 
@@ -113,94 +115,54 @@
         <h3 class="register-title">ExploreVia Register</h3>
 
         <form asp-action="Register" method="post" class="my-login-validation" novalidate>
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
             <div class="form-group">
-                <label for="name">Name</label>
-                <input id="name" type="text" class="form-control" name="Name" required autofocus />
-                <div class="invalid-feedback">What's your name?</div>
+                <label asp-for="Name"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
             </div>
 
             <div class="form-group">
-                <label for="email">E-Mail Address</label>
-                <input id="email" type="email" class="form-control" name="Email" required />
-                <div class="invalid-feedback">Your email is invalid</div>
+                <label asp-for="Email"></label>
+                <input asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger"></span>
             </div>
 
             <div class="form-group">
-                <label for="password">Password</label>
-                <input id="password" type="password" class="form-control" name="Password" required />
-                <div class="invalid-feedback">Password is required</div>
+                <label asp-for="Password"></label>
+                <input asp-for="Password" class="form-control" type="password" />
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="ConfirmPassword"></label>
+                <input asp-for="ConfirmPassword" class="form-control" type="password" />
+                <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
             </div>
 
             <div class="form-group">
                 <div class="custom-control custom-checkbox">
-                    <input type="checkbox" name="Agree" id="agree" class="custom-control-input" required />
-                    <label for="agree" class="custom-control-label">
+                    <input asp-for="Agree" class="custom-control-input" id="agree" />
+                    <label class="custom-control-label" for="agree">
                         I agree to the <a href="#">Terms and Conditions</a>
                     </label>
-                    <div class="invalid-feedback">
-                        You must agree with our Terms and Conditions
-                    </div>
+                    <span asp-validation-for="Agree" class="text-danger"></span>
                 </div>
             </div>
 
             <button type="submit" class="btn btn-gold mt-3">Register</button>
 
             <div class="footer-text">
-                Already have an account? <a href="/Account/Login">Login</a>
+                Already have an account? <a asp-controller="Account" asp-action="Login">Login</a>
             </div>
         </form>
-
     </div>
 
+    @section Scripts {
+        @{
+            await Html.RenderPartialAsync("_ValidationScriptsPartial");
+        }
+    }
 </body>
 </html>
-=======
-﻿@model Explorevia.DTOs.RegisterViewModel
-
-@{
-    ViewData["Title"] = "Register";
-}
-
-<h1>Register</h1>
-
-<h4>RegisterViewModel</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Register">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="Name" class="control-label"></label>
-                <input asp-for="Name" class="form-control" />
-                <span asp-validation-for="Name" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Email" class="control-label"></label>
-                <input asp-for="Email" class="form-control" />
-                <span asp-validation-for="Email" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Password" class="control-label"></label>
-                <input asp-for="Password" class="form-control" />
-                <span asp-validation-for="Password" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="ConfirmPassword" class="control-label"></label>
-                <input asp-for="ConfirmPassword" class="form-control" />
-                <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
-            </div>
-        </form>
-    </div>
-</div>
-
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
-
-@section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
-}
->>>>>>> identity

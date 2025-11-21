@@ -1,7 +1,6 @@
 ﻿using Explorevia.Helpers;
+using Explorevia.IRepository;
 using Explorevia.Models;
-using ExploreVia.Services;
-//using ExploreVia.Web.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Hosting;
@@ -11,10 +10,10 @@ namespace Explorevia.Controllers
 {
     public class BookingsController : Controller
     {
-        private readonly IBookingService _bookingService;
-        private readonly IHotelService _hotelService;
+        private readonly IBookingRepository _bookingService;
+        private readonly IHotelRepository _hotelService;
 
-        public BookingsController(IBookingService bookingService, IHotelService hotelService)
+        public BookingsController(IBookingRepository bookingService, IHotelRepository hotelService)
         {
             _bookingService = bookingService;
             _hotelService = hotelService;
@@ -32,17 +31,17 @@ namespace Explorevia.Controllers
         public IActionResult Create(int roomId, DateTime startDate, DateTime endDate)
         {
             var room = _hotelService.GetAll().SelectMany(h => h.Rooms).FirstOrDefault(r => r.Id == roomId);
-            if (room == null) { NotificationHelper.Error(this, "Room not found!"); return RedirectToAction("Index", "Home"); }
+            if (room == null)
+            {
+                NotificationHelper.Error(this, "Room not found!");
+                return RedirectToAction("Index", "Home");
+            }
 
             decimal totalPrice = (decimal)(endDate - startDate).TotalDays * room.Price;
             var booking = new Booking
             {
                 RoomId = roomId,
-<<<<<<< HEAD
-                UserId =User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier).Value,
-=======
-                UserId  = User.FindFirst(ClaimTypes.NameIdentifier).Value,
->>>>>>> 5dcde25b1f1c760085716d479c40839990988c32
+                UserId = User.FindFirst(ClaimTypes.NameIdentifier).Value,
                 StartDate = startDate,
                 EndDate = endDate,
                 TotalPrice = totalPrice,
@@ -56,13 +55,8 @@ namespace Explorevia.Controllers
         // User: My bookings
         public IActionResult MyBookings()
         {
-<<<<<<< HEAD
-            int userId = int.Parse(User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier).Value);
-            var bookings = _bookingService.GetAllBookings().Where(b => b.UserId == userId.ToString());
-=======
-            string userId = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier).Value;
+            string userId = User.FindFirst(ClaimTypes.NameIdentifier).Value;
             var bookings = _bookingService.GetAllBookings().Where(b => b.UserId.Equals(userId));
->>>>>>> 5dcde25b1f1c760085716d479c40839990988c32
             return View(bookings);
         }
 

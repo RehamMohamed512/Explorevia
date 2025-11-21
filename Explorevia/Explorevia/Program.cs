@@ -8,30 +8,22 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews().AddRazorRuntimeCompilation();
+
+// DbContext configuration
 builder.Services.AddDbContext<AppDbContext>(option =>
-<<<<<<< HEAD
-option.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
-=======
-option.UseSqlServer(builder.Configuration.GetConnectionString("db")));
->>>>>>> identity
-//builder.Services.AddDbContext<AppDbContext>(options =>
-//options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
-builder.Services.AddScoped<IAuthRepository,AuthRepository>();
-<<<<<<< HEAD
+    option.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+// Dependency injection
+builder.Services.AddScoped<IAuthRepository, AuthRepository>();
+
+// Identity configuration
 builder.Services.AddIdentity<ApplicationUser, IdentityRole>(option =>
 {
-    option.Password.RequireNonAlphanumeric=false;
-    option.Password.RequireUppercase=false;
-    option.Password.RequireUppercase=false;
+    option.Password.RequireNonAlphanumeric = false;
+    option.Password.RequireUppercase = false;
 })
-    .AddEntityFrameworkStores<AppDbContext>();
-=======
-
-
-builder.Services.AddIdentity<ApplicationUser, IdentityRole>()
-    .AddEntityFrameworkStores<AppDbContext>()
-    .AddDefaultTokenProviders();
->>>>>>> 5dcde25b1f1c760085716d479c40839990988c32
+.AddEntityFrameworkStores<AppDbContext>()
+.AddDefaultTokenProviders();
 
 var app = builder.Build();
 
@@ -39,7 +31,6 @@ var app = builder.Build();
 if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Home/Error");
-    // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
     app.UseHsts();
 }
 

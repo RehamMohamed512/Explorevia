@@ -1,6 +1,7 @@
 ﻿using Explorevia.Helpers;
+using Explorevia.IRepository;
 using Explorevia.Models;
-using ExploreVia.Services;
+
 
 //using ExploreVia.Web.Services;
 using Microsoft.AspNetCore.Authorization;
@@ -12,10 +13,10 @@ namespace Explorevia.Controllers
     [Authorize]
     public class ReviewsController : Controller
     {
-        private readonly IHotelService _hotelService;
+        private readonly IHotelRepository _hotelService;
         private readonly AppDbContext _context;
 
-        public ReviewsController(IHotelService hotelService, AppDbContext context)
+        public ReviewsController(IHotelRepository hotelService, AppDbContext context)
         {
             _hotelService = hotelService;
             _context = context;
