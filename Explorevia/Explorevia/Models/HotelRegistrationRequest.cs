@@ -11,8 +11,7 @@ namespace Explorevia.Models
         public string OwnerName { get; set; }
         [Required,EmailAddress]
         public string Email { get; set; }
-        [Required]
-        public string Phone { get; set; }
+        
         [Required]
         public string Address { get; set; }
         [Required,MaxLength(20)]
@@ -24,7 +23,7 @@ namespace Explorevia.Models
         [Required]
         public string OwnerIdCardPath { get; set; }
 
-        public string Status { get; set; } = "Pending"; 
+        public string Status { get; set; } = "Pending"; //approved, rejected, pending
 
     }
 }

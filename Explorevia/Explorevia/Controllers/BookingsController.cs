@@ -38,7 +38,11 @@ namespace Explorevia.Controllers
             var booking = new Booking
             {
                 RoomId = roomId,
+<<<<<<< HEAD
+                UserId =User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier).Value,
+=======
                 UserId  = User.FindFirst(ClaimTypes.NameIdentifier).Value,
+>>>>>>> 5dcde25b1f1c760085716d479c40839990988c32
                 StartDate = startDate,
                 EndDate = endDate,
                 TotalPrice = totalPrice,
@@ -52,8 +56,13 @@ namespace Explorevia.Controllers
         // User: My bookings
         public IActionResult MyBookings()
         {
+<<<<<<< HEAD
+            int userId = int.Parse(User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier).Value);
+            var bookings = _bookingService.GetAllBookings().Where(b => b.UserId == userId.ToString());
+=======
             string userId = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier).Value;
             var bookings = _bookingService.GetAllBookings().Where(b => b.UserId.Equals(userId));
+>>>>>>> 5dcde25b1f1c760085716d479c40839990988c32
             return View(bookings);
         }
 

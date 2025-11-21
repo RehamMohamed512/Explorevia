@@ -20,10 +20,14 @@ namespace Explorevia.Models
 
         [ForeignKey("User")]
         public string UserId { get; set; }
+<<<<<<< HEAD
+        public ApplicationUser? User { get; set; }
+=======
         public ApplicationUser User { get; set; }
+>>>>>>> 5dcde25b1f1c760085716d479c40839990988c32
 
         [ForeignKey("Hotel")]
         public int HotelId { get; set; }
-        public Hotel Hotel { get; set; }
+        public Hotel? Hotel { get; set; }
     }
 }
