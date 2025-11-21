@@ -19,11 +19,15 @@ namespace Explorevia.Models
         public bool IsApproved { get; set; } = false;
 
         [ForeignKey("User")]
-        public int UserId { get; set; }
-        public User User { get; set; }
+        public string UserId { get; set; }
+<<<<<<< HEAD
+        public ApplicationUser? User { get; set; }
+=======
+        public ApplicationUser User { get; set; }
+>>>>>>> 5dcde25b1f1c760085716d479c40839990988c32
 
         [ForeignKey("Hotel")]
         public int HotelId { get; set; }
-        public Hotel Hotel { get; set; }
+        public Hotel? Hotel { get; set; }
     }
 }
