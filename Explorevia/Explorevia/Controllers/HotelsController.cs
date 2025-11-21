@@ -1,6 +1,6 @@
 ﻿using Explorevia.Helpers;
+using Explorevia.IRepository;
 using Explorevia.Models;
-using ExploreVia.Services;
 //using ExploreVia.Web.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -11,10 +11,10 @@ namespace Explorevia.Controllers
     //CRUD FOR HOTELS
     public class HotelsController : Controller
     {
-        private readonly IHotelService _hotelService;
+        private readonly IHotelRepository _hotelService;
         private readonly IWebHostEnvironment _env;
 
-        public HotelsController(IHotelService hotelService, IWebHostEnvironment env)
+        public HotelsController(IHotelRepository hotelService, IWebHostEnvironment env)
         {
             _hotelService = hotelService;
             _env = env;

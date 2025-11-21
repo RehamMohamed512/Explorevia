@@ -2,156 +2,88 @@
 using Explorevia.Helpers;
 using Explorevia.IRepository;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.IdentityModel.Tokens;
-using System.IdentityModel.Tokens.Jwt;
-using System.Security.Claims;
-using System.Text;
+using System.Threading.Tasks;
 
 namespace Explorevia.Controllers
 {
     [Authorize]
     public class AccountController : Controller
     {
-        IAuthRepository _authRepository;
+        private readonly IAuthRepository _authRepository;
 
         public AccountController(IAuthRepository authRepository)
         {
             _authRepository = authRepository;
         }
+
         // Register
         [HttpGet]
+        [AllowAnonymous]
         public IActionResult Register() => View("Register");
 
-
         [HttpPost]
-<<<<<<< HEAD
         [AllowAnonymous]
-=======
->>>>>>> 5dcde25b1f1c760085716d479c40839990988c32
         public async Task<IActionResult> Register(RegisterViewModel registerDto)
         {
-            if (ModelState.IsValid)
-            {
-                var user = await _authRepository.RegisterUser(registerDto);
-                if (!user)
-                {
-                    NotificationHelper.Error(this, "Registration failed, Email already exist");
-                    return View("Register");
-                }
-                NotificationHelper.Success(this, "Registration Successful, Please login");
-                return View("Login");
-            }
-            else
+            if (!ModelState.IsValid)
             {
                 NotificationHelper.Error(this, "Registration failed, Please fill all the required fields");
                 return View("Register");
             }
+
+            var user = await _authRepository.RegisterUser(registerDto);
+            if (!user)
+            {
+                NotificationHelper.Error(this, "Registration failed, Email already exists");
+                return View("Register");
+            }
+
+            NotificationHelper.Success(this, "Registration Successful, Please login");
+            return View("Login");
         }
 
         // Login
         [HttpGet]
+        [AllowAnonymous]
         public IActionResult Login() => View("Login");
 
         [HttpPost]
-        [Authorize]
-<<<<<<< HEAD
+        [AllowAnonymous]
         public async Task<IActionResult> Login(LoginViewModel loginDTO)
         {
-=======
-<<<<<<< HEAD
-        public async Task<IActionResult> Login(LoginViewModel loginDTO)
-=======
-        public async Task<IActionResult> Login(LoginDTO loginDTO)
->>>>>>> 371f56d96280209b8db5c5c7f6bac9aa137b8cfb
-        { 
->>>>>>> 5dcde25b1f1c760085716d479c40839990988c32
-            if (ModelState.IsValid)
-            {
-                var login = await _authRepository.Login(loginDTO);
-                if (!login)
-                {
-                    NotificationHelper.Error(this, "Login failed, Invalid email or password");
-                    return View("Login");
-                }
-                else
-                {
-                    return RedirectToAction("Index", "Home");
-                    //string key = "team R2M2 in depi explorevia project";
-                    //var securityKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes(key));
-                    //var signCred = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256);
-                    //List<Claim> claims = new List<Claim>();
-                    //claims.Add(new Claim("Email", "RmRm@gmail.com"));
-
-                    //var token = new JwtSecurityToken(
-                    //    claims: claims,
-                    //    expires: DateTime.Now.AddDays(1),
-                    //    signingCredentials: signCred);
-
-                    //var stringToken = new JwtSecurityTokenHandler().WriteToken(token);
-
-<<<<<<< HEAD
-
-                    //NotificationHelper.Success(this, "Login Successful");
-                    //return Ok(RedirectToAction("Index", "Home"));
-=======
-                    NotificationHelper.Success(this, "Login Successful");
-<<<<<<< HEAD
-                    Console.WriteLine("Login Successfully");
-                    return RedirectToAction("Index", "Home");
-
-
-=======
-                    return Ok( RedirectToAction("Index", "Home"));
->>>>>>> 371f56d96280209b8db5c5c7f6bac9aa137b8cfb
->>>>>>> 5dcde25b1f1c760085716d479c40839990988c32
-                }
-            }
-            else
+            if (!ModelState.IsValid)
             {
                 NotificationHelper.Error(this, "Login failed, Please fill all the required fields");
                 return View("Login");
-<<<<<<< HEAD
-=======
-                
->>>>>>> 5dcde25b1f1c760085716d479c40839990988c32
             }
-           
 
-        }
-  
-        public async Task<IActionResult> Logout()
-        {
-           var result =  _authRepository.LogoutAsync();
-            if (result != null)
-                return RedirectToAction("Login", "Account");
-            else
+            var login = await _authRepository.Login(loginDTO);
+
+            if (!login)
             {
-                ModelState.AddModelError("", "Logout failed");
-                return View();
+                NotificationHelper.Error(this, "Login failed, Invalid email or password");
+                return View("Login");
             }
-               
 
+            NotificationHelper.Success(this, "Login Successful");
+            return RedirectToAction("Index", "Home");
         }
 
         // Logout
         [HttpPost]
         public async Task<IActionResult> Logout()
         {
-            var logout = await _authRepository.Logout();
+            var logout = await _authRepository.LogoutAsync(); 
             if (!logout)
             {
                 NotificationHelper.Error(this, "Logout failed, Please try again");
                 return RedirectToAction("Index", "Home");
             }
+
             NotificationHelper.Success(this, "Logout Successful");
-            return View("Login");
-
-
-<<<<<<< HEAD
+            return RedirectToAction("Login", "Account");
         }
-=======
->>>>>>> 5dcde25b1f1c760085716d479c40839990988c32
+
     }
 }
