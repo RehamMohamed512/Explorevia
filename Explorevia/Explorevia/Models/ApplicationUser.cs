@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Explorevia.Models
 {
-    public class ApplicationUser : IdentityUser
+    public class ApplicationUser :IdentityUser
     {
         //public int Id { get; set; }
         /*  [Key]

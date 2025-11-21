@@ -16,30 +16,36 @@ namespace Explorevia.Repository
         //DI
         private readonly AppDbContext _context;
         private readonly UserManager<ApplicationUser> _applicationUser;
-        public AuthRepository(AppDbContext context, UserManager<ApplicationUser> applicationUser)
+        private readonly SignInManager<ApplicationUser> _signInManager;
+        public AuthRepository(AppDbContext context, UserManager<ApplicationUser> applicationUser, SignInManager<ApplicationUser> signInManager)
         {
             _context = context;
             _applicationUser = applicationUser;
+            _signInManager = signInManager;
         }
 
-        public async Task<bool> Login(LoginDTO ldto)
+        public async Task<bool> Login(LoginViewModel ldto)
         {
-           var user = _context.Users.FirstOrDefault(u=>u.Email == ldto.Email);
-            if (user == null) 
+           var user = await _applicationUser.FindByEmailAsync(ldto.Email);
+            if(user != null)
             {
+                var passwordCheck = await _applicationUser.CheckPasswordAsync(user, ldto.Password);
+                if(passwordCheck)
+                {
+                    await _signInManager.SignInAsync(user, ldto.RememberMe);
+                    return true;
+                }
                 return false;
             }
+            return false;
 
-            bool isPasswordVaild = BCrypt.Net.BCrypt.Verify(ldto.Password,user.PasswordHash);
-            if (!isPasswordVaild) 
-                return false;
-            return true;
-           
         }
 
-        public async Task<bool> RegisterUser(RegisterDTO rdto)
+        
+
+        public async Task<bool> RegisterUser(RegisterViewModel rdto)
         {
-            var existingUser = await _context.Users.FirstOrDefaultAsync(u => u.Email == rdto.Email);
+            var existingUser = await _applicationUser.FindByEmailAsync(rdto.Email);
 
             if (existingUser != null)
             {
@@ -51,37 +57,25 @@ namespace Explorevia.Repository
             {
                 UserName = rdto.Name,
                 Email = rdto.Email,
-                PasswordHash = BCrypt.Net.BCrypt.HashPassword(rdto.Password),
+                PasswordHash = rdto.Password,
                 Role = "User"
             };
-            _context.Users.Add(newUser);
-            await _context.SaveChangesAsync();
-            return true;
-
-        }
-
-        public async Task<bool> RegisterHotel(RegisterDTO rdto)
-        {
-            var existingUser = await _context.Users.FirstOrDefaultAsync(u => u.Email == rdto.Email);
-
-            if (existingUser != null)
+            var result =_applicationUser.CreateAsync(newUser, rdto.Password);
+            if (result.IsCompletedSuccessfully)
             {
-                return false; // User with the same email already exists
+                await _signInManager.SignInAsync(newUser, false);
+                return true;
             }
+            return false;
 
+        }
 
-            var newUser = new ApplicationUser
-            {
-                UserName = rdto.Name,
-                Email = rdto.Email,
-                PasswordHash = BCrypt.Net.BCrypt.HashPassword(rdto.Password),
-                Role = "Hotel Owner"
-            };
-            //_context.Users.Add(newUser);
-            await _applicationUser.CreateAsync(newUser);
-            await _context.SaveChangesAsync();
+        public async Task<bool> Logout()
+        {
+            await _signInManager.SignOutAsync();
             return true;
         }
+
 
 
     }

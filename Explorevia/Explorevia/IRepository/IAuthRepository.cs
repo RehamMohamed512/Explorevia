@@ -5,8 +5,8 @@ namespace Explorevia.IRepository
 {
     public interface IAuthRepository
     {
-        Task<bool> RegisterUser(RegisterDTO rdto);
-        Task<bool> Login(LoginDTO ldto);
-        Task<bool> RegisterHotel(RegisterDTO rdto);
+        Task<bool> RegisterUser(RegisterViewModel rdto);
+        Task<bool> Login(LoginViewModel ldto);
+        Task<bool> Logout();
     }
 }

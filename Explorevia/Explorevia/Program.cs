@@ -13,7 +13,12 @@ option.UseSqlServer(builder.Configuration.GetConnectionString("db")));
 //builder.Services.AddDbContext<AppDbContext>(options =>
 //options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 builder.Services.AddScoped<IAuthRepository,AuthRepository>();
-builder.Services.AddIdentity<ApplicationUser, IdentityRole>()
+builder.Services.AddIdentity<ApplicationUser, IdentityRole>(option =>
+{
+    option.Password.RequireNonAlphanumeric=false;
+    option.Password.RequireUppercase=false;
+    option.Password.RequireUppercase=false;
+})
     .AddEntityFrameworkStores<AppDbContext>();
 
 var app = builder.Build();
@@ -31,7 +36,6 @@ app.UseStaticFiles();
 
 app.UseRouting();
 app.UseAuthentication();
-
 app.UseAuthorization();
 
 app.MapControllerRoute(
