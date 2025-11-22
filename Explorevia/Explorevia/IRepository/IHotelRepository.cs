@@ -4,7 +4,7 @@ namespace Explorevia.IRepository
 {
     public interface IHotelRepository
     {
-        IEnumerable<Hotel> GetAll();
+        Task<List<Hotel>> GetAll();
         Hotel GetById(int id);
         void AddHotel(Hotel hotel);
         void UpdateHotel(Hotel hotel);

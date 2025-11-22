@@ -8,7 +8,13 @@ namespace Explorevia.Repository
         private readonly AppDbContext _context;
         public HotelRepository(AppDbContext context) => _context = context;
 
-        public IEnumerable<Hotel> GetAll() => _context.Hotels.Include(h => h.HotelImages).Include(h => h.Reviews).ToList();
+        public async Task<List<Hotel>> GetAll()
+        {
+            return await _context.Hotels
+                     .Include(h => h.HotelImages)
+                     .Include(h => h.Reviews)
+                     .ToListAsync();
+        }
 
         public Hotel GetById(int id) => _context.Hotels.Include(h => h.HotelImages).Include(h => h.Reviews).FirstOrDefault(h => h.Id == id);
 

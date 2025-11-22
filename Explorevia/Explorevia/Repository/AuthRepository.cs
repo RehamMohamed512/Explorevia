@@ -38,7 +38,7 @@ namespace Explorevia.Repository
             {
                 UserName = rdto.Email,
                 Email = rdto.Email,
-                Role = "User"
+                
             };
 
             // Create user

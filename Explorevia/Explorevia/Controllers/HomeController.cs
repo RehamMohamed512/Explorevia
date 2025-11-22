@@ -17,13 +17,11 @@ namespace Explorevia.Controllers
         // Home Page — Featured Hotels
         public async Task<IActionResult> Index()
         {
-            var featuredHotels = await _context.Hotels //retrieving all hotels 
+            var featuredHotels = await _context.Hotels
+                .Include(h => h.HotelImages)
                 .Include(h => h.Reviews)
-                .OrderByDescending(h => h.Rating)
-                .Take(6)
                 .ToListAsync();
-
-            return View();
+            return View(featuredHotels);
         }
         // view explore now (apply filters +hotels)
         public IActionResult Explore()

@@ -20,9 +20,7 @@ namespace Explorevia.Controllers
             _env = env;
         }
 
-        // List all hotels
-        public IActionResult Index() => View(_hotelService.GetAll());
-
+        
         // Hotel details
         public IActionResult Details(int id)
         {

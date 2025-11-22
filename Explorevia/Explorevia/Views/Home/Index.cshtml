@@ -1,5 +1,7 @@
-﻿<!DOCTYPE html>
+﻿@using Explorevia.Models
+<!DOCTYPE html>
 <html lang="en">
+@model List<Hotel>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -168,13 +170,42 @@
     </section>
 
             <!-- Hotels Results -->
-            <div class="mb-12">
+            <div class="mb-12" >
                 <h3 class="text-2xl font-semibold mb-6 text-gray-800 flex items-center">
                     <i class="fas fa-hotel mr-3 text-green-600"></i>Available Hotels
                 </h3>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+                        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" action="/Hotels/Index">
+                            
+                                @foreach (var hotel in Model)
+                                {
+                                    <div class="col-md-4 mb-4">
+                                        <div class="card shadow-sm">
+                                            <img src="@hotel.HotelImages?.FirstOrDefault()?.ImageUrl"
+                                                 class="card-img-top"
+                                                 style="height:220px;object-fit:cover;" />
+
+                                            <div class="card-body">
+                                                <h5 class="card-title">@hotel.Name</h5>
+                                                <p class="card-text text-muted">
+                                                    @hotel.Description?.Substring(0, Math.Min(60, hotel.Description.Length))...
+                                                </p>
+                                                <a href="/Hotels/Details/@hotel.Id" class="btn btn-primary w-100">
+                                                    View Details
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                }
+                            
+                            </div>
+
+
+
+
                     <!-- Hotel Card 1 -->
-                    <div class="bg-white rounded-2xl shadow-md overflow-hidden result-card">
+                    @* <div class="bg-white rounded-2xl shadow-md overflow-hidden result-card">
                         <div class="h-48 bg-gray-200">
                             <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/15965795-c32c-4967-8e18-b79d11c034e6.png" alt="Luxury hotel in Paris with elegant facade, marble entrance, and beautiful flower arrangements" class="w-full h-full object-cover">
                         </div>
@@ -196,32 +227,8 @@
                                 Book Now
                             </button>
                         </div>
-                    </div>
+                    </div> *@
 
-                    <!-- Hotel Card 2 -->
-                    <div class="bg-white rounded-2xl shadow-md overflow-hidden result-card">
-                        <div class="h-48 bg-gray-200">
-                            <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/cc27b37f-0b74-4ac4-8d2c-f0073c43ddbd.png" alt="Boutique hotel with charming Parisian architecture, cozy rooms, and rooftop terrace views" class="w-full h-full object-cover">
-                        </div>
-                        <div class="p-6">
-                            <h4 class="font-semibold text-lg mb-2">Riverside Boutique</h4>
-                            <p class="text-gray-600 mb-3">Seine River, Paris</p>
-                            <div class="flex items-center justify-between mb-4">
-                                <div class="flex items-center text-yellow-400">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star-half-alt"></i>
-                                    <span class="ml-2 text-gray-600">4.5/5</span>
-                                </div>
-                                <span class="text-2xl font-bold text-green-600">$129<small class="text-sm font-normal text-gray-600">/night</small></span>
-                            </div>
-                            <button class="w-full bg-green-600 hover:bg-green-700 text-white font-semibold py-3 rounded-lg transition-colors">
-                                Book Now
-                            </button>
-                        </div>
-                    </div>
                 </div>
             </div>
 

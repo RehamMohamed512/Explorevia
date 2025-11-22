@@ -11,7 +11,7 @@ builder.Services.AddControllersWithViews().AddRazorRuntimeCompilation();
 
 // DbContext configuration
 builder.Services.AddDbContext<AppDbContext>(option =>
-    option.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+    option.UseSqlServer(builder.Configuration.GetConnectionString("DB")));
 
 // Dependency injection
 builder.Services.AddScoped<IAuthRepository, AuthRepository>();
