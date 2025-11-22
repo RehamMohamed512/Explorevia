@@ -1,5 +1,6 @@
 ﻿using Explorevia.IRepository;
 using Explorevia.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace Explorevia.Repository
 {
@@ -12,23 +13,23 @@ namespace Explorevia.Repository
             _context = context;
         }
 
-        public async Task<bool> Requests()
+        public async Task<List<HotelRegistrationRequest>> Requests()
         {
-           var req = _context.HotelRegistrationRequests.Where(r => r.Status == "Pending").ToList();
-            if (req != null && req.Count > 0)
+           var req = await _context.HotelRegistrationRequests.Where(r => r.Status == "Pending").ToListAsync();
+            if(req != null)
             {
-                return true;
+                return req;
             }
-            return false;
+            return null;
         } 
-        public async Task<bool> GetDetails(int Id)
+        public async Task<HotelRegistrationRequest> GetDetails(int Id)
         {
-            var req = _context.HotelRegistrationRequests.FindAsync(Id);
-            if (req != null)
+            var req = await _context.HotelRegistrationRequests.FindAsync(Id);
+            if(req != null)
             {
-                return true;
+                return req;
             }
-            return false;
+            return null;
         }
 
         public async Task<bool> ApproveRequest(int requestId)
@@ -36,8 +37,21 @@ namespace Explorevia.Repository
            var req = _context.HotelRegistrationRequests.FindAsync(requestId);
             if (req == null)
                 return false;
-            req.Result.Status = "Approved";
+            var hotel = new Hotel
+            {
+                Name = req.Result.HotelName,
+                Description = req.Result.Description,
+                City = req.Result.City,
+                Country = req.Result.Country,
+                Location = req.Result.Address,
+                Rating = req.Result.Rating,
+                
+            };
+            await _context.Hotels.AddAsync(hotel);
             await _context.SaveChangesAsync();
+
+            var image = new List<string>();
+
             return true;
         }
 

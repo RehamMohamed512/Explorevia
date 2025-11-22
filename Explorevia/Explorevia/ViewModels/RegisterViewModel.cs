@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace Explorevia.DTOs
+namespace Explorevia.ViewModels
 {
     public class RegisterViewModel
     {

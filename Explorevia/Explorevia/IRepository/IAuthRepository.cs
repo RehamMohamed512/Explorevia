@@ -1,4 +1,4 @@
-﻿using Explorevia.DTOs;
+﻿using Explorevia.ViewModels;
 using Explorevia.Models;
 using Explorevia.ViewModels;
 using Microsoft.AspNetCore.Mvc;

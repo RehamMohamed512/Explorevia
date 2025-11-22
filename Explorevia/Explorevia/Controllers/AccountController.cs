@@ -1,4 +1,4 @@
-﻿using Explorevia.DTOs;
+﻿using Explorevia.ViewModels;
 using Explorevia.Helpers;
 using Explorevia.IRepository;
 using Explorevia.ViewModels;
@@ -27,19 +27,19 @@ namespace Explorevia.Controllers
 
         [HttpPost]
         [AllowAnonymous]
-        public async Task<IActionResult> RegisterUser(RegisterViewModel registerDto)
+        public async Task<IActionResult> RegisterUser(RegisterViewModel register)
         {
             if (!ModelState.IsValid)
             {
                 NotificationHelper.Error(this, "Registration failed, Please fill all the required fields");
-                return View("Register",registerDto);
+                return View("Register",register);
             }
 
-            var isCreated = await _authRepository.RegisterUser(registerDto);
+            var isCreated = await _authRepository.RegisterUser(register);
             if (!isCreated)
             {
                 NotificationHelper.Error(this, "Registration failed, Email already exists");
-                return View("Register",registerDto);
+                return View("Register",register);
             }
 
             NotificationHelper.Success(this, "Registration Successful, Please login");
@@ -49,21 +49,21 @@ namespace Explorevia.Controllers
         //-----------------------------------------------------
         [HttpGet]
         [AllowAnonymous]
-        public IActionResult RegisterHotel() => View("RegisterHotel");
+        public IActionResult RegisterHotel() => View("UploadDocs");
         [HttpPost]
         [AllowAnonymous]
-        public async Task<IActionResult> RegisterHotel(HotelOwnerRegisterViewModel registerDto)
+        public async Task<IActionResult> RegisterHotel(HotelOwnerRegisterViewModel register)
         {
             if (!ModelState.IsValid)
             {
                 NotificationHelper.Error(this, "Registration failed, Please fill all the required fields");
-                return View("RegisterHotel", registerDto);
+                return View("RegisterHotel", register);
             }
-            var isCreated = await _authRepository.RegisterHotelOwner(registerDto);
+            var isCreated = await _authRepository.RegisterHotelOwner(register);
             if (!isCreated)
             {
                 NotificationHelper.Error(this, "Registration failed, Email already exists");
-                return View("RegisterHotel", registerDto);
+                return View("RegisterHotel", register);
             }
             NotificationHelper.Success(this, "Registration Successful, Please login");
             return RedirectToAction("Login", "Account");

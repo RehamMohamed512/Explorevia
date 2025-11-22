@@ -1,11 +1,14 @@
-using Explorevia.ViewModels;
-using Explorevia.DTOs
-@* <!--@model Explorevia.ViewModels.RegisterViewModel *@
-
+@model Explorevia.ViewModels.RegisterViewModel
 
 @{
-    Layout = null;
+    Layout = "_Layout";
     ViewData["Title"] = "Register";
+}
+@if (TempData["NotificationMessage"] != null)
+{
+    <div class="alert alert-@TempData["NotificationType"]">
+        @TempData["NotificationMessage"]
+    </div>
 }
 
 <!DOCTYPE html>
@@ -55,7 +58,7 @@ using Explorevia.DTOs
         }
 
         .form-control {
-            background: rgba(255, 252, 240);
+            background: rgba(255, 252, 240, 0.7);
             border: 2px solid #444;
             color: #003459;
         }
@@ -63,7 +66,7 @@ using Explorevia.DTOs
             .form-control:focus {
                 border-color: #003459;
                 box-shadow: 0 0 5px #003459;
-                background: rgba(255, 252, 240);
+                background: rgba(255, 252, 240, 0.7);
                 color: #003459;
             }
 
@@ -98,11 +101,6 @@ using Explorevia.DTOs
                 color: #003459;
                 font-weight: 600;
             }
-
-        .custom-control-label a {
-            color: #003459;
-            text-decoration: underline;
-        }
     </style>
 </head>
 <body>
@@ -115,7 +113,7 @@ using Explorevia.DTOs
         <h3 class="register-title">ExploreVia Register</h3>
 
         <form asp-action="Register" method="post" class="my-login-validation" novalidate>
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div asp-validation-summary="All" class="text-danger"></div>
 
             <div class="form-group">
                 <label asp-for="Name"></label>
@@ -141,28 +139,18 @@ using Explorevia.DTOs
                 <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
             </div>
 
-            <div class="form-group">
-                <div class="custom-control custom-checkbox">
-                    <input asp-for="Agree" class="custom-control-input" id="agree" />
-                    <label class="custom-control-label" for="agree">
-                        I agree to the <a href="#">Terms and Conditions</a>
-                    </label>
-                    <span asp-validation-for="Agree" class="text-danger"></span>
-                </div>
-            </div>
-
             <button type="submit" class="btn btn-gold mt-3">Register</button>
 
             <div class="footer-text">
-                Already have an account? <a asp-controller="Account" asp-action="Login">Login</a>
+                Already have an account? <a href="/Account/Login">Login</a>
             </div>
         </form>
     </div>
 
     @section Scripts {
-        @{
-            await Html.RenderPartialAsync("_ValidationScriptsPartial");
-        }
+        @await Html.PartialAsync("_ValidationScriptsPartial")
     }
+
+
 </body>
 </html>

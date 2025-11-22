@@ -1,49 +1,16 @@
-﻿<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Travel Booking</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        .navbar-fixed {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            z-index: 50;
-            background-color: rgba(255, 252, 240, 0.7); /* نفس لون خلفية اللوجو */
-            backdrop-filter: blur(16px);
-        }
+﻿<nav class="navbar-fixed px-8 py-2 flex justify-between items-center shadow-md bg-[#fffcf0]/70 backdrop-blur-md">
+    <!-- Logo -->
+    <a href="/">
+        <img src="/images/ex-photo.png" alt="Explorevia Logo" class="h-[60px] w-[200px]">
+    </a>
 
-        .nav-link {
-            color: #003459; /* نفس لون نص اللوجو */
-        }
-
-            .nav-link:hover {
-                color: #00b6ad; /* لون أصفر قريب من الخط المنحني في اللوجو */
-            }
-    </style>
-</head>
-<body>
-    <!-- pt-24 علشان الناف بار ثابت وما يغطيش المحتوى -->
-    <!-- Navigation -->
-    <nav class="navbar-fixed px-8 py-2 flex justify-between items-center shadow-md">
-        <!-- Logo -->
-        <a href="/">
-            <img src="/images/ex-photo.png" alt="Explorevia Logo" class="h-[60px] w-[200px]">
-        </a>
-
-        <!-- Menu -->
-        <ul class="flex gap-8 text-lg font-medium">
-            <li><a href="/" class="nav-link">Home</a></li>
-            <li><a href="/Explore" class="nav-link">Explore</a></li>
-            <li><a href="/Account/Login" class="nav-link">Login</a></li>
-            <li><a href="/Account/Register" class="nav-link">Register</a></li>
-            <li><a href="/Account/Logout" class="nav-link">Logout</a></li>
-            <li><a href="/Contact" class="nav-link">Contact Us</a></li>
-        </ul>
-    </nav>
-
-</body>
-</html>
+    <!-- Menu -->
+    <ul class="flex gap-8 text-lg font-medium">
+        <li><a href="/" class="nav-link text-[#003459] hover:text-[#00b6ad]">Home</a></li>
+        <li><a href="/Explore" class="nav-link text-[#003459] hover:text-[#00b6ad]">Explore</a></li>
+        <li><a href="/Account/Login" class="nav-link text-[#003459] hover:text-[#00b6ad]">Login</a></li>
+        <li><a href="/Account/Register" class="nav-link text-[#003459] hover:text-[#00b6ad]">Register</a></li>
+        <li><a href="/Account/Logout" class="nav-link text-[#003459] hover:text-[#00b6ad]">Logout</a></li>
+        <li><a href="/Contact" class="nav-link text-[#003459] hover:text-[#00b6ad]">Contact Us</a></li>
+    </ul>
+</nav>

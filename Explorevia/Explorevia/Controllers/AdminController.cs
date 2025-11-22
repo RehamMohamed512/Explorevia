@@ -16,21 +16,17 @@ namespace Explorevia.Controllers
         {
             _adminRepository = adminRepository;
         }
-        [HttpGet]
-        public IActionResult Requests()
+        
+        public IActionResult GetRequests()
         {
             return View();
         }
         [HttpGet]
         public async Task<IActionResult> GetRequests()
         {
-            var req = _adminRepository.Requests();
-            if (req == null)
-            { NotificationHelper.Error(this, "No pending requests found."); 
-            return BadRequest();
-            }
-            return Ok(req);
-
+            var request = _adminRepository.Requests(); 
+            
+            
         }
 
     }

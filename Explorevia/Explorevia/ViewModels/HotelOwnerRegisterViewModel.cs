@@ -30,9 +30,23 @@ namespace Explorevia.ViewModels
         public string Description { get; set; }
         //-----------------------------------------------------
         [Required(ErrorMessage = "*")]
-        public string Location { get; set; }
+        public string City { get; set; }
         //-----------------------------------------------------
+
+        [Required(ErrorMessage = "*")]
+        public string Country { get; set; }
+
+        [Required]
+        public string Address { get; set; }
+
+
         [Required(ErrorMessage = "*"),Range(1,7)]
         public double Rating { get; set; }
+        //-----------------------------------------------------
+        [Required]
+        public IFormFile HotelLicense { get; set; }
+        [Required]
+        public IFormFile OwnerIdCard { get; set; }
+        public List<IFormFile> Images { get; set; }
     }
 }
