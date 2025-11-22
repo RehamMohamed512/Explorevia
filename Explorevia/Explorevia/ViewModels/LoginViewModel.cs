@@ -11,5 +11,6 @@ namespace Explorevia.DTOs
 
         public bool RememberMe { get; set; }
 
+
     }
 }

@@ -21,6 +21,7 @@ namespace Explorevia.Models
         [Range(0, 7)]
         public double Rating { get; set; }
 
+
         [Column(TypeName = "decimal(10,2)")]
         public decimal PricePerNight { get; set; }
 

@@ -1,6 +1,7 @@
 ﻿using Explorevia.DTOs;
 using Explorevia.Helpers;
 using Explorevia.IRepository;
+using Explorevia.ViewModels;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
@@ -17,31 +18,58 @@ namespace Explorevia.Controllers
             _authRepository = authRepository;
         }
 
+        //-----------------------------------------------------
+
         // Register
         [HttpGet]
         [AllowAnonymous]
-        public IActionResult Register() => View("Register");
+        public IActionResult RegisterUser() => View("Register");
 
         [HttpPost]
         [AllowAnonymous]
-        public async Task<IActionResult> Register(RegisterViewModel registerDto)
+        public async Task<IActionResult> RegisterUser(RegisterViewModel registerDto)
         {
             if (!ModelState.IsValid)
             {
                 NotificationHelper.Error(this, "Registration failed, Please fill all the required fields");
-                return View("Register");
+                return View("Register",registerDto);
             }
 
-            var user = await _authRepository.RegisterUser(registerDto);
-            if (!user)
+            var isCreated = await _authRepository.RegisterUser(registerDto);
+            if (!isCreated)
             {
                 NotificationHelper.Error(this, "Registration failed, Email already exists");
-                return View("Register");
+                return View("Register",registerDto);
             }
 
             NotificationHelper.Success(this, "Registration Successful, Please login");
-            return View("Login");
+            return RedirectToAction("Login","Account");
         }
+
+        //-----------------------------------------------------
+        [HttpGet]
+        [AllowAnonymous]
+        public IActionResult RegisterHotel() => View("RegisterHotel");
+        [HttpPost]
+        [AllowAnonymous]
+        public async Task<IActionResult> RegisterHotel(HotelOwnerRegisterViewModel registerDto)
+        {
+            if (!ModelState.IsValid)
+            {
+                NotificationHelper.Error(this, "Registration failed, Please fill all the required fields");
+                return View("RegisterHotel", registerDto);
+            }
+            var isCreated = await _authRepository.RegisterHotelOwner(registerDto);
+            if (!isCreated)
+            {
+                NotificationHelper.Error(this, "Registration failed, Email already exists");
+                return View("RegisterHotel", registerDto);
+            }
+            NotificationHelper.Success(this, "Registration Successful, Please login");
+            return RedirectToAction("Login", "Account");
+        }
+
+        //-----------------------------------------------------
 
         // Login
         [HttpGet]
@@ -60,15 +88,31 @@ namespace Explorevia.Controllers
 
             var login = await _authRepository.Login(loginDTO);
 
-            if (!login)
+            if (login == "Envalid Email or Password")
             {
-                NotificationHelper.Error(this, "Login failed, Invalid email or password");
+                NotificationHelper.Error(this, "Login failed, Envalid Email or Password");
                 return View("Login");
             }
+            switch (login)
+            {
+                case "HotelOwner":
+                    NotificationHelper.Success(this, "Login Successful");
+                    return RedirectToAction("Index", "HotelOwnerDashboard");
 
-            NotificationHelper.Success(this, "Login Successful");
-            return RedirectToAction("Index", "Home");
+                case "Admin":
+                    NotificationHelper.Success(this, "Login Successful");
+                    return RedirectToAction("Index", "AdminDashboard");
+
+                case "User":
+                    NotificationHelper.Success(this, "Login Successful");
+                    return RedirectToAction("Index", "Home");
+            }
+            NotificationHelper.Error(this, "Login failed, Please try again");
+            return View("Login",loginDTO);
+
         }
+
+        //-----------------------------------------------------
 
         // Logout
         [HttpPost]
