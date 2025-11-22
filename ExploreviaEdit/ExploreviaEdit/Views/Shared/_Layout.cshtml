@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - ExploreviaEdit</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/ExploreviaEdit.styles.css" asp-append-version="true" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet" />
+</head>
+<body>
+    <header>
+        @await Html.PartialAsync("_Navbar")
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    @await Html.PartialAsync("_Footer")
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+    <script>
+        $(function () {
+                    toastr.options = {
+            "closeButton": true,
+            "progressBar": true,
+            "positionClass": "toast-top-right",
+            "timeOut": "4000"
+        };
+
+            var type = '@TempData["NotificationType"]';
+            var message = '@TempData["NotificationMessage"]';
+
+            if (type && message) {
+                switch (type.toLowerCase()) {
+                    case "success":
+                        toastr.success(message);
+                        break;
+                    case "danger":
+                        toastr.error(message);
+                        break;
+                    default:
+                        toastr.info(message);
+                        break;
+                }
+            }
+        });
+    </script>
+</body>
+</html>
