@@ -1,125 +1,97 @@
-﻿@* @model ExploreviaEdit.ViewModel.AdminDashboardViewModel
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #fffcf0;
+            color: #003459;
+        }
 
-@{
-    ViewData["Title"] = "Admin Dashboard";
-}
+        .navbar, .btn-primary {
+            background-color: #003459;
+            color: #fffcf0 !important;
+        }
 
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-<link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet" />
-<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+            .btn-primary:hover {
+                background-color: #002a45;
+            }
 
-<h1 class="my-4">Admin Dashboard</h1>
+        .btn-danger:hover {
+            background-color: #990000;
+        }
 
-<!-- Pending Requests -->
-<h3>Pending Hotel Requests</h3>
-<table class="table table-bordered table-hover mb-5">
-    <thead class="table-dark">
-        <tr>
-            <th>#</th>
-            <th>Hotel Name</th>
-            <th>Owner</th>
-            <th>Email</th>
-            <th>City</th>
-            <th>Actions</th>
-        </tr>
-    </thead>
-    <tbody>
-        @if (Model.PendingRequests.Any())
-        {
-            int i = 1;
-            foreach (var req in Model.PendingRequests)
-            {
+        table th, table td {
+            vertical-align: middle !important;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Admin Dashboard</a>
+            <div class="d-flex">
+                <a class="btn btn-outline-light" href="/Home/Logout">Logout</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container my-5">
+        <div class="d-flex justify-content-between mb-3">
+            <h2>Hotels List</h2>
+            <a class="btn btn-primary" href="/Admin/AddHotel">Add New Hotel</a>
+        </div>
+
+        <table class="table table-bordered table-hover">
+            <thead class="table-dark">
                 <tr>
-                    <td>@i</td>
-                    <td>@req.HotelName</td>
-                    <td>@req.OwnerName</td>
-                    <td>@req.Email</td>
-                    <td>@req.City</td>
-                    <td>
-                        <form method="post" asp-action="Approve" asp-route-id="@req.Id" style="display:inline">
-                            <button class="btn btn-success btn-sm">Approve</button>
-                        </form>
-                        <form method="post" asp-action="Reject" asp-route-id="@req.Id" style="display:inline">
-                            <button class="btn btn-danger btn-sm">Reject</button>
-                        </form>
-                    </td>
+                    <th>#</th>
+                    <th>Hotel Name</th>
+                    <th>Owner Name</th>
+                    <th>Email</th>
+                    <th>Phone</th>
+                    <th>City</th>
+                    <th>Country</th>
+                    <th>Status</th>
+                    <th>Actions</th>
                 </tr>
-                i++;
-            }
-        }
-        else
-        {
-            <tr>
-                <td colspan="6" class="text-center">No pending requests</td>
-            </tr>
-        }
-    </tbody>
-</table>
-
-<!-- Existing Hotels -->
-<h3>Hotels List</h3>
-<table class="table table-bordered table-hover">
-    <thead class="table-dark">
-        <tr>
-            <th>#</th>
-            <th>Name</th>
-            <th>Location</th>
-            <th>Actions</th>
-        </tr>
-    </thead>
-    <tbody>
-        @if (Model.Hotels.Any())
-        {
-            int j = 1;
-            foreach (var hotel in Model.Hotels)
-            {
-                <tr>
-                    <td>@j</td>
-                    <td>@hotel.Name</td>
-                    <td>@hotel.Location</td>
-                    <td>
-                        <form method="post" asp-action="DeleteHotel" asp-route-id="@hotel.Id" style="display:inline">
-                            <button class="btn btn-danger btn-sm" onclick="return confirm('Are you sure?');">Delete</button>
-                        </form>
-                    </td>
-                </tr>
-                j++;
-            }
-        }
-        else
-        {
-            <tr>
-                <td colspan="4" class="text-center">No hotels found</td>
-            </tr>
-        }
-    </tbody>
-</table>
-
-<script>
-    $(function () {
-        toastr.options = {
-            "closeButton": true,
-            "progressBar": true,
-            "positionClass": "toast-top-right",
-            "timeOut": "4000"
-        };
-
-        var type = '@TempData["NotificationType"]';
-        var message = '@TempData["NotificationMessage"]';
-
-        if (type && message) {
-            switch (type.toLowerCase()) {
-                case "success":
-                    toastr.success(message);
-                    break;
-                case "danger":
-                    toastr.error(message);
-                    break;
-                default:
-                    toastr.info(message);
-                    break;
-            }
-        }
-    });
-</script> *@
+            </thead>
+            <tbody>
+                @if (Model.Any())
+                {
+                    int i = 1;
+                    foreach (var hotel in Model)
+                    {
+                        <tr>
+                            <td>@i</td>
+                            <td>@hotel.HotelName</td>
+                            <td>@hotel.OwnerName</td>
+                            <td>@hotel.Email</td>
+                            <td>@hotel.Phone</td>
+                            <td>@hotel.City</td>
+                            <td>@hotel.Country</td>
+                            <td>@hotel.Status</td>
+                            <td>
+                                <a class="btn btn-sm btn-primary me-1" href="/Admin/EditHotel/@hotel.Id">Edit</a>
+                                <a class="btn btn-sm btn-danger" href="/Admin/DeleteHotel/@hotel.Id"
+                                   onclick="return confirm('Are you sure you want to delete this hotel?');">Delete</a>
+                            </td>
+                        </tr>
+                        i++;
+                    }
+                }
+                else
+                {
+                    <tr>
+                        <td colspan="9" class="text-center">No hotels found.</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

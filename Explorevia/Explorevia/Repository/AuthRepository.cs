@@ -18,17 +18,19 @@ namespace Explorevia.Repository
         private readonly RoleManager<IdentityRole> _roleManager;
         private readonly SignInManager<ApplicationUser> _signInManager;
         private readonly AppDbContext _context;
-
+        private readonly IWebHostEnvironment _environment;
         public AuthRepository(
             UserManager<ApplicationUser> userManager,
             RoleManager<IdentityRole> roleManager,
             SignInManager<ApplicationUser> signInManager,
-            AppDbContext context)
+            AppDbContext context,
+            IWebHostEnvironment environment)
         {
             _userManager = userManager;
             _roleManager = roleManager;
             _signInManager = signInManager;
             _context = context;
+            _environment = environment;
         }
 
         // ============================
@@ -71,24 +73,16 @@ namespace Explorevia.Repository
             {
                 try
                 {
-                    // Check duplicate email
                     var existingHotelOwner = await _userManager.FindByEmailAsync(hotel.Email);
                     if (existingHotelOwner != null)
                         return false;
-                    var newHotel = new Hotel
-                    {
-                        Name = hotel.HotelName,
-                        Location = hotel.Location,
-                        Description = hotel.Description,
-                        Rating = hotel.Rating
-                    };
+                    // Create user
                     var appUser = new ApplicationUser
                     {
                         UserName = hotel.OwnerName,
                         Email = hotel.Email,
                         PhoneNumber = hotel.PhoneNumber
                     };
-                    // Create user
                     var result = await _userManager.CreateAsync(appUser, hotel.Password);
                     if (!result.Succeeded)
                         return false;
@@ -99,6 +93,19 @@ namespace Explorevia.Repository
 
                     // Assign role to user
                     await _userManager.AddToRoleAsync(appUser, "HotelOwner");
+
+
+                    var newHotel = new Hotel
+                    {
+                        Name = hotel.HotelName,
+                        Description = hotel.Description,
+                        Rating = hotel.Rating,
+                        Address = hotel.Address,
+                        City = hotel.City,
+                        Country = hotel.Country
+
+                    };
+
                     // Link hotel owner to user
                     newHotel.OwnerId = appUser.Id;
 
@@ -108,7 +115,8 @@ namespace Explorevia.Repository
                     await transaction.CommitAsync();
                     return true;
                 }
-                catch  {
+                catch
+                {
                     await transaction.RollbackAsync();
                     return false;
                 }
@@ -142,7 +150,7 @@ namespace Explorevia.Repository
             {
                 return "Admin";
             }
-            if (await _userManager.IsInRoleAsync(user, "User"))
+            if (await _userManager.IsInRoleAsync(user,"User"))
             {
                 return "User";
             }

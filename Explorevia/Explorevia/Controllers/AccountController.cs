@@ -50,24 +50,24 @@ namespace Explorevia.Controllers
         [HttpGet]
         [AllowAnonymous]
         public IActionResult RegisterHotel() => View("UploadDocs");
-        [HttpPost]
-        [AllowAnonymous]
-        public async Task<IActionResult> RegisterHotel(HotelOwnerRegisterViewModel register)
-        {
-            if (!ModelState.IsValid)
-            {
-                NotificationHelper.Error(this, "Registration failed, Please fill all the required fields");
-                return View("RegisterHotel", register);
-            }
-            var isCreated = await _authRepository.RegisterHotelOwner(register);
-            if (!isCreated)
-            {
-                NotificationHelper.Error(this, "Registration failed, Email already exists");
-                return View("RegisterHotel", register);
-            }
-            NotificationHelper.Success(this, "Registration Successful, Please login");
-            return RedirectToAction("Login", "Account");
-        }
+        //[HttpPost]
+        //[AllowAnonymous]
+        //public async Task<IActionResult> RegisterHotel(HotelOwnerRegisterViewModel register)
+        //{
+        //    if (!ModelState.IsValid)
+        //    {
+        //        NotificationHelper.Error(this, "Registration failed, Please fill all the required fields");
+        //        return View("RegisterHotel", register);
+        //    }
+        //    var isCreated = await _authRepository.RegisterHotelOwner(register);
+        //    if (!isCreated)
+        //    {
+        //        NotificationHelper.Error(this, "Registration failed, Email already exists");
+        //        return View("RegisterHotel", register);
+        //    }
+        //    NotificationHelper.Success(this, "Registration Successful, Please login");
+        //    return RedirectToAction("Login", "Account");
+        //}
 
         //-----------------------------------------------------
 

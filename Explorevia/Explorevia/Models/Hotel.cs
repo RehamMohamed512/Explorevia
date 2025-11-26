@@ -13,7 +13,11 @@ namespace Explorevia.Models
         public string Name { get; set; }
 
         [Required, MaxLength(200)]
-        public string Location { get; set; }
+        public string Address { get; set; }
+        [Required, MaxLength(100)]
+        public string City { get; set; }
+        [Required, MaxLength(100)]
+        public string Country { get; set; }
 
         [Required]
         public string Description { get; set; }
