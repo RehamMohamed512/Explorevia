@@ -8,8 +8,6 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using System.Security.Claims;
 
-
-
 namespace Explorevia.Repository
 {
     public class AuthRepository : IAuthRepository
@@ -67,61 +65,101 @@ namespace Explorevia.Repository
         // ============================
         // Register Hotel
         // ============================
-        public async Task<bool> RegisterHotelOwner(HotelOwnerRegisterViewModel hotel)
+        public async Task<bool> SendHotelRegisterRequest(HotelOwnerRegisterViewModel hotel)
         {
-            using (var transaction = await _context.Database.BeginTransactionAsync())
+            
+            if (hotel == null) return false;
+            if (hotel.HotelLicense == null || hotel.OwnerIdCard == null) return false;
+
+            var licenseName = Guid.NewGuid().ToString() + Path.GetExtension(hotel.HotelLicense.FileName);
+            var idCardName = Guid.NewGuid().ToString() + Path.GetExtension(hotel.OwnerIdCard.FileName);
+            var imagesNames = new List<string>();
+
+            if (hotel.Images != null && hotel.Images.Count > 0)
             {
-                try
+                foreach (var image in hotel.Images)
                 {
-                    var existingHotelOwner = await _userManager.FindByEmailAsync(hotel.Email);
-                    if (existingHotelOwner != null)
-                        return false;
-                    // Create user
-                    var appUser = new ApplicationUser
-                    {
-                        UserName = hotel.OwnerName,
-                        Email = hotel.Email,
-                        PhoneNumber = hotel.PhoneNumber
-                    };
-                    var result = await _userManager.CreateAsync(appUser, hotel.Password);
-                    if (!result.Succeeded)
-                        return false;
-
-                    // Create role if first time
-                    if (!await _roleManager.RoleExistsAsync("HotelOwner"))
-                        await _roleManager.CreateAsync(new IdentityRole("HotelOwner"));
-
-                    // Assign role to user
-                    await _userManager.AddToRoleAsync(appUser, "HotelOwner");
-
-
-                    var newHotel = new Hotel
-                    {
-                        Name = hotel.HotelName,
-                        Description = hotel.Description,
-                        Rating = hotel.Rating,
-                        Address = hotel.Address,
-                        City = hotel.City,
-                        Country = hotel.Country
-
-                    };
-
-                    // Link hotel owner to user
-                    newHotel.OwnerId = appUser.Id;
-
-                    // Add hotel owner to database
-                    await _context.Hotels.AddAsync(newHotel);
-                    await _context.SaveChangesAsync();
-                    await transaction.CommitAsync();
-                    return true;
-                }
-                catch
-                {
-                    await transaction.RollbackAsync();
-                    return false;
+                    if (image == null) continue;
+                    imagesNames.Add(Guid.NewGuid().ToString() + Path.GetExtension(image.FileName));
                 }
             }
+
+
+            var savePath = Path.Combine(_environment.WebRootPath ?? "wwwroot", "HotelRequests");
+            if (!Directory.Exists(savePath))
+                Directory.CreateDirectory(savePath);
+
+            var savedFilePaths = new List<string>(); 
+
+            try
+            {
+
+                var licensePath = Path.Combine(savePath, licenseName);
+                using (var stream = new FileStream(licensePath, FileMode.Create))
+                {
+                    await hotel.HotelLicense.CopyToAsync(stream);
+                }
+                savedFilePaths.Add(licensePath);
+
+                var idCardPath = Path.Combine(savePath, idCardName);
+                using (var stream = new FileStream(idCardPath, FileMode.Create))
+                {
+                    await hotel.OwnerIdCard.CopyToAsync(stream);
+                }
+                savedFilePaths.Add(idCardPath);
+
+                if (hotel.Images != null && hotel.Images.Count > 0)
+                {
+                    for (int i = 0; i < hotel.Images.Count; i++)
+                    {
+                        var imagePath = Path.Combine(savePath, imagesNames[i]);
+                        using (var stream = new FileStream(imagePath, FileMode.Create))
+                        {
+                            await hotel.Images[i].CopyToAsync(stream);
+                        }
+                        savedFilePaths.Add(imagePath);
+                    }
+                }
+
+                var newRequest = new HotelRegistrationRequest
+                {
+                    OwnerName = hotel.OwnerName,
+                    HotelName = hotel.HotelName,
+                    Email = hotel.Email,
+                    Password = hotel.Password,
+                    Phone = hotel.PhoneNumber,
+                    Description = hotel.Description,
+                    City = hotel.City,
+                    Country = hotel.Country,
+                    Address = hotel.Address,
+                    Rating = hotel.Rating,
+                    HotelLicensePath = Path.Combine("HotelRequests", licenseName),    // تخزين المسار النسبي
+                    OwnerIdCardPath = Path.Combine("HotelRequests", idCardName),
+                    ImagesJson = System.Text.Json.JsonSerializer.Serialize(imagesNames.Select(n => Path.Combine("HotelRequests", n))),
+                    Status = "Pending",
+                    CreatedAt = DateTime.Now
+                };
+
+                await _context.HotelRegistrationRequests.AddAsync(newRequest);
+                await _context.SaveChangesAsync();
+
+                return true;
+            }
+            catch (Exception ex)
+            {
+                foreach (var p in savedFilePaths)
+                {
+                    try
+                    {
+                        if (File.Exists(p)) File.Delete(p);
+                    }
+                    catch(Exception) { }
+                }
+
+                return false;
+            }
         }
+
 
         // ============================
         // Login
@@ -158,7 +196,9 @@ namespace Explorevia.Repository
 
         }
 
-       
+        // ============================
+        // Logout
+        // ============================
         public async Task<bool> LogoutAsync()
         {
             await _signInManager.SignOutAsync();

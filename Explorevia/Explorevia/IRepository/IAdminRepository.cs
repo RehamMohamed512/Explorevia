@@ -8,7 +8,7 @@ namespace Explorevia.IRepository
         Task<List<HotelRegistrationRequest>> Requests();
         Task<List<Hotel> > GetAllHotels();
         Task<HotelRegistrationRequest> GetDetails(int id);
-        Task<bool> ApproveRequest(int requestId, HotelOwnerRegisterViewModel hotel);
+        Task<bool> ApproveRequest(int requestId);
         Task<bool> RejectRequest(int requestId);
         Task<bool> DeleteHotel(int id);
 

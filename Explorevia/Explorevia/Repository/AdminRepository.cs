@@ -49,7 +49,7 @@ namespace Explorevia.Repository
             return null;
         }
 
-        public async Task<bool> ApproveRequest(int requestId,HotelOwnerRegisterViewModel hotel)
+        public async Task<bool> ApproveRequest(int requestId)
         {
             var req = await _context.HotelRegistrationRequests.FindAsync(requestId);
             if (req == null)
@@ -60,17 +60,14 @@ namespace Explorevia.Repository
 
                 try
                 {
-                    var existingHotelOwner = await _userManager.FindByEmailAsync(hotel.Email);
-                    if (existingHotelOwner != null)
-                        return false;
-                    // Create user
+                    
                     var appUser = new ApplicationUser
                     {
-                        UserName = hotel.OwnerName,
-                        Email = hotel.Email,
-                        PhoneNumber = hotel.PhoneNumber
+                        UserName = req.OwnerName,
+                        Email = req.Email,
+                        PhoneNumber = req.Phone
                     };
-                    var result = await _userManager.CreateAsync(appUser, hotel.Password);
+                    var result = await _userManager.CreateAsync(appUser, req.Password);
                     if (!result.Succeeded)
                         return false;
 
@@ -84,20 +81,20 @@ namespace Explorevia.Repository
 
                     var newHotel = new Hotel
                     {
-                        Name = hotel.HotelName,
-                        Description = hotel.Description,
-                        Rating = hotel.Rating,
-                        Address = hotel.Address,
-                        City = hotel.City,
-                        Country = hotel.Country
-
+                        Name = req.HotelName,
+                        Description = req.Description,
+                        Rating = req.Rating,
+                        Address = req.Address,
+                        City = req.City,
+                        Country = req.Country,
+                        OwnerId = appUser.Id,
                     };
 
-                    // Link hotel owner to user
-                    newHotel.OwnerId = appUser.Id;
 
                     // Add hotel owner to database
                     await _context.Hotels.AddAsync(newHotel);
+                    req.Status = "Approved";
+
                     await _context.SaveChangesAsync();
                     await transaction.CommitAsync();
                     return true;
@@ -118,10 +115,28 @@ namespace Explorevia.Repository
                 return false;
             req.Status = "Rejected";
             await _context.SaveChangesAsync();
+
             return true;
 
         }
 
-        
+        public async Task<bool> DeleteHotel(int id)
+        {
+            var hotel = await _context.Hotels.FindAsync(id);
+            if (hotel == null)
+                return false;
+            var owner = await _userManager.FindByIdAsync(hotel.OwnerId);
+            if (owner != null)
+            {
+                var result = await _userManager.DeleteAsync(owner);
+                if (!result.Succeeded)
+                    return false;
+            }
+            _context.Hotels.Remove(hotel);
+            await _context.SaveChangesAsync();
+            return true;
+        }
+
+
     }
 }
