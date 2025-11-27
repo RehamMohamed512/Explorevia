@@ -18,20 +18,20 @@ namespace Explorevia.Models
                 .HasOne(b => b.Hotel)
                 .WithMany(h => h.Bookings)
                 .HasForeignKey(b => b.HotelId)
-                .OnDelete(DeleteBehavior.NoAction);
+                .OnDelete(DeleteBehavior.Cascade);
 
             // Booking → Room
             modelBuilder.Entity<Booking>()
                 .HasOne(b => b.Room)
                 .WithMany(r => r.Bookings)
                 .HasForeignKey(b => b.RoomId)
-                .OnDelete(DeleteBehavior.NoAction);
+                .OnDelete(DeleteBehavior.Cascade);
 
             modelBuilder.Entity<Review>()
              .HasOne(r => r.User)
              .WithMany(u => u.Reviews)
              .HasForeignKey(r => r.UserId)
-             .OnDelete(DeleteBehavior.NoAction);
+             .OnDelete(DeleteBehavior.Cascade);
         }
 
         public virtual DbSet<ApplicationUser> Users { get; set; }

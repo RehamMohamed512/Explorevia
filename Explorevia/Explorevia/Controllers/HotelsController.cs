@@ -1,9 +1,12 @@
 ﻿using Explorevia.Helpers;
 using Explorevia.IRepository;
 using Explorevia.Models;
+using Explorevia.Repository;
+
 //using ExploreVia.Web.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.CodeAnalysis;
 using Microsoft.Extensions.Hosting;
 
 namespace Explorevia.Controllers
@@ -102,5 +105,13 @@ namespace Explorevia.Controllers
             NotificationHelper.Success(this, "Hotel deleted successfully!");
             return RedirectToAction("Hotels", "Admin");
         }
+
+        [HttpGet("filter")]
+        public async Task<IActionResult> Filter(string location, int minPrice, int maxPrice, double minRating)
+        {
+            var hotels = await _hotelService.FilterAsync(location, minPrice, maxPrice, minRating);
+            return PartialView("_HotelsGrid", hotels); // partial view only for the hotel cards
+        }
+
     }
 }

@@ -78,7 +78,7 @@ namespace Explorevia.Repository
                     var newHotel = new Hotel
                     {
                         Name = hotel.HotelName,
-                        Location = hotel.Location,
+                    //    Location = hotel.Location,
                         Description = hotel.Description,
                         Rating = hotel.Rating
                     };

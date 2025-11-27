@@ -41,8 +41,8 @@ namespace Explorevia.Repository
             {
                 Name = req.Result.HotelName,
                 Description = req.Result.Description,
-                City = req.Result.City,
-                Country = req.Result.Country,
+              //  City = req.Result.City,
+              //  Country = req.Result.Country,
                 Location = req.Result.Address,
                 Rating = req.Result.Rating,
                 

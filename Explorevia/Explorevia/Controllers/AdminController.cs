@@ -16,18 +16,17 @@ namespace Explorevia.Controllers
         {
             _adminRepository = adminRepository;
         }
-        
+
         public IActionResult GetRequests()
         {
             return View();
         }
-        [HttpGet]
-        public async Task<IActionResult> GetRequests()
-        {
-            var request = _adminRepository.Requests(); 
-            
-            
-        }
+        //[HttpGet]
+        //public async Task<IActionResult> GetRequests()
+        //{
+        //    var request = _adminRepository.Requests(); 
 
-    }
+
+        //}
+    }   
 }

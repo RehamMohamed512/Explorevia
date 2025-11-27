@@ -60,6 +60,10 @@ namespace Explorevia.Controllers
                 await _appDbContext.SaveChangesAsync();
                 return RedirectToAction("Index", "Home");
             }
+            else
+            {
+                return View();  
+            }
         }
     }
 }

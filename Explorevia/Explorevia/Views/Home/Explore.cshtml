@@ -12,6 +12,8 @@
     @{
         Layout = "~/Views/Shared/_Layout.cshtml";
     }
+    @model List<Hotel>
+
     <div class="max-w-7xl mx-auto px-4 py-12">
         <div class="grid grid-cols-1 lg:grid-cols-4 gap-8">
             <!-- Filters Sidebar -->
@@ -39,53 +41,57 @@
                         <h3 class="font-semibold mb-2">Minimum Rating</h3>
                         <select id="minRating" class="w-full px-3 py-2 border rounded-lg">
                             <option value="0">All Ratings</option>
-                            <option value="3">3+ Stars</option>
-                            <option value="3.5">3.5+ Stars</option>
-                            <option value="4">4+ Stars</option>
-                            <option value="4.5">4.5+ Stars</option>
+                            <option value="3">3</option>
+                            <option value="3.5">3.5</option>
+                            <option value="4">4</option>
+                            <option value="4.5">4.5</option>
                         </select>
                     </div>
                     <button onclick="applyFilters()" class="w-full mt-4 bg-accent text-white py-2 rounded-lg font-semibold">Apply Filters</button>
                 </div>
             </div>
             <!-- Hotels Grid -->
-            <div class="lg:col-span-3">
+            @* <div class="lg:col-span-3"> 
                 <div class="mb-4 text-sm text-muted-foreground" id="hotelCount"></div>
                 <div id="hotelsGrid" class="grid grid-cols-1 md:grid-cols-2 gap-6"></div>
-            </div>
+            </div> *@
+            <div id="hotelsGrid" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+    @foreach (var h in Model)
+    {
+        <div class="bg-white rounded-lg shadow p-4">
+            <img src="@h.HotelImages.FirstOrDefault()?.ImageUrl" class="w-full h-48 object-cover rounded-lg" />
+            <h2 class="mt-2 text-lg font-bold">@h.Name</h2>
+            <p>@h.Location</p>
+            <p class="text-sm text-gray-600">@h.PricePerNight EGP / night</p>
+            <p>⭐ @h.Rating</p>
+        </div>
+    }
+</div>
+
         </div>
     </div>
     <script>
-        const hotels = [
-          {
-            name: "Nile Luxury Palace",
-            location: "Cairo",
-            price: 450,
-            rating: 4.8,
-            reviews: 120,
-            description: "Luxury hotel with Nile view",
-            image: "https://via.placeholder.com/400x200"
-          },
-          {
-            name: "Red Sea Oasis Resort",
-            location: "Hurghada",
-            price: 350,
-            rating: 4.7,
-            reviews: 95,
-            description: "Relaxing resort by the Red Sea",
-            image: "https://via.placeholder.com/400x200"
-          },
-          {
-            name: "Luxor Heritage Hotel",
-            location: "Luxor",
-            price: 320,
-            rating: 4.9,
-            reviews: 110,
-            description: "Experience historic Luxor in style",
-            image: "https://via.placeholder.com/400x200"
-          }
-        ];
+      async function applyFilters() {
+    const location = document.getElementById('locationFilter').value;
+    const minPrice = parseInt(document.getElementById('minPrice').value) || 0;
+    const maxPrice = parseInt(document.getElementById('maxPrice').value) || 10000;
+    const minRating = parseFloat(document.getElementById('minRating').value) || 0;
 
+    // Build URL to your MVC action
+    const url = `/Hotels/Filter?location=${location}&minPrice=${minPrice}&maxPrice=${maxPrice}&minRating=${minRating}`;
+
+    try {
+        const response = await fetch(url);
+        const html = await response.text(); // MVC returns HTML partial
+        document.getElementById("hotelsGrid").innerHTML = html; // update div
+    } catch (error) {
+        console.error("Error fetching hotels:", error);
+    }
+}
+
+    </script>
+    @* <script>
+       
         const hotelsGrid = document.getElementById('hotelsGrid');
         const hotelCount = document.getElementById('hotelCount');
 
@@ -114,11 +120,7 @@
           });
         }
 
-        function applyFilters() {
-          const location = document.getElementById('locationFilter').value;
-          const minPrice = parseInt(document.getElementById('minPrice').value) || 0;
-          const maxPrice = parseInt(document.getElementById('maxPrice').value) || 10000;
-          const minRating = parseFloat(document.getElementById('minRating').value);
+       
 
           const filtered = hotels.filter(h =>
             (location === 'All' || h.location === location) &&
@@ -132,7 +134,7 @@
 
         // Initial display
         displayHotels(hotels);
-    </script>
+    </script> *@
 
 </body>
 </html>

@@ -1,8 +1,195 @@
-﻿@{
+﻿
+@{
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="collage-wrapper">
+    <div class="collage">
+        <!-- your entire collage HTML exactly as is -->
+     
+        <div class="collage">
+
+  <img class="img main-pyramids" src="\images\Screenshot 2025-11-25 154552.png" alt="Pyramids">
+
+  <!-- SWAP: Safari now where Khan El Khalili was -->
+  <img class="img safari" src="https://i.pinimg.com/736x/f7/5b/4b/f75b4b5b6270344de1c6ec32c058d7d3.jpg" alt="Safari">
+
+  <!-- SWAP: Khan El Khalili now where Safari was -->
+  <img class="img khan" src="\images\image (1).png" alt="Khan El Khalili">
+
+  <img class="img helwa"  src="\images\حلوة يا بلدي.png" alt="helwa ya balady"> 
+
+  <img class="img aswan" src="\images\cairo_aswan.jpg" alt="Aswan">
+  <img class="img cairo" src="\images\image (9).png" alt="Cairo Tower">
+
+  <img class="img luxor" src="\images\Screenshot 2025-11-25 155026.png" alt="Luxor">
+
+  <img class="img siwa" src="https://i.pinimg.com/736x/4a/cb/ca/4acbca6724ddf96fa99963c7a390e018.jpg" alt="Siwa">
+  <img class="img dahab" src="https://i.pinimg.com/736x/e5/ad/94/e5ad94c4940ad33cc4fda5e888866abe.jpg" alt="Dahab">
+
+  <!-- SWAP: Tunis ↔ Diving -->
+  <img class="img diving" src="https://i.pinimg.com/1200x/4b/4b/45/4b4b45e0f0cb22d537ade5c672acd709.jpg" alt="Diving">
+  <img class="img tounes" src="https://i.pinimg.com/1200x/91/0a/11/910a11cb4f79573bdbe38c69b50ea1d5.jpg" alt="Tunis Village">
+
+  <img class="img sharm" src="https://i.pinimg.com/1200x/31/17/ae/3117ae942b4bb03aeeb664f2f0d2a1e1.jpg" alt="Sharm El Sheikh">
+
+  <!-- MUSEUM moved to BOTTOM CENTER -->
+
+
+  <img class="img extra" src="\images\Screenshot 2025-11-25 154925.png" />
+
 </div>
+
+
+<style>
+
+.collage {
+  position: relative;
+  width: 100%;
+  height: 950px;
+  margin: 0 auto;
+  background-color: #fffcf0;
+
+  overflow: hidden;
+}
+
+/* GENERAL IMAGE STYLE */
+.img {
+  position: absolute;
+  width: 200px;          /* reduced for less space */
+  border-radius: 8px;
+  transition: transform .4s ease;
+}
+
+.img:hover {
+  transform: scale(1.1);
+}
+
+/* PYRAMIDS - always top layer */
+.main-pyramids {
+  width: 400px;
+
+  top: 250px;
+  left: 35%;
+  transform: scale(0.9);
+  z-index: 30;
+}
+
+/* LEFT SIDE */
+.dahab {
+  top: 40px;
+  left: 2%;
+  transform: rotate(-3deg);
+}
+
+.siwa {
+  bottom: 120px;
+  left: 4%;
+  transform: rotate(-2deg);
+}
+
+/* CENTER-LEFT */
+.luxor {
+  top: 20px;
+  right: 38%;
+  width: 300px;
+  height:180px
+  transform: rotate(3deg);
+}
+
+/* SWAP POSITIONS */
+
+/* SAFARI takes old Khan location */
+.safari {
+  bottom: 200px;
+  right: 20%;
+  transform: rotate(4deg);
+}
+
+/* KHAN takes old Safari location */
+.khan {
+  bottom: 220px;
+  right: 5%;
+  transform: rotate(-2deg);
+}
+
+/* TOP RIGHT */
+.aswan {
+    bottom: 230px;
+  left: 19%;
+  height:17%;
+  width:16%;
+  transform: rotate(3deg);
+  z-index: 5;    /* behind top layers */
+}
+
+.cairo {
+  top: 150px;
+  right: 20%;
+  transform: rotate(-2deg);
+}
+
+/* SWAP Tunis <-> Diving */
+
+/* Diving moved to the left-mid */
+.diving {
+  top: 200px;
+  right: 3%;
+  transform: scale(1.05);
+}
+
+/* Tunis now on right */
+.tounes {
+   top: 300px;
+  left: 5%;
+  transform: rotate(-3deg);
+}
+
+/* RIGHT SIDE */
+.sharm {
+  top: 40px;
+  right: 3%;
+}
+
+/* MUSEUM bottom center */
+.museum {
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%) rotate(2deg);
+  width: 250px;
+  z-index: 10;
+}
+
+.extra {
+  top: 70px;
+  left: 18.5%;
+  transform: rotate(-5deg);
+}
+.helwa{
+    top:50px;
+    right:50%;
+    width:30%;
+    height:20%;
+
+}
+.collage-wrapper {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+/* This makes the collage scale proportionally */
+.collage-wrapper .collage {
+    transform-origin: top left;
+}
+              
+
+    }
+}
+
+
+</style>
+    </div>
+</div>
+
+
