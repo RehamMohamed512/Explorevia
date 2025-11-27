@@ -20,11 +20,7 @@ namespace Explorevia.Repository
 
         public Hotel GetById(int id) => _context.Hotels.Include(h => h.HotelImages).Include(h => h.Reviews).FirstOrDefault(h => h.Id == id);
 
-        public void AddHotel(Hotel hotel)
-        {
-            _context.Hotels.Add(hotel);
-            _context.SaveChanges();
-        }
+
 
         public void UpdateHotel(Hotel hotel)
         {

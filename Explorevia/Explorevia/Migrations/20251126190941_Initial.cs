@@ -468,4 +468,8 @@ namespace Explorevia.Migrations
                 name: "AspNetUsers");
         }
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 380c7a80300a8409f8dd8b5b23a9342774243374
