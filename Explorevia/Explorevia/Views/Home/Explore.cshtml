@@ -55,39 +55,35 @@
                 <div class="mb-4 text-sm text-muted-foreground" id="hotelCount"></div>
                 <div id="hotelsGrid" class="grid grid-cols-1 md:grid-cols-2 gap-6"></div>
             </div> *@
-            <div id="hotelsGrid" class="grid grid-cols-1 md:grid-cols-2 gap-6">
-    @foreach (var h in Model)
-    {
-        <div class="bg-white rounded-lg shadow p-4">
-            <img src="@h.HotelImages.FirstOrDefault()?.ImageUrl" class="w-full h-48 object-cover rounded-lg" />
-            <h2 class="mt-2 text-lg font-bold">@h.Name</h2>
-            <p>@h.Location</p>
-            <p class="text-sm text-gray-600">@h.PricePerNight EGP / night</p>
-            <p>⭐ @h.Rating</p>
-        </div>
-    }
-</div>
+            <div id="hotelsGrid">
+                @await Html.PartialAsync("_HotelsGrid", Model)
+            </div>
 
         </div>
+
+        }
+    </div>
+
+    </div>
     </div>
     <script>
-      async function applyFilters() {
-    const location = document.getElementById('locationFilter').value;
-    const minPrice = parseInt(document.getElementById('minPrice').value) || 0;
-    const maxPrice = parseInt(document.getElementById('maxPrice').value) || 10000;
-    const minRating = parseFloat(document.getElementById('minRating').value) || 0;
+              async function applyFilters() {
+            const location = document.getElementById('locationFilter').value;
+            const minPrice = parseInt(document.getElementById('minPrice').value) || 0;
+            const maxPrice = parseInt(document.getElementById('maxPrice').value) || 10000;
+            const minRating = parseFloat(document.getElementById('minRating').value) || 0;
 
-    // Build URL to your MVC action
-    const url = `/Hotels/Filter?location=${location}&minPrice=${minPrice}&maxPrice=${maxPrice}&minRating=${minRating}`;
+            // Build URL to your MVC action
+            const url = /Hotels/Filter?location=${location}&minPrice=${minPrice}&maxPrice=${maxPrice}&minRating=${minRating};
 
-    try {
-        const response = await fetch(url);
-        const html = await response.text(); // MVC returns HTML partial
-        document.getElementById("hotelsGrid").innerHTML = html; // update div
-    } catch (error) {
-        console.error("Error fetching hotels:", error);
-    }
-}
+            try {
+                const response = await fetch(url);
+                const html = await response.text(); // MVC returns HTML partial
+                document.getElementById("hotelsGrid").innerHTML = html; // update div
+            } catch (error) {
+                console.error("Error fetching hotels:", error);
+            }
+        }
 
     </script>
     @* <script>
@@ -97,9 +93,9 @@
 
         function displayHotels(list) {
           hotelsGrid.innerHTML = '';
-          hotelCount.textContent = `Showing ${list.length} hotel${list.length !== 1 ? 's' : ''}`;
+          hotelCount.textContent = Showing ${list.length} hotel${list.length !== 1 ? 's' : ''};
           if (list.length === 0) {
-            hotelsGrid.innerHTML = `<div class="border p-12 text-center text-muted-foreground rounded-lg">No hotels found matching your criteria.</div>`;
+            hotelsGrid.innerHTML = <div class="border p-12 text-center text-muted-foreground rounded-lg">No hotels found matching your criteria.</div>;
             return;
           }
 

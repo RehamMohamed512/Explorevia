@@ -1,10 +1,4 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-   @model List<Hotel>
-*@
-@{
-}
-@using Microsoft.AspNetCore.Identity
+﻿@using Microsoft.AspNetCore.Identity
 @using Explorevia.Models
 
 @model List<Explorevia.Models.Hotel>
@@ -12,11 +6,11 @@
 
 @foreach (var h in Model)
 {
-        <div class="bg-white rounded-lg shadow p-4">
-            <img src="@h.HotelImages.FirstOrDefault()?.ImageUrl" class="w-full h-48 object-cover rounded-lg" />
-            <h2 class="mt-2 text-lg font-bold">@h.Name</h2>
-            <p>@h.Location</p>
-            <p class="text-sm text-gray-600">@h.PricePerNight EGP / night</p>
-            <p>⭐ @h.Rating</p>
-        </div>
+    <div class="bg-white rounded-lg shadow p-4">
+        <img src="@h.HotelImages.FirstOrDefault()?.ImageUrl" class="w-full h-48 object-cover rounded-lg" />
+        <h2 class="mt-2 text-lg font-bold">@h.Name</h2>
+        <p>@h.City</p>
+        <p class="text-sm text-gray-600">@h.PricePerNight EGP / night</p>
+        <p>⭐ @h.Rating</p>
+    </div>
 }

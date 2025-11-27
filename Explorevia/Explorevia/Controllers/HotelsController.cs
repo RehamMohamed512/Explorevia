@@ -1,7 +1,11 @@
-﻿using Explorevia.Helpers;
+﻿// HotelController
+
+using Explorevia.Helpers;
 using Explorevia.IRepository;
 using Explorevia.Models;
 using Explorevia.Repository;
+using Explorevia.ViewModels;
+
 
 //using ExploreVia.Web.Services;
 using Microsoft.AspNetCore.Authorization;
@@ -16,14 +20,16 @@ namespace Explorevia.Controllers
     {
         private readonly IHotelRepository _hotelService;
         private readonly IWebHostEnvironment _env;
+        private readonly IAuthRepository _authRepository;
 
-        public HotelsController(IHotelRepository hotelService, IWebHostEnvironment env)
+        public HotelsController(IHotelRepository hotelService, IWebHostEnvironment env, IAuthRepository repo)
         {
             _hotelService = hotelService;
             _env = env;
+            _authRepository = repo;
         }
 
-        
+
         // Hotel details
         public IActionResult Details(int id)
         {
@@ -34,7 +40,7 @@ namespace Explorevia.Controllers
 
         // Admin: Create hotel
         [Authorize(Roles = "Admin")]
-        [HttpGet] 
+        [HttpGet]
         public IActionResult Create() => View();
 
         //[Authorize(Roles = "Admin")]
@@ -113,5 +119,24 @@ namespace Explorevia.Controllers
             return PartialView("_HotelsGrid", hotels); // partial view only for the hotel cards
         }
 
+
+        [HttpPost]
+        public async Task<IActionResult> SendHotelRegistration(HotelOwnerRegisterViewModel hotel)
+        {
+            if (!ModelState.IsValid)
+            {
+                return Content("Invalid data. Please check the input fields.");
+            }
+            var result = await _authRepository.SendHotelRegisterRequest(hotel);
+            if (result)
+            {
+                return Content("Hotel registration request sent successfully.");
+            }
+            else
+            {
+                NotificationHelper.Error(this, "Failed to send hotel registration request.");
+                return Content("Failed to send hotel registration request.");
+            }
+        }
     }
 }

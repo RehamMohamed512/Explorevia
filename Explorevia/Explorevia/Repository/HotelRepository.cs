@@ -46,22 +46,22 @@ namespace Explorevia.Repository
         {
             throw new NotImplementedException();
         }
-       
+
 
         public async Task<List<Hotel>> FilterAsync(string location, int minPrice, int maxPrice, double minRating)
         {
-         
+
 
             var query = _context.Hotels
      .Include(h => h.HotelImages)
      .Include(h => h.Reviews)
      .AsQueryable(); // for better performance "Linq method build dynamic database queries 
-            //don't execute query until i finish don't load all hotels in memory and then filter but load only filtered
+                     //don't execute query until i finish don't load all hotels in memory and then filter but load only filtered
 
 
             // Location filter
             if (location != "All")
-                query = query.Where(h => h.Location == location);
+                query = query.Where(h => h.City == location);
 
             // Price filter (only apply if not default)
             if (minPrice > 0 || maxPrice < 10000)

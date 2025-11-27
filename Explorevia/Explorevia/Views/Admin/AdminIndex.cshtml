@@ -35,7 +35,7 @@
         <div class="container-fluid">
             <a class="navbar-brand" href="#">Admin Dashboard</a>
             <div class="d-flex">
-                <a class="btn btn-outline-light" href="/Home/Logout">Logout</a>
+                <a class="btn btn-outline-light"  asp-controller="Account" asp-action="Logout">Logout</a>
             </div>
         </div>
     </nav>
@@ -61,7 +61,8 @@
                 </tr>
             </thead>
             <tbody>
-                @if (Model.Any())
+                @if (Model != null && Model.Any())
+
                 {
                     int i = 1;
                     foreach (var hotel in Model)

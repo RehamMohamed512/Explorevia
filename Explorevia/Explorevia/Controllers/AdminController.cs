@@ -17,31 +17,24 @@ namespace Explorevia.Controllers
         {
             _adminRepository = adminRepository;
         }
-<<<<<<< HEAD
 
-=======
         [HttpGet("requests")]
->>>>>>> 380c7a80300a8409f8dd8b5b23a9342774243374
         public IActionResult GetRequests()
         {
             var requests = _adminRepository.Requests();
             if(requests != null)
             {
-                return View("Requests", requests);
+                return View("AdminIndex", requests);
             }
             return NotFound("No pending requests found");
 
         }
-<<<<<<< HEAD
-        //[HttpGet]
-        //public async Task<IActionResult> GetRequests()
-        //{
-        //    var request = _adminRepository.Requests(); 
+        [HttpGet]
+        public IActionResult AdminIndex()
+        {
+            return View("AdminIndex");
+        }
 
-
-        //}
-    }   
-=======
 
         [HttpGet]
         public async Task<List<Hotel>> GetAllHotels()
@@ -85,5 +78,4 @@ namespace Explorevia.Controllers
 
 
     }
->>>>>>> 380c7a80300a8409f8dd8b5b23a9342774243374
 }

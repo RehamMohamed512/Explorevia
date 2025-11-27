@@ -52,75 +52,59 @@ namespace Explorevia.Repository
         public async Task<bool> ApproveRequest(int requestId)
         {
             var req = await _context.HotelRegistrationRequests.FindAsync(requestId);
-            if (req == null)
+            if (req == null || req.Status != "Pending")
                 return false;
-<<<<<<< HEAD
-            var hotel = new Hotel
+
+            using var transaction = await _context.Database.BeginTransactionAsync();
+
+            try
             {
-                Name = req.Result.HotelName,
-                Description = req.Result.Description,
-              //  City = req.Result.City,
-              //  Country = req.Result.Country,
-                Location = req.Result.Address,
-                Rating = req.Result.Rating,
-                
-            };
-            await _context.Hotels.AddAsync(hotel);
-            await _context.SaveChangesAsync();
-=======
-            if (req.Status != "Pending")
-                return false;
-            using (var transaction = await _context.Database.BeginTransactionAsync())
->>>>>>> 380c7a80300a8409f8dd8b5b23a9342774243374
 
-                try
+                var appUser = new ApplicationUser
                 {
-                    
-                    var appUser = new ApplicationUser
-                    {
-                        UserName = req.OwnerName,
-                        Email = req.Email,
-                        PhoneNumber = req.Phone
-                    };
-                    var result = await _userManager.CreateAsync(appUser, req.Password);
-                    if (!result.Succeeded)
-                        return false;
+                    UserName = req.OwnerName,
+                    Email = req.Email,
+                    PhoneNumber = req.Phone
+                };
 
-                    // Create role if first time
-                    if (!await _roleManager.RoleExistsAsync("HotelOwner"))
-                        await _roleManager.CreateAsync(new IdentityRole("HotelOwner"));
-
-                    // Assign role to user
-                    await _userManager.AddToRoleAsync(appUser, "HotelOwner");
-
-
-                    var newHotel = new Hotel
-                    {
-                        Name = req.HotelName,
-                        Description = req.Description,
-                        Rating = req.Rating,
-                        Address = req.Address,
-                        City = req.City,
-                        Country = req.Country,
-                        OwnerId = appUser.Id,
-                    };
-
-
-                    // Add hotel owner to database
-                    await _context.Hotels.AddAsync(newHotel);
-                    req.Status = "Approved";
-
-                    await _context.SaveChangesAsync();
-                    await transaction.CommitAsync();
-                    return true;
-                }
-                catch
-                {
-                    await transaction.RollbackAsync();
+                var createUser = await _userManager.CreateAsync(appUser, req.Password);
+                if (!createUser.Succeeded)
                     return false;
-                }
+
+
+                if (!await _roleManager.RoleExistsAsync("HotelOwner"))
+                    await _roleManager.CreateAsync(new IdentityRole("HotelOwner"));
+
+
+                await _userManager.AddToRoleAsync(appUser, "HotelOwner");
+
+
+                var hotel = new Hotel
+                {
+                    Name = req.HotelName,
+                    Description = req.Description,
+                    Rating = req.Rating,
+                    Address = req.Address,
+                    City = req.City,
+                    Country = req.Country,
+                    OwnerId = appUser.Id,
+                };
+
+                await _context.Hotels.AddAsync(hotel);
+                req.Status = "Approved";
+
+                await _context.SaveChangesAsync();
+                await transaction.CommitAsync();
+                return true;
+            }
+            catch
+            {
+                await transaction.RollbackAsync();
+                return false;
+            }
         }
-        
+
+
         public async Task<bool> RejectRequest(int requestId)
         {
             var req =await _context.HotelRegistrationRequests.FindAsync(requestId);

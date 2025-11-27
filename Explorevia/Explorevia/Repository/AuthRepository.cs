@@ -67,76 +67,33 @@ namespace Explorevia.Repository
         // ============================
         public async Task<bool> SendHotelRegisterRequest(HotelOwnerRegisterViewModel hotel)
         {
-            
             if (hotel == null) return false;
             if (hotel.HotelLicense == null || hotel.OwnerIdCard == null) return false;
 
             var licenseName = Guid.NewGuid().ToString() + Path.GetExtension(hotel.HotelLicense.FileName);
             var idCardName = Guid.NewGuid().ToString() + Path.GetExtension(hotel.OwnerIdCard.FileName);
+
             var imagesNames = new List<string>();
 
             if (hotel.Images != null && hotel.Images.Count > 0)
             {
-                foreach (var image in hotel.Images)
+                foreach (var img in hotel.Images)
                 {
-<<<<<<< HEAD
-                    // Check duplicate email
-                    var existingHotelOwner = await _userManager.FindByEmailAsync(hotel.Email);
-                    if (existingHotelOwner != null)
-                        return false;
-                    var newHotel = new Hotel
+                    if (img != null)
                     {
-                        Name = hotel.HotelName,
-                    //    Location = hotel.Location,
-                        Description = hotel.Description,
-                        Rating = hotel.Rating
-                    };
-                    var appUser = new ApplicationUser
-                    {
-                        UserName = hotel.OwnerName,
-                        Email = hotel.Email,
-                        PhoneNumber = hotel.PhoneNumber
-                    };
-                    // Create user
-                    var result = await _userManager.CreateAsync(appUser, hotel.Password);
-                    if (!result.Succeeded)
-                        return false;
-
-                    // Create role if first time
-                    if (!await _roleManager.RoleExistsAsync("HotelOwner"))
-                        await _roleManager.CreateAsync(new IdentityRole("HotelOwner"));
-
-                    // Assign role to user
-                    await _userManager.AddToRoleAsync(appUser, "HotelOwner");
-                    // Link hotel owner to user
-                    newHotel.OwnerId = appUser.Id;
-
-                    // Add hotel owner to database
-                    await _context.Hotels.AddAsync(newHotel);
-                    await _context.SaveChangesAsync();
-                    await transaction.CommitAsync();
-                    return true;
-                }
-                catch  {
-                    await transaction.RollbackAsync();
-                    return false;
-=======
-                    if (image == null) continue;
-                    imagesNames.Add(Guid.NewGuid().ToString() + Path.GetExtension(image.FileName));
->>>>>>> 380c7a80300a8409f8dd8b5b23a9342774243374
+                        imagesNames.Add(Guid.NewGuid().ToString() + Path.GetExtension(img.FileName));
+                    }
                 }
             }
-
 
             var savePath = Path.Combine(_environment.WebRootPath ?? "wwwroot", "HotelRequests");
             if (!Directory.Exists(savePath))
                 Directory.CreateDirectory(savePath);
 
-            var savedFilePaths = new List<string>(); 
+            var savedFilePaths = new List<string>();
 
             try
             {
-
                 var licensePath = Path.Combine(savePath, licenseName);
                 using (var stream = new FileStream(licensePath, FileMode.Create))
                 {
@@ -155,6 +112,8 @@ namespace Explorevia.Repository
                 {
                     for (int i = 0; i < hotel.Images.Count; i++)
                     {
+                        if (hotel.Images[i] == null) continue;
+
                         var imagePath = Path.Combine(savePath, imagesNames[i]);
                         using (var stream = new FileStream(imagePath, FileMode.Create))
                         {
@@ -171,37 +130,45 @@ namespace Explorevia.Repository
                     Email = hotel.Email,
                     Password = hotel.Password,
                     Phone = hotel.PhoneNumber,
-                    Description = hotel.Description,
+                    
                     City = hotel.City,
                     Country = hotel.Country,
                     Address = hotel.Address,
-                    Rating = hotel.Rating,
-                    HotelLicensePath = Path.Combine("HotelRequests", licenseName),    // تخزين المسار النسبي
+                   
+                    HotelLicensePath = Path.Combine("HotelRequests", licenseName),
                     OwnerIdCardPath = Path.Combine("HotelRequests", idCardName),
-                    ImagesJson = System.Text.Json.JsonSerializer.Serialize(imagesNames.Select(n => Path.Combine("HotelRequests", n))),
+
+                    ImagesJson = System.Text.Json.JsonSerializer
+                        .Serialize(imagesNames.Select(n => Path.Combine("HotelRequests", n))),
+
                     Status = "Pending",
                     CreatedAt = DateTime.Now
                 };
 
+                // حفظ الطلب في الداتابيز
                 await _context.HotelRegistrationRequests.AddAsync(newRequest);
                 await _context.SaveChangesAsync();
 
                 return true;
             }
-            catch (Exception ex)
+            catch
             {
+
                 foreach (var p in savedFilePaths)
                 {
                     try
                     {
-                        if (File.Exists(p)) File.Delete(p);
+                        if (File.Exists(p))
+                            File.Delete(p);
                     }
-                    catch(Exception) { }
+                    catch { }
                 }
 
                 return false;
             }
         }
+
+
 
 
         // ============================

@@ -83,7 +83,7 @@ namespace Explorevia.Controllers
 
                 case "Admin":
                     NotificationHelper.Success(this, "Login Successful");
-                    return RedirectToAction("Index", "AdminDashboard");
+                    return View("AdminIndex");
 
                 case "User":
                     NotificationHelper.Success(this, "Login Successful");
@@ -97,7 +97,7 @@ namespace Explorevia.Controllers
         //-----------------------------------------------------
 
         // Logout
-        [HttpPost]
+        [HttpGet]
         public async Task<IActionResult> Logout()
         {
             var logout = await _authRepository.LogoutAsync(); 
