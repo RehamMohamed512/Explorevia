@@ -19,21 +19,23 @@ namespace Explorevia.Controllers
         }
 
         [HttpGet("requests")]
-        public IActionResult GetRequests()
+        public async Task< IActionResult> GetRequests()
         {
-            var requests = _adminRepository.Requests();
+            var requests = await _adminRepository.Requests();
             if(requests != null)
             {
                 return View("AdminIndex", requests);
+
             }
             return NotFound("No pending requests found");
 
         }
-        [HttpGet]
-        public IActionResult AdminIndex()
+        [HttpGet("AdminIndex")]
+        public IActionResult AdminIndex(List<HotelRegistrationRequest> model)
         {
-            return View("AdminIndex");
+            return View(model);
         }
+
 
 
         [HttpGet]
@@ -54,7 +56,7 @@ namespace Explorevia.Controllers
             return NotFound("Request not found");
         }
 
-        [HttpPost]
+        [HttpGet("ApproveRequest/{requestId}")]
         public async Task<IActionResult> ApproveRequest(int requestId)
         {
             var result =await _adminRepository.ApproveRequest(requestId);
@@ -65,7 +67,7 @@ namespace Explorevia.Controllers
             return RedirectToAction("GetRequests");
         }
 
-        [HttpPost]
+        [HttpGet("RejectRequest/{requestId}")]
         public async Task<IActionResult> RejectRequest(int requestId)
         {
             var result = await _adminRepository.RejectRequest(requestId);

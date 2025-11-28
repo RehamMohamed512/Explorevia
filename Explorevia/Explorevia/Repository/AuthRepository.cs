@@ -75,16 +75,16 @@ namespace Explorevia.Repository
 
             var imagesNames = new List<string>();
 
-            if (hotel.Images != null && hotel.Images.Count > 0)
-            {
-                foreach (var img in hotel.Images)
-                {
-                    if (img != null)
-                    {
-                        imagesNames.Add(Guid.NewGuid().ToString() + Path.GetExtension(img.FileName));
-                    }
-                }
-            }
+            //if (hotel.Images != null && hotel.Images.Count > 0)
+            //{
+            //    foreach (var img in hotel.Images)
+            //    {
+            //        if (img != null)
+            //        {
+            //            imagesNames.Add(Guid.NewGuid().ToString() + Path.GetExtension(img.FileName));
+            //        }
+            //    }
+            //}
 
             var savePath = Path.Combine(_environment.WebRootPath ?? "wwwroot", "HotelRequests");
             if (!Directory.Exists(savePath))
@@ -213,6 +213,7 @@ namespace Explorevia.Repository
         {
             await _signInManager.SignOutAsync();
             return true;
+
         }
     }
 }

@@ -24,10 +24,13 @@ namespace Explorevia.Controllers
             return View(featuredHotels);
         }
         // view explore now (apply filters +hotels)
-        public IActionResult Explore()
+        public async Task< IActionResult >Explore()
         {
-           
-            return View(); 
+            var hotels = await _context.Hotels
+         .Include(h => h.HotelImages)
+         .ToListAsync();
+
+            return View("Explore", hotels);
         }
 
 

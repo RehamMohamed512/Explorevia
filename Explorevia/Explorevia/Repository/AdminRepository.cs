@@ -23,8 +23,10 @@ namespace Explorevia.Repository
 
         public async Task<List<HotelRegistrationRequest>> Requests()
         {
-           var req = await _context.HotelRegistrationRequests.Where(r => r.Status == "Pending").ToListAsync();
-            if(req != null)
+           var req = await _context.HotelRegistrationRequests
+                .Where(r => r.Status == "Pending")
+                .ToListAsync();
+            if (req != null)
             {
                 return req;
             }
@@ -82,7 +84,7 @@ namespace Explorevia.Repository
                 var hotel = new Hotel
                 {
                     Name = req.HotelName,
-                    Description = req.Description,
+                    //Description = req.Description,
                     Rating = req.Rating,
                     Address = req.Address,
                     City = req.City,

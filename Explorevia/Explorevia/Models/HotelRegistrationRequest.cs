@@ -14,8 +14,8 @@ namespace Explorevia.Models
 
         [Required,DataType(DataType.Password)]
         public string Password { get; set; }
-        [Required]
-        public string Description { get; set; }
+        //[Required]
+        //public string Description { get; set; }
         [Required,Range(1,7)]
         public double Rating { get; set; }
         

@@ -16,6 +16,7 @@ builder.Services.AddDbContext<AppDbContext>(option =>
 // Dependency injection
 builder.Services.AddScoped<IAuthRepository, AuthRepository>();
 builder.Services.AddScoped<IHotelRepository, HotelRepository>();
+builder.Services.AddScoped<IAdminRepository, AdminRepository>();
 
 // Identity configuration
 builder.Services.AddIdentity<ApplicationUser, IdentityRole>(option =>
@@ -39,8 +40,10 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
-app.UseAuthentication();
+
+app.UseAuthentication();   
 app.UseAuthorization();
+
 
 app.MapControllerRoute(
     name: "default",

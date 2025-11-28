@@ -19,8 +19,8 @@ namespace Explorevia.Models
         [Required, MaxLength(100)]
         public string Country { get; set; }
 
-        [Required]
-        public string Description { get; set; }
+        
+        public string? Description { get; set; }
 
         [Range(0, 7)]
         public double Rating { get; set; }

@@ -109,6 +109,7 @@ namespace Explorevia.Controllers
 
             NotificationHelper.Success(this, "Logout Successful");
             return RedirectToAction("Login", "Account");
+
         }
 
     }
