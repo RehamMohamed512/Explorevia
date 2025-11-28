@@ -1,0 +1,134 @@
+﻿<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<style>
+    body {
+        background: url('/images/pppp.jpg') no-repeat center center;
+        background-size: cover;
+        font-family: 'Segoe UI', sans-serif;
+    }
+
+    .form-container {
+        background-color: white;
+        border-radius: 15px;
+        padding: 30px;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        border-top: 10px solid #003459;
+    }
+
+    .form-title {
+        color: #003459;
+        font-weight: 700;
+        text-align: center;
+        margin-bottom: 25px;
+    }
+
+    .btn-main {
+        background-color: #003459;
+        color: #fffcf0;
+        border-radius: 10px;
+        padding: 10px 20px;
+        font-weight: 600;
+    }
+
+        .btn-main:hover {
+            background-color: #00253d;
+            color: #fffcf0;
+        }
+
+    label {
+        color: #003459;
+        font-weight: 600;
+    }
+</style>
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+
+            <div class="form-container">
+                <h2 class="form-title">Hotel Registration Request</h2>
+
+                <!-- Error Summary -->
+                <div asp-validation-summary="All" class="text-danger mb-3"></div>
+
+                <form method="post" enctype="multipart/form-data" asp-action="SendHotelRegistration" asp-controller="Hotels">
+
+                    <div class="mb-3">
+                        <label>Hotel Name</label>
+                        <input type="text" name="HotelName" class="form-control" placeholder="Enter hotel name" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label>Owner Name</label>
+                        <input type="text" name="OwnerName" class="form-control" placeholder="Enter owner name" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label>Email</label>
+                        <input type="email" name="Email" class="form-control" placeholder="Enter email address" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label>Password</label>
+                        <input type="password" name="Password" class="form-control" placeholder="Create a password" required />
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label>Phone</label>
+                            <input type="text" name="PhoneNumber" class="form-control" placeholder="Enter phone number" required>
+                        </div>
+
+                        <div class="col-md-6 mb-3">
+                            <label>City</label>
+                            <select name="City" class="form-control" required>
+                                <option value="">Select City</option>
+                                <option>Cairo</option>
+                                <option>Alexandria</option>
+                                <option>Giza</option>
+                                <option>Sharm El Sheikh</option>
+                                <option>Hurghada</option>
+                                <option>Luxor</option>
+                                <option>Aswan</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label>Address</label>
+                        <input type="text" name="Address" class="form-control" placeholder="Enter full address" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label>Country</label>
+                        <select name="Country" class="form-control" required>
+                            <option value="">Select Country</option>
+                            <option>Egypt</option>
+                            <option>Saudi Arabia</option>
+                            <option>UAE</option>
+                            <option>Qatar</option>
+                            <option>Kuwait</option>
+                            <option>Bahrain</option>
+                            <option>Oman</option>
+                        </select>
+                    </div>
+
+                    <div class="mb-3">
+                        <label>Hotel License (PDF/Image)</label>
+                        <input type="file" name="HotelLicense" class="form-control" accept=".pdf,image/*" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label>Owner Card (Image)</label>
+                        <input type="file" name="OwnerIdCard" class="form-control" accept="image/*" required>
+                    </div>
+
+                    <button class="btn btn-main w-100 mt-3">Submit Request</button>
+
+                </form>
+
+            </div>
+
+        </div>
+    </div>
+</div>

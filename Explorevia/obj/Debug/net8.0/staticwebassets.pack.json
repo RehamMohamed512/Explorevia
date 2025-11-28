@@ -1,0 +1,421 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\Explorevia-my-part\\Explorevia-my-part\\Explorevia\\Explorevia\\wwwroot\\HotelRequests\\300b31b8-62ae-43ee-a61d-75bfe72f635a.png",
+      "PackagePath": "staticwebassets\\HotelRequests\\300b31b8-62ae-43ee-a61d-75bfe72f635a.png"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\Explorevia-my-part\\Explorevia-my-part\\Explorevia\\Explorevia\\wwwroot\\HotelRequests\\3a6e47f0-a61d-4e84-a61d-b27065d7f469.png",
+      "PackagePath": "staticwebassets\\HotelRequests\\3a6e47f0-a61d-4e84-a61d-b27065d7f469.png"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\Explorevia-my-part\\Explorevia-my-part\\Explorevia\\Explorevia\\wwwroot\\HotelRequests\\3c17ca8e-a78b-4269-85ec-76401997c233.png",
+      "PackagePath": "staticwebassets\\HotelRequests\\3c17ca8e-a78b-4269-85ec-76401997c233.png"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\Explorevia-my-part\\Explorevia-my-part\\Explorevia\\Explorevia\\wwwroot\\HotelRequests\\51b3c942-7e3a-419d-ad1e-7d39f5006933.png",
+      "PackagePath": "staticwebassets\\HotelRequests\\51b3c942-7e3a-419d-ad1e-7d39f5006933.png"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\Explorevia-my-part\\Explorevia-my-part\\Explorevia\\Explorevia\\wwwroot\\HotelRequests\\5ea8446f-9ac8-42bd-b5f8-b002cf41b1f6.png",
+      "PackagePath": "staticwebassets\\HotelRequests\\5ea8446f-9ac8-42bd-b5f8-b002cf41b1f6.png"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\Explorevia-my-part\\Explorevia-my-part\\Explorevia\\Explorevia\\wwwroot\\HotelRequests\\7da2d3ff-1d99-43be-ad94-386b769a96ad.png",
+      "PackagePath": "staticwebassets\\HotelRequests\\7da2d3ff-1d99-43be-ad94-386b769a96ad.png"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\Explorevia-my-part\\Explorevia-my-part\\Explorevia\\Explorevia\\wwwroot\\HotelRequests\\d69375a8-5c3c-41ad-8b3b-c223a793a7f2.png",
+      "PackagePath": "staticwebassets\\HotelRequests\\d69375a8-5c3c-41ad-8b3b-c223a793a7f2.png"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\Explorevia-my-part\\Explorevia-my-part\\Explorevia\\Explorevia\\wwwroot\\HotelRequests\\dfd67c4d-f6fe-4719-a4f1-4b4356c67639.png",
+      "PackagePath": "staticwebassets\\HotelRequests\\dfd67c4d-f6fe-4719-a4f1-4b4356c67639.png"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\Explorevia-my-part\\Explorevia-my-part\\Explorevia\\Explorevia\\wwwroot\\css\\site.css",
+      "PackagePath": "staticwebassets\\css\\site.css"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\Explorevia-my-part\\Explorevia-my-part\\Explorevia\\Explorevia\\wwwroot\\favicon.ico",
+      "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\Explorevia-my-part\\Explorevia-my-part\\Explorevia\\Explorevia\\wwwroot\\images\\Black and Gold Geometric Egyptian Legacy Presentation.jpg",
+      "PackagePath": "staticwebassets\\images\\Black and Gold Geometric Egyptian Legacy Presentation.jpg"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\Explorevia-my-part\\Explorevia-my-part\\Explorevia\\Explorevia\\wwwroot\\images\\Black and Gold Geometric Egyptian Legacy Presentation.zip",
+      "PackagePath": "staticwebassets\\images\\Black and Gold Geometric Egyptian Legacy Presentation.zip"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\Explorevia-my-part\\Explorevia-my-part\\Explorevia\\Explorevia\\wwwroot\\images\\Screenshot 2025-11-25 154552.png",
+      "PackagePath": "staticwebassets\\images\\Screenshot 2025-11-25 154552.png"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\Explorevia-my-part\\Explorevia-my-part\\Explorevia\\Explorevia\\wwwroot\\images\\Screenshot 2025-11-25 154854.png",
+      "PackagePath": "staticwebassets\\images\\Screenshot 2025-11-25 154854.png"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\Explorevia-my-part\\Explorevia-my-part\\Explorevia\\Explorevia\\wwwroot\\images\\Screenshot 2025-11-25 154908.png",
+      "PackagePath": "staticwebassets\\images\\Screenshot 2025-11-25 154908.png"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\Explorevia-my-part\\Explorevia-my-part\\Explorevia\\Explorevia\\wwwroot\\images\\Screenshot 2025-11-25 154925.png",
+      "PackagePath": "staticwebassets\\images\\Screenshot 2025-11-25 154925.png"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\Explorevia-my-part\\Explorevia-my-part\\Explorevia\\Explorevia\\wwwroot\\images\\Screenshot 2025-11-25 155026.png",
+      "PackagePath": "staticwebassets\\images\\Screenshot 2025-11-25 155026.png"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\Explorevia-my-part\\Explorevia-my-part\\Explorevia\\Explorevia\\wwwroot\\images\\Screenshot 2025-11-25 155114.png",
+      "PackagePath": "staticwebassets\\images\\Screenshot 2025-11-25 155114.png"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\Explorevia-my-part\\Explorevia-my-part\\Explorevia\\Explorevia\\wwwroot\\images\\This is Egypt.png",
+      "PackagePath": "staticwebassets\\images\\This is Egypt.png"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\Explorevia-my-part\\Explorevia-my-part\\Explorevia\\Explorevia\\wwwroot\\images\\background.png",
+      "PackagePath": "staticwebassets\\images\\background.png"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\Explorevia-my-part\\Explorevia-my-part\\Explorevia\\Explorevia\\wwwroot\\images\\bannner.jpg",
+      "PackagePath": "staticwebassets\\images\\bannner.jpg"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\Explorevia-my-part\\Explorevia-my-part\\Explorevia\\Explorevia\\wwwroot\\images\\bg-3.jpg",
+      "PackagePath": "staticwebassets\\images\\bg-3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\Explorevia-my-part\\Explorevia-my-part\\Explorevia\\Explorevia\\wwwroot\\images\\bg-p.webp",
+      "PackagePath": "staticwebassets\\images\\bg-p.webp"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\Explorevia-my-part\\Explorevia-my-part\\Explorevia\\Explorevia\\wwwroot\\images\\bg-pp.jpg",
+      "PackagePath": "staticwebassets\\images\\bg-pp.jpg"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\Explorevia-my-part\\Explorevia-my-part\\Explorevia\\Explorevia\\wwwroot\\images\\bg2.webp",
+      "PackagePath": "staticwebassets\\images\\bg2.webp"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\Explorevia-my-part\\Explorevia-my-part\\Explorevia\\Explorevia\\wwwroot\\images\\bg4.jpg",
+      "PackagePath": "staticwebassets\\images\\bg4.jpg"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\Explorevia-my-part\\Explorevia-my-part\\Explorevia\\Explorevia\\wwwroot\\images\\bg5.webp",
+      "PackagePath": "staticwebassets\\images\\bg5.webp"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\Explorevia-my-part\\Explorevia-my-part\\Explorevia\\Explorevia\\wwwroot\\images\\cairo.jpg",
+      "PackagePath": "staticwebassets\\images\\cairo.jpg"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\Explorevia-my-part\\Explorevia-my-part\\Explorevia\\Explorevia\\wwwroot\\images\\cairo_aswan.jpg",
+      "PackagePath": "staticwebassets\\images\\cairo_aswan.jpg"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\Explorevia-my-part\\Explorevia-my-part\\Explorevia\\Explorevia\\wwwroot\\images\\ex-photo.png",
+      "PackagePath": "staticwebassets\\images\\ex-photo.png"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\Explorevia-my-part\\Explorevia-my-part\\Explorevia\\Explorevia\\wwwroot\\images\\image (1).png",
+      "PackagePath": "staticwebassets\\images\\image (1).png"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\Explorevia-my-part\\Explorevia-my-part\\Explorevia\\Explorevia\\wwwroot\\images\\image (2).png",
+      "PackagePath": "staticwebassets\\images\\image (2).png"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\Explorevia-my-part\\Explorevia-my-part\\Explorevia\\Explorevia\\wwwroot\\images\\image (3).png",
+      "PackagePath": "staticwebassets\\images\\image (3).png"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\Explorevia-my-part\\Explorevia-my-part\\Explorevia\\Explorevia\\wwwroot\\images\\image (4).png",
+      "PackagePath": "staticwebassets\\images\\image (4).png"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\Explorevia-my-part\\Explorevia-my-part\\Explorevia\\Explorevia\\wwwroot\\images\\image (5).png",
+      "PackagePath": "staticwebassets\\images\\image (5).png"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\Explorevia-my-part\\Explorevia-my-part\\Explorevia\\Explorevia\\wwwroot\\images\\image (6).png",
+      "PackagePath": "staticwebassets\\images\\image (6).png"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\Explorevia-my-part\\Explorevia-my-part\\Explorevia\\Explorevia\\wwwroot\\images\\image (7).png",
+      "PackagePath": "staticwebassets\\images\\image (7).png"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\Explorevia-my-part\\Explorevia-my-part\\Explorevia\\Explorevia\\wwwroot\\images\\image (8).png",
+      "PackagePath": "staticwebassets\\images\\image (8).png"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\Explorevia-my-part\\Explorevia-my-part\\Explorevia\\Explorevia\\wwwroot\\images\\image (9).png",
+      "PackagePath": "staticwebassets\\images\\image (9).png"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\Explorevia-my-part\\Explorevia-my-part\\Explorevia\\Explorevia\\wwwroot\\images\\museum.jpg",
+      "PackagePath": "staticwebassets\\images\\museum.jpg"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\Explorevia-my-part\\Explorevia-my-part\\Explorevia\\Explorevia\\wwwroot\\images\\pppp.jpg",
+      "PackagePath": "staticwebassets\\images\\pppp.jpg"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\Explorevia-my-part\\Explorevia-my-part\\Explorevia\\Explorevia\\wwwroot\\images\\حلوة يا بلدي.png",
+      "PackagePath": "staticwebassets\\images\\حلوة يا بلدي.png"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\Explorevia-my-part\\Explorevia-my-part\\Explorevia\\Explorevia\\wwwroot\\js\\site.js",
+      "PackagePath": "staticwebassets\\js\\site.js"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\Explorevia-my-part\\Explorevia-my-part\\Explorevia\\Explorevia\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "PackagePath": "staticwebassets\\lib\\bootstrap"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\Explorevia-my-part\\Explorevia-my-part\\Explorevia\\Explorevia\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\Explorevia-my-part\\Explorevia-my-part\\Explorevia\\Explorevia\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\Explorevia-my-part\\Explorevia-my-part\\Explorevia\\Explorevia\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\Explorevia-my-part\\Explorevia-my-part\\Explorevia\\Explorevia\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\Explorevia-my-part\\Explorevia-my-part\\Explorevia\\Explorevia\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\Explorevia-my-part\\Explorevia-my-part\\Explorevia\\Explorevia\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\Explorevia-my-part\\Explorevia-my-part\\Explorevia\\Explorevia\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\Explorevia-my-part\\Explorevia-my-part\\Explorevia\\Explorevia\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\Explorevia-my-part\\Explorevia-my-part\\Explorevia\\Explorevia\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\Explorevia-my-part\\Explorevia-my-part\\Explorevia\\Explorevia\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\Explorevia-my-part\\Explorevia-my-part\\Explorevia\\Explorevia\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\Explorevia-my-part\\Explorevia-my-part\\Explorevia\\Explorevia\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\Explorevia-my-part\\Explorevia-my-part\\Explorevia\\Explorevia\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\Explorevia-my-part\\Explorevia-my-part\\Explorevia\\Explorevia\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\Explorevia-my-part\\Explorevia-my-part\\Explorevia\\Explorevia\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\Explorevia-my-part\\Explorevia-my-part\\Explorevia\\Explorevia\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\Explorevia-my-part\\Explorevia-my-part\\Explorevia\\Explorevia\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\Explorevia-my-part\\Explorevia-my-part\\Explorevia\\Explorevia\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\Explorevia-my-part\\Explorevia-my-part\\Explorevia\\Explorevia\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\Explorevia-my-part\\Explorevia-my-part\\Explorevia\\Explorevia\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\Explorevia-my-part\\Explorevia-my-part\\Explorevia\\Explorevia\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\Explorevia-my-part\\Explorevia-my-part\\Explorevia\\Explorevia\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\Explorevia-my-part\\Explorevia-my-part\\Explorevia\\Explorevia\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\Explorevia-my-part\\Explorevia-my-part\\Explorevia\\Explorevia\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\Explorevia-my-part\\Explorevia-my-part\\Explorevia\\Explorevia\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\Explorevia-my-part\\Explorevia-my-part\\Explorevia\\Explorevia\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\Explorevia-my-part\\Explorevia-my-part\\Explorevia\\Explorevia\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\Explorevia-my-part\\Explorevia-my-part\\Explorevia\\Explorevia\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\Explorevia-my-part\\Explorevia-my-part\\Explorevia\\Explorevia\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\Explorevia-my-part\\Explorevia-my-part\\Explorevia\\Explorevia\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\Explorevia-my-part\\Explorevia-my-part\\Explorevia\\Explorevia\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\Explorevia-my-part\\Explorevia-my-part\\Explorevia\\Explorevia\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\Explorevia-my-part\\Explorevia-my-part\\Explorevia\\Explorevia\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\Explorevia-my-part\\Explorevia-my-part\\Explorevia\\Explorevia\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\Explorevia-my-part\\Explorevia-my-part\\Explorevia\\Explorevia\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\Explorevia-my-part\\Explorevia-my-part\\Explorevia\\Explorevia\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\Explorevia-my-part\\Explorevia-my-part\\Explorevia\\Explorevia\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\Explorevia-my-part\\Explorevia-my-part\\Explorevia\\Explorevia\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\Explorevia-my-part\\Explorevia-my-part\\Explorevia\\Explorevia\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\Explorevia-my-part\\Explorevia-my-part\\Explorevia\\Explorevia\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\Explorevia-my-part\\Explorevia-my-part\\Explorevia\\Explorevia\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\Explorevia-my-part\\Explorevia-my-part\\Explorevia\\Explorevia\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\Explorevia-my-part\\Explorevia-my-part\\Explorevia\\Explorevia\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\Explorevia-my-part\\Explorevia-my-part\\Explorevia\\Explorevia\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\Explorevia-my-part\\Explorevia-my-part\\Explorevia\\Explorevia\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\Explorevia-my-part\\Explorevia-my-part\\Explorevia\\Explorevia\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\Explorevia-my-part\\Explorevia-my-part\\Explorevia\\Explorevia\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\Explorevia-my-part\\Explorevia-my-part\\Explorevia\\Explorevia\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\LICENSE.md"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\Explorevia-my-part\\Explorevia-my-part\\Explorevia\\Explorevia\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.js"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\Explorevia-my-part\\Explorevia-my-part\\Explorevia\\Explorevia\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.min.js"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\Explorevia-my-part\\Explorevia-my-part\\Explorevia\\Explorevia\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.js"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\Explorevia-my-part\\Explorevia-my-part\\Explorevia\\Explorevia\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\Explorevia-my-part\\Explorevia-my-part\\Explorevia\\Explorevia\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery\\LICENSE.txt"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\Explorevia-my-part\\Explorevia-my-part\\Explorevia\\Explorevia\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.js"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\Explorevia-my-part\\Explorevia-my-part\\Explorevia\\Explorevia\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.js"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\Explorevia-my-part\\Explorevia-my-part\\Explorevia\\Explorevia\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.Explorevia.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.Explorevia.props",
+      "PackagePath": "build\\Explorevia.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.Explorevia.props",
+      "PackagePath": "buildMultiTargeting\\Explorevia.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.Explorevia.props",
+      "PackagePath": "buildTransitive\\Explorevia.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

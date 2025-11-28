@@ -1,0 +1,195 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\user\\source\\repos\\Explorevia-my-part\\Explorevia-my-part\\Explorevia\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{0D1E884A-3718-4F79-AB7B-53F10B3B65B7}|Explorevia\\Explorevia.csproj|c:\\users\\user\\source\\repos\\explorevia-my-part\\explorevia-my-part\\explorevia\\explorevia\\viewmodels\\loginviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0D1E884A-3718-4F79-AB7B-53F10B3B65B7}|Explorevia\\Explorevia.csproj|solutionrelative:explorevia\\viewmodels\\loginviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0D1E884A-3718-4F79-AB7B-53F10B3B65B7}|Explorevia\\Explorevia.csproj|c:\\users\\user\\source\\repos\\explorevia-my-part\\explorevia-my-part\\explorevia\\explorevia\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0D1E884A-3718-4F79-AB7B-53F10B3B65B7}|Explorevia\\Explorevia.csproj|solutionrelative:explorevia\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0D1E884A-3718-4F79-AB7B-53F10B3B65B7}|Explorevia\\Explorevia.csproj|c:\\users\\user\\source\\repos\\explorevia-my-part\\explorevia-my-part\\explorevia\\explorevia\\views\\account\\uploaddocs.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{0D1E884A-3718-4F79-AB7B-53F10B3B65B7}|Explorevia\\Explorevia.csproj|solutionrelative:explorevia\\views\\account\\uploaddocs.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0D1E884A-3718-4F79-AB7B-53F10B3B65B7}|Explorevia\\Explorevia.csproj|c:\\users\\user\\source\\repos\\explorevia-my-part\\explorevia-my-part\\explorevia\\explorevia\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0D1E884A-3718-4F79-AB7B-53F10B3B65B7}|Explorevia\\Explorevia.csproj|solutionrelative:explorevia\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0D1E884A-3718-4F79-AB7B-53F10B3B65B7}|Explorevia\\Explorevia.csproj|c:\\users\\user\\source\\repos\\explorevia-my-part\\explorevia-my-part\\explorevia\\explorevia\\views\\home\\contactus.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{0D1E884A-3718-4F79-AB7B-53F10B3B65B7}|Explorevia\\Explorevia.csproj|solutionrelative:explorevia\\views\\home\\contactus.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0D1E884A-3718-4F79-AB7B-53F10B3B65B7}|Explorevia\\Explorevia.csproj|c:\\users\\user\\source\\repos\\explorevia-my-part\\explorevia-my-part\\explorevia\\explorevia\\views\\account\\onwerdashboard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{0D1E884A-3718-4F79-AB7B-53F10B3B65B7}|Explorevia\\Explorevia.csproj|solutionrelative:explorevia\\views\\account\\onwerdashboard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0D1E884A-3718-4F79-AB7B-53F10B3B65B7}|Explorevia\\Explorevia.csproj|c:\\users\\user\\source\\repos\\explorevia-my-part\\explorevia-my-part\\explorevia\\explorevia\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{0D1E884A-3718-4F79-AB7B-53F10B3B65B7}|Explorevia\\Explorevia.csproj|solutionrelative:explorevia\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\user\\source\\repos\\Explorevia-my-part\\Explorevia-my-part\\Explorevia\\Explorevia\\Migrations\\20251128125402_MMA.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Explorevia\\Migrations\\20251128125402_MMA.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\user\\source\\repos\\Explorevia-my-part\\Explorevia-my-part\\Explorevia\\Explorevia\\Migrations\\20251128114819_Update-manar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Explorevia\\Migrations\\20251128114819_Update-manar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\user\\source\\repos\\Explorevia-my-part\\Explorevia-my-part\\Explorevia\\Explorevia\\Migrations\\20251128114601_MMa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Explorevia\\Migrations\\20251128114601_MMa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ContactUs.cshtml",
+              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\Explorevia-my-part\\Explorevia-my-part\\Explorevia\\Explorevia\\Views\\Home\\ContactUs.cshtml",
+              "RelativeDocumentMoniker": "Explorevia\\Views\\Home\\ContactUs.cshtml",
+              "ToolTip": "C:\\Users\\user\\source\\repos\\Explorevia-my-part\\Explorevia-my-part\\Explorevia\\Explorevia\\Views\\Home\\ContactUs.cshtml",
+              "RelativeToolTip": "Explorevia\\Views\\Home\\ContactUs.cshtml",
+              "ViewState": "AQIAAGYAAAAAAAAAAAAAAG8AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-28T13:45:20.93Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "LoginViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\Explorevia-my-part\\Explorevia-my-part\\Explorevia\\Explorevia\\ViewModels\\LoginViewModel.cs",
+              "RelativeDocumentMoniker": "Explorevia\\ViewModels\\LoginViewModel.cs",
+              "ToolTip": "C:\\Users\\user\\source\\repos\\Explorevia-my-part\\Explorevia-my-part\\Explorevia\\Explorevia\\ViewModels\\LoginViewModel.cs",
+              "RelativeToolTip": "Explorevia\\ViewModels\\LoginViewModel.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAABuAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-28T16:04:54.558Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\Explorevia-my-part\\Explorevia-my-part\\Explorevia\\Explorevia\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "Explorevia\\Controllers\\HomeController.cs",
+              "ToolTip": "C:\\Users\\user\\source\\repos\\Explorevia-my-part\\Explorevia-my-part\\Explorevia\\Explorevia\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "Explorevia\\Controllers\\HomeController.cs",
+              "ViewState": "AQIAAEIAAAAAAAAAAAAswEgAAAAaAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-28T13:27:49.133Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "AccountController.cs",
+              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\Explorevia-my-part\\Explorevia-my-part\\Explorevia\\Explorevia\\Controllers\\AccountController.cs",
+              "RelativeDocumentMoniker": "Explorevia\\Controllers\\AccountController.cs",
+              "ToolTip": "C:\\Users\\user\\source\\repos\\Explorevia-my-part\\Explorevia-my-part\\Explorevia\\Explorevia\\Controllers\\AccountController.cs",
+              "RelativeToolTip": "Explorevia\\Controllers\\AccountController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAHAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-28T13:23:04.667Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "OnwerDashboard.cshtml",
+              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\Explorevia-my-part\\Explorevia-my-part\\Explorevia\\Explorevia\\Views\\Account\\OnwerDashboard.cshtml",
+              "RelativeDocumentMoniker": "Explorevia\\Views\\Account\\OnwerDashboard.cshtml",
+              "ToolTip": "C:\\Users\\user\\source\\repos\\Explorevia-my-part\\Explorevia-my-part\\Explorevia\\Explorevia\\Views\\Account\\OnwerDashboard.cshtml",
+              "RelativeToolTip": "Explorevia\\Views\\Account\\OnwerDashboard.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-28T13:22:52.703Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "UploadDocs.cshtml",
+              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\Explorevia-my-part\\Explorevia-my-part\\Explorevia\\Explorevia\\Views\\Account\\UploadDocs.cshtml",
+              "RelativeDocumentMoniker": "Explorevia\\Views\\Account\\UploadDocs.cshtml",
+              "ToolTip": "C:\\Users\\user\\source\\repos\\Explorevia-my-part\\Explorevia-my-part\\Explorevia\\Explorevia\\Views\\Account\\UploadDocs.cshtml",
+              "RelativeToolTip": "Explorevia\\Views\\Account\\UploadDocs.cshtml",
+              "ViewState": "AQIAADYAAAAAAAAAAAAAAD4AAABRAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-28T13:12:08.095Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "20251128125402_MMA.cs",
+              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\Explorevia-my-part\\Explorevia-my-part\\Explorevia\\Explorevia\\Migrations\\20251128125402_MMA.cs",
+              "RelativeDocumentMoniker": "Explorevia\\Migrations\\20251128125402_MMA.cs",
+              "ToolTip": "C:\\Users\\user\\source\\repos\\Explorevia-my-part\\Explorevia-my-part\\Explorevia\\Explorevia\\Migrations\\20251128125402_MMA.cs",
+              "RelativeToolTip": "Explorevia\\Migrations\\20251128125402_MMA.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-28T12:54:02.23Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "20251128114819_Update-manar.cs",
+              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\Explorevia-my-part\\Explorevia-my-part\\Explorevia\\Explorevia\\Migrations\\20251128114819_Update-manar.cs",
+              "RelativeDocumentMoniker": "Explorevia\\Migrations\\20251128114819_Update-manar.cs",
+              "ToolTip": "C:\\Users\\user\\source\\repos\\Explorevia-my-part\\Explorevia-my-part\\Explorevia\\Explorevia\\Migrations\\20251128114819_Update-manar.cs",
+              "RelativeToolTip": "Explorevia\\Migrations\\20251128114819_Update-manar.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-28T11:48:19.619Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "20251128114601_MMa.cs",
+              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\Explorevia-my-part\\Explorevia-my-part\\Explorevia\\Explorevia\\Migrations\\20251128114601_MMa.cs",
+              "RelativeDocumentMoniker": "Explorevia\\Migrations\\20251128114601_MMa.cs",
+              "ToolTip": "C:\\Users\\user\\source\\repos\\Explorevia-my-part\\Explorevia-my-part\\Explorevia\\Explorevia\\Migrations\\20251128114601_MMa.cs",
+              "RelativeToolTip": "Explorevia\\Migrations\\20251128114601_MMa.cs",
+              "ViewState": "AQIAAA8AAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-28T11:46:02.095Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\Explorevia-my-part\\Explorevia-my-part\\Explorevia\\Explorevia\\appsettings.json",
+              "RelativeDocumentMoniker": "Explorevia\\appsettings.json",
+              "ToolTip": "C:\\Users\\user\\source\\repos\\Explorevia-my-part\\Explorevia-my-part\\Explorevia\\Explorevia\\appsettings.json",
+              "RelativeToolTip": "Explorevia\\appsettings.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-11-28T11:06:27.106Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
