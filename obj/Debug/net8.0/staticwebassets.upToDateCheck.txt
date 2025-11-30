@@ -1,0 +1,110 @@
+wwwroot\css\site.css
+wwwroot\favicon.ico
+wwwroot\images\background.png
+wwwroot\images\bannner.jpg
+wwwroot\images\bg-3.jpg
+wwwroot\images\bg-p.webp
+wwwroot\images\bg-pp.jpg
+wwwroot\images\bg2.webp
+wwwroot\images\bg4.jpg
+wwwroot\images\bg5.webp
+wwwroot\images\Black and Gold Geometric Egyptian Legacy Presentation.jpg
+wwwroot\images\Black and Gold Geometric Egyptian Legacy Presentation.zip
+wwwroot\images\cairo.jpg
+wwwroot\images\cairo_aswan.jpg
+wwwroot\images\ex-photo.png
+wwwroot\images\image (1).png
+wwwroot\images\image (2).png
+wwwroot\images\image (3).png
+wwwroot\images\image (4).png
+wwwroot\images\image (5).png
+wwwroot\images\image (6).png
+wwwroot\images\image (7).png
+wwwroot\images\image (8).png
+wwwroot\images\image (9).png
+wwwroot\images\museum.jpg
+wwwroot\images\pppp.jpg
+wwwroot\images\Screenshot 2025-11-25 154552.png
+wwwroot\images\Screenshot 2025-11-25 154854.png
+wwwroot\images\Screenshot 2025-11-25 154908.png
+wwwroot\images\Screenshot 2025-11-25 154925.png
+wwwroot\images\Screenshot 2025-11-25 155026.png
+wwwroot\images\Screenshot 2025-11-25 155114.png
+wwwroot\images\This is Egypt.png
+wwwroot\images\حلوة يا بلدي.png
+wwwroot\js\site.js
+wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css
+wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css.map
+wwwroot\lib\bootstrap\dist\css\bootstrap-grid.min.css
+wwwroot\lib\bootstrap\dist\css\bootstrap-grid.min.css.map
+wwwroot\lib\bootstrap\dist\css\bootstrap-grid.rtl.css
+wwwroot\lib\bootstrap\dist\css\bootstrap-grid.rtl.css.map
+wwwroot\lib\bootstrap\dist\css\bootstrap-grid.rtl.min.css
+wwwroot\lib\bootstrap\dist\css\bootstrap-grid.rtl.min.css.map
+wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.css
+wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.css.map
+wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.min.css
+wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.min.css.map
+wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.rtl.css
+wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.rtl.css.map
+wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.rtl.min.css
+wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.rtl.min.css.map
+wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.css
+wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.css.map
+wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.min.css
+wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.min.css.map
+wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.rtl.css
+wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.rtl.css.map
+wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.rtl.min.css
+wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.rtl.min.css.map
+wwwroot\lib\bootstrap\dist\css\bootstrap.css
+wwwroot\lib\bootstrap\dist\css\bootstrap.css.map
+wwwroot\lib\bootstrap\dist\css\bootstrap.min.css
+wwwroot\lib\bootstrap\dist\css\bootstrap.rtl.css
+wwwroot\lib\bootstrap\dist\css\bootstrap.rtl.css.map
+wwwroot\lib\bootstrap\dist\css\bootstrap.rtl.min.css
+wwwroot\lib\bootstrap\dist\css\bootstrap.rtl.min.css.map
+wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.js
+wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.js.map
+wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.min.js
+wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.min.js.map
+wwwroot\lib\bootstrap\dist\js\bootstrap.esm.js
+wwwroot\lib\bootstrap\dist\js\bootstrap.esm.js.map
+wwwroot\lib\bootstrap\dist\js\bootstrap.esm.min.js
+wwwroot\lib\bootstrap\dist\js\bootstrap.esm.min.js.map
+wwwroot\lib\bootstrap\dist\js\bootstrap.js
+wwwroot\lib\bootstrap\dist\js\bootstrap.js.map
+wwwroot\lib\bootstrap\dist\js\bootstrap.min.js
+wwwroot\lib\bootstrap\dist\js\bootstrap.min.js.map
+wwwroot\lib\bootstrap\LICENSE
+wwwroot\lib\jquery-validation-unobtrusive\jquery.validate.unobtrusive.js
+wwwroot\lib\jquery-validation-unobtrusive\jquery.validate.unobtrusive.min.js
+wwwroot\lib\jquery-validation-unobtrusive\LICENSE.txt
+wwwroot\lib\jquery-validation\dist\additional-methods.js
+wwwroot\lib\jquery-validation\dist\additional-methods.min.js
+wwwroot\lib\jquery-validation\dist\jquery.validate.js
+wwwroot\lib\jquery-validation\dist\jquery.validate.min.js
+wwwroot\lib\jquery-validation\LICENSE.md
+wwwroot\lib\jquery\dist\jquery.js
+wwwroot\lib\jquery\dist\jquery.min.js
+wwwroot\lib\jquery\dist\jquery.min.map
+wwwroot\lib\jquery\LICENSE.txt
+wwwroot\Destinations\cairo.jpg
+wwwroot\Destinations\alex.jfif
+wwwroot\Destinations\luxor.jfif
+wwwroot\Destinations\sharm.jfif
+wwwroot\Destinations\aswan.jfif
+wwwroot\Destinations\hurghada.jfif
+wwwroot\HotelRequests\00c41874-b89a-41cf-a43c-32ee58800a3f.jpg
+wwwroot\HotelRequests\27812b14-ecef-4ee9-a43e-f7cec13ce827.jpg
+wwwroot\HotelRequests\0cb97f00-75e3-4d2c-bba9-4d068798b49c.jpg
+wwwroot\HotelRequests\92719e09-fd8a-405a-824a-c6f4d0b0cd17.jpg
+wwwroot\HotelRequests\5740631d-378b-495b-b952-e3bfc4c71c36.png
+wwwroot\HotelRequests\e7069836-8609-4dea-99d6-0756d2ad946b.jpg
+wwwroot\HotelRequests\6d9834e6-c4b7-428b-ad92-f1028226a1b9.png
+wwwroot\HotelRequests\e2a5771b-80b9-4b92-8886-c657415edf6b.jpg
+wwwroot\images\hotels\0a87d1e8-f50d-410f-856b-94d8ab1b0b77_1.jfif
+wwwroot\images\hotels\b64f99df-ea3f-44f5-b2aa-2c604a3af03b_2.jfif
+wwwroot\HotelRequests\76c5eaf4-96af-497d-bc33-02415b32eb67.png
+wwwroot\HotelRequests\d91b4bdf-cd0a-4e46-8369-26c86e368d5c.png
+wwwroot\images\hotels\ebcebce4-1440-416c-a60e-57f78973e45c_1.jfif
