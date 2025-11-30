@@ -1,0 +1,179 @@
+﻿@model List<Explorevia.Models.HotelRegistrationRequest>
+@{
+    ViewBag.Title = "Admin Dashboard";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Toastr CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" />
+
+    <!-- jQuery (must load before Toastr) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <!-- Toastr JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
+    <!-- SweetAlert2 -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <style>
+        body {
+            background-color: #fffcf0;
+            color: #003459;
+        }
+
+        .navbar, .btn-primary {
+            background-color: #003459;
+            color: #fffcf0 !important;
+        }
+
+            .btn-primary:hover {
+                background-color: #002a45;
+            }
+
+        .btn-danger:hover {
+            background-color: #990000;
+        }
+
+        table th, table td {
+            vertical-align: middle !important;
+        }
+
+        .badge {
+            padding: 0.5em 0.75em;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Admin Dashboard</a>
+            <div class="d-flex">
+                <a class="btn btn-outline-light" asp-controller="Account" asp-action="Logout">Logout</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container my-5">
+        <div class="d-flex justify-content-between mb-3">
+            <h2>Pending Hotel Registration Requests</h2>
+        </div>
+
+        <table class="table table-bordered table-hover">
+            <thead class="table-dark">
+                <tr>
+                    <th>#</th>
+                    <th>Hotel Name</th>
+                    <th>Owner Name</th>
+                    <th>Email</th>
+                    <th>Phone</th>
+                    <th>City</th>
+                    <th>Country</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                @if (Model != null && Model.Any())
+                {
+                    int i = 1;
+                    foreach (var hotel in Model)
+                    {
+                        <tr>
+                            <td>@i</td>
+                            <td>@hotel.HotelName</td>
+                            <td>@hotel.OwnerName</td>
+                            <td>@hotel.Email</td>
+                            <td>@hotel.Phone</td>
+                            <td>@hotel.City</td>
+                            <td>@hotel.Country</td>
+                            <td><span class="badge bg-warning text-dark">@hotel.Status</span></td>
+                            <td>
+                                <!-- Approve Button -->
+                                <a class="btn btn-sm btn-primary me-1"
+                                   asp-route-requestId="@hotel.Id"
+                                   asp-controller="Admin"
+                                   asp-action="ApproveRequest">
+                                    Approve
+                                </a>
+
+                                <!-- Reject Button with SweetAlert -->
+                                <a class="btn btn-sm btn-danger"
+                                   href="javascript:void(0);"
+                                   onclick="confirmReject(@hotel.Id)">
+                                    Reject
+                                </a>
+                            </td>
+                        </tr>
+                        i++;
+                    }
+                }
+                else
+                {
+                    <tr>
+                        <td colspan="9" class="text-center">No pending requests found.</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        // Toastr Configuration
+        toastr.options = {
+            "closeButton": true,
+            "progressBar": true,
+            "positionClass": "toast-top-right",
+            "timeOut": "3000",
+            "extendedTimeOut": "1000"
+        };
+
+        // Display notifications from TempData
+        $(document).ready(function () {
+            @if (TempData["Success"] != null)
+            {
+                        <text>toastr.success("@TempData["Success"]");</text>
+            }
+
+            @if (TempData["Error"] != null)
+            {
+                        <text>toastr.error("@TempData["Error"]");</text>
+            }
+
+            @if (TempData["Info"] != null)
+            {
+                        <text>toastr.info("@TempData["Info"]");</text>
+            }
+        });
+
+        // SweetAlert confirmation for Reject
+        function confirmReject(requestId) {
+            Swal.fire({
+                title: 'Are you sure?',
+                text: "This hotel request will be rejected permanently!",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#d33',
+                cancelButtonColor: '#3085d6',
+                confirmButtonText: 'Yes, reject it!',
+                cancelButtonText: 'Cancel'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    // Redirect to reject action with requestId as route parameter
+                    window.location.href = '@Url.Action("RejectRequest", "Admin")/' + requestId;
+                }
+            });
+        }
+    </script>
+</body>
+</html>

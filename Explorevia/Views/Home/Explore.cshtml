@@ -1,0 +1,81 @@
+﻿@model List<Hotel>
+@{
+    ViewData["Title"] = "Hotels";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="max-w-7xl mt-5 mx-auto px-4 py-12">
+    <div class="grid grid-cols-1 lg:grid-cols-4 gap-8">
+
+        <!-- Filters Sidebar -->
+        <div class="lg:col-span-1">
+            <div class="border-border sticky top-4 bg-light rounded-lg shadow-lg p-4 space-y-6">
+                <h2 class="text-lg font-semibold mb-2">Filters</h2>
+
+                <!-- Location -->
+                <div>
+                    <h3 class="font-semibold mb-2">Location</h3>
+                    <select id="locationFilter" class="form-select">
+                        <option value="All">All</option>
+                        <option value="Cairo">Cairo</option>
+                        <option value="Hurghada">Hurghada</option>
+                        <option value="Luxor">Luxor</option>
+                    </select>
+                </div>
+
+                <!-- Price -->
+                <div>
+                    <h3 class="font-semibold mb-2">Price Range</h3>
+                    <div class="d-flex gap-2">
+                        <input type="number" id="minPrice" placeholder="Min" class="form-control" />
+                        <input type="number" id="maxPrice" placeholder="Max" class="form-control" />
+                    </div>
+                </div>
+
+                <!-- Rating -->
+                <div>
+                    <h3 class="font-semibold mb-2">Minimum Rating</h3>
+                    <select id="minRating" class="form-select">
+                        <option value="0">All Ratings</option>
+                        <option value="3">3</option>
+                        <option value="3.5">3.5</option>
+                        <option value="4">4</option>
+                        <option value="4.5">4.5</option>
+                    </select>
+                </div>
+
+                <button onclick="applyFilters()" class="btn btn-primary w-100 mt-3">
+                    Apply Filters
+                </button>
+            </div>
+        </div>
+
+        <!-- Hotels Grid -->
+        <div class="lg:col-span-3" id="hotelsGrid">
+            @await Html.PartialAsync("_HotelsGrid", Model)
+        </div>
+
+    </div>
+</div>
+
+
+<!-- Filter Script -->
+<script>
+    async function applyFilters() {
+        const location = document.getElementById('locationFilter').value;
+        const minPrice = parseInt(document.getElementById('minPrice').value) || 0;
+        const maxPrice = parseInt(document.getElementById('maxPrice').value) || 10000;
+        const minRating = parseFloat(document.getElementById('minRating').value) || 0;
+
+        // Correct URL with backticks
+        const url = `/Hotels/Filter?location=${location}&minPrice=${minPrice}&maxPrice=${maxPrice}&minRating=${minRating}`;
+
+        try {
+            const response = await fetch(url);
+            const html = await response.text();
+            document.getElementById('hotelsGrid').innerHTML = html;
+        } catch (error) {
+            console.error("Error fetching hotels:", error);
+        }
+    }
+</script>

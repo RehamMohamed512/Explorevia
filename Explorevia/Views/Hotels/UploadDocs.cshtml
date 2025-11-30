@@ -1,0 +1,312 @@
+﻿@model Explorevia.ViewModels.HotelOwnerRegisterViewModel
+@{
+    ViewBag.Title = "Hotel Registration";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Toastr -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" />
+
+    <style>
+        body {
+            background: url('/images/pppp.jpg') no-repeat center center;
+            background-size: cover;
+            font-family: 'Segoe UI', sans-serif;
+            min-height: 100vh;
+        }
+
+        .form-container {
+            background-color: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            border-top: 10px solid #003459;
+            margin: 30px auto;
+        }
+
+        .form-title {
+            color: #003459;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        .btn-main {
+            background-color: #003459;
+            color: #fffcf0;
+            border-radius: 10px;
+            padding: 10px 20px;
+            font-weight: 600;
+            border: none;
+        }
+
+            .btn-main:hover {
+                background-color: #00253d;
+                color: #fffcf0;
+            }
+
+        label {
+            color: #003459;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .form-control:focus {
+            border-color: #003459;
+            box-shadow: 0 0 0 0.2rem rgba(0, 52, 89, 0.25);
+        }
+
+        .text-danger {
+            font-size: 0.875rem;
+            margin-top: 3px;
+        }
+
+        /* Password strength indicator */
+        #passwordStrength .progress-bar {
+            transition: width 0.3s ease;
+        }
+
+        #passwordStrengthText {
+            display: block;
+            margin-top: 5px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="form-container">
+                    <h2 class="form-title">Hotel Registration Request</h2>
+
+                    <form asp-action="SendHotelRegistration" asp-controller="Hotels" method="post" enctype="multipart/form-data">
+
+                        <!-- Hotel Name -->
+                        <div class="mb-3">
+                            <label asp-for="HotelName">Hotel Name</label>
+                            <input asp-for="HotelName" class="form-control" placeholder="Enter hotel name" />
+                            <span asp-validation-for="HotelName" class="text-danger"></span>
+                        </div>
+
+                        <!-- Owner Name -->
+                        <div class="mb-3">
+                            <label asp-for="OwnerName">Owner Name</label>
+                            <input asp-for="OwnerName" class="form-control" placeholder="Enter owner name" />
+                            <span asp-validation-for="OwnerName" class="text-danger"></span>
+                        </div>
+
+                        <!-- Email -->
+                        <div class="mb-3">
+                            <label asp-for="Email">Email Address</label>
+                            <input asp-for="Email" class="form-control" placeholder="Enter email address" />
+                            <span asp-validation-for="Email" class="text-danger"></span>
+                        </div>
+
+                        <!-- Password -->
+                        <div class="mb-3">
+                            <label asp-for="Password">Password</label>
+                            <input asp-for="Password" class="form-control" placeholder="Create a password" />
+                            <div class="mt-2">
+                                <div id="passwordStrength" class="progress" style="height:6px;">
+                                    <div class="progress-bar" role="progressbar" style="width:0%;"></div>
+                                </div>
+                                <small id="passwordStrengthText" class="form-text"></small>
+                            </div>
+                            <span asp-validation-for="Password" class="text-danger"></span>
+                        </div>
+
+                        <div class="row">
+                            <!-- Phone Number -->
+                            <div class="col-md-6 mb-3">
+                                <label asp-for="PhoneNumber">Phone Number</label>
+                                <input asp-for="PhoneNumber" class="form-control" placeholder="Enter phone number" />
+                                <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+                            </div>
+
+                            <!-- City -->
+                            <div class="col-md-6 mb-3">
+                                <label asp-for="City">City</label>
+                                <select asp-for="City" class="form-control">
+                                    <option value="">Select City</option>
+                                    <option>Cairo</option>
+                                    <option>Alexandria</option>
+                                    <option>Giza</option>
+                                    <option>Sharm El Sheikh</option>
+                                    <option>Hurghada</option>
+                                    <option>Luxor</option>
+                                    <option>Aswan</option>
+                                </select>
+                                <span asp-validation-for="City" class="text-danger"></span>
+                            </div>
+                        </div>
+
+                        <!-- Address -->
+                        <div class="mb-3">
+                            <label asp-for="Address">Full Address</label>
+                            <input asp-for="Address" class="form-control" placeholder="Enter full address" />
+                            <span asp-validation-for="Address" class="text-danger"></span>
+                        </div>
+
+                        <!-- Country -->
+                        <div class="mb-3">
+                            <label asp-for="Country">Country</label>
+                            <select asp-for="Country" class="form-control">
+                                <option value="">Select Country</option>
+                                <option>Egypt</option>
+                                <option>Saudi Arabia</option>
+                                <option>UAE</option>
+                                <option>Qatar</option>
+                                <option>Kuwait</option>
+                                <option>Bahrain</option>
+                                <option>Oman</option>
+                            </select>
+                            <span asp-validation-for="Country" class="text-danger"></span>
+                        </div>
+
+                        <!-- Hotel License -->
+                        <div class="mb-3">
+                            <label asp-for="HotelLicense">Hotel License (PDF/Image)</label>
+                            <input asp-for="HotelLicense" class="form-control" type="file" accept=".pdf,image/*" />
+                            <small class="form-text text-muted">Accepted formats: PDF, JPG, PNG</small>
+                            <span asp-validation-for="HotelLicense" class="text-danger"></span>
+                        </div>
+
+                        <!-- Owner ID Card -->
+                        <div class="mb-3">
+                            <label asp-for="OwnerIdCard">Owner ID Card (Image)</label>
+                            <input asp-for="OwnerIdCard" class="form-control" type="file" accept="image/*" />
+                            <small class="form-text text-muted">Accepted formats: JPG, PNG</small>
+                            <span asp-validation-for="OwnerIdCard" class="text-danger"></span>
+                        </div>
+
+                        <!-- Optional: Hotel Images -->
+                        <!-- Uncomment if you want to allow multiple images
+                        <div class="mb-3">
+                            <label asp-for="Images">Hotel Images (Optional)</label>
+                            <input asp-for="Images" class="form-control" type="file" accept="image/*" multiple />
+                            <small class="form-text text-muted">You can select multiple images</small>
+                        </div>
+                        -->
+                        <!-- Submit Button -->
+                        <button class="btn btn-main w-100 mt-3" type="submit">Submit Registration Request</button>
+
+                        <div class="text-center mt-3">
+                            <small class="text-muted">Already have an account? <a asp-controller="Account" asp-action="Login">Login here</a></small>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/jquery.validate.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation-unobtrusive@4.0.0/dist/jquery.validate.unobtrusive.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            // Toastr notifications
+            @if (TempData["Success"] != null)
+            {
+                    <text>toastr.success("@TempData["Success"]");</text>
+            }
+            @if (TempData["Error"] != null)
+            {
+                    <text>toastr.error("@TempData["Error"]");</text>
+            }
+
+            // Password strength indicator
+            $('input[name="Password"]').on('input', function () {
+                const val = $(this).val();
+                let strength = 0;
+
+                // Check password criteria
+                if (val.length >= 6) strength += 1;
+                if (/[A-Z]/.test(val)) strength += 1;
+                if (/[0-9]/.test(val)) strength += 1;
+                if (/[^A-Za-z0-9]/.test(val)) strength += 1;
+
+                // Calculate percentage
+                let percentage = (strength / 4) * 100;
+                let color = 'bg-danger';
+                let text = 'Very Weak';
+
+                if (percentage === 0) {
+                    color = 'bg-danger';
+                    text = '';
+                } else if (percentage === 25) {
+                    color = 'bg-danger';
+                    text = 'Weak';
+                } else if (percentage === 50) {
+                    color = 'bg-warning';
+                    text = 'Medium';
+                } else if (percentage === 75) {
+                    color = 'bg-info';
+                    text = 'Strong';
+                } else if (percentage === 100) {
+                    color = 'bg-success';
+                    text = 'Very Strong';
+                }
+
+                // Update progress bar
+                $('#passwordStrength .progress-bar')
+                    .css('width', percentage + '%')
+                    .removeClass('bg-danger bg-warning bg-info bg-success')
+                    .addClass(color);
+
+                $('#passwordStrengthText').text(text);
+            });
+
+            // File validation
+            $('form').on('submit', function (e) {
+                let valid = true;
+                const license = $('input[name="HotelLicense"]')[0].files[0];
+                const ownerCard = $('input[name="OwnerIdCard"]')[0].files[0];
+
+                // Validate hotel license
+                if (!license) {
+                    toastr.error('Please upload hotel license.');
+                    valid = false;
+                } else {
+                    const ext = license.name.split('.').pop().toLowerCase();
+                    if (!['pdf', 'jpg', 'jpeg', 'png', 'gif'].includes(ext)) {
+                        toastr.error('Hotel license must be PDF or image.');
+                        valid = false;
+                    }
+                }
+
+                // Validate owner ID card
+                if (!ownerCard) {
+                    toastr.error('Please upload owner ID card.');
+                    valid = false;
+                } else {
+                    const ext2 = ownerCard.name.split('.').pop().toLowerCase();
+                    if (!['jpg', 'jpeg', 'png', 'gif'].includes(ext2)) {
+                        toastr.error('Owner ID card must be an image.');
+                        valid = false;
+                    }
+                }
+
+                if (!valid) {
+                    e.preventDefault();
+                }
+
+                return valid;
+            });
+        });
+    </script>
+</body>
+</html>

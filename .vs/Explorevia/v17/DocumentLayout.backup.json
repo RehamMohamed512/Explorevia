@@ -1,0 +1,269 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Reem\\Downloads\\Explorevia-my-part\\Explorevia-my-part\\Explorevia\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{0D1E884A-3718-4F79-AB7B-53F10B3B65B7}|Explorevia\\Explorevia.csproj|c:\\users\\reem\\downloads\\explorevia-my-part\\explorevia-my-part\\explorevia\\explorevia\\views\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{0D1E884A-3718-4F79-AB7B-53F10B3B65B7}|Explorevia\\Explorevia.csproj|solutionrelative:explorevia\\views\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0D1E884A-3718-4F79-AB7B-53F10B3B65B7}|Explorevia\\Explorevia.csproj|c:\\users\\reem\\downloads\\explorevia-my-part\\explorevia-my-part\\explorevia\\explorevia\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0D1E884A-3718-4F79-AB7B-53F10B3B65B7}|Explorevia\\Explorevia.csproj|solutionrelative:explorevia\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0D1E884A-3718-4F79-AB7B-53F10B3B65B7}|Explorevia\\Explorevia.csproj|c:\\users\\reem\\downloads\\explorevia-my-part\\explorevia-my-part\\explorevia\\explorevia\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0D1E884A-3718-4F79-AB7B-53F10B3B65B7}|Explorevia\\Explorevia.csproj|solutionrelative:explorevia\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0D1E884A-3718-4F79-AB7B-53F10B3B65B7}|Explorevia\\Explorevia.csproj|c:\\users\\reem\\downloads\\explorevia-my-part\\explorevia-my-part\\explorevia\\explorevia\\controllers\\hotelscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0D1E884A-3718-4F79-AB7B-53F10B3B65B7}|Explorevia\\Explorevia.csproj|solutionrelative:explorevia\\controllers\\hotelscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0D1E884A-3718-4F79-AB7B-53F10B3B65B7}|Explorevia\\Explorevia.csproj|c:\\users\\reem\\downloads\\explorevia-my-part\\explorevia-my-part\\explorevia\\explorevia\\repository\\authrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0D1E884A-3718-4F79-AB7B-53F10B3B65B7}|Explorevia\\Explorevia.csproj|solutionrelative:explorevia\\repository\\authrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0D1E884A-3718-4F79-AB7B-53F10B3B65B7}|Explorevia\\Explorevia.csproj|c:\\users\\reem\\downloads\\explorevia-my-part\\explorevia-my-part\\explorevia\\explorevia\\views\\shared\\_navbar.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{0D1E884A-3718-4F79-AB7B-53F10B3B65B7}|Explorevia\\Explorevia.csproj|solutionrelative:explorevia\\views\\shared\\_navbar.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0D1E884A-3718-4F79-AB7B-53F10B3B65B7}|Explorevia\\Explorevia.csproj|c:\\users\\reem\\downloads\\explorevia-my-part\\explorevia-my-part\\explorevia\\explorevia\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{0D1E884A-3718-4F79-AB7B-53F10B3B65B7}|Explorevia\\Explorevia.csproj|solutionrelative:explorevia\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0D1E884A-3718-4F79-AB7B-53F10B3B65B7}|Explorevia\\Explorevia.csproj|c:\\users\\reem\\downloads\\explorevia-my-part\\explorevia-my-part\\explorevia\\explorevia\\controllers\\bookingscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0D1E884A-3718-4F79-AB7B-53F10B3B65B7}|Explorevia\\Explorevia.csproj|solutionrelative:explorevia\\controllers\\bookingscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0D1E884A-3718-4F79-AB7B-53F10B3B65B7}|Explorevia\\Explorevia.csproj|c:\\users\\reem\\downloads\\explorevia-my-part\\explorevia-my-part\\explorevia\\explorevia\\views\\hotels\\uploaddocs.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{0D1E884A-3718-4F79-AB7B-53F10B3B65B7}|Explorevia\\Explorevia.csproj|solutionrelative:explorevia\\views\\hotels\\uploaddocs.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0D1E884A-3718-4F79-AB7B-53F10B3B65B7}|Explorevia\\Explorevia.csproj|c:\\users\\reem\\downloads\\explorevia-my-part\\explorevia-my-part\\explorevia\\explorevia\\repository\\adminrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0D1E884A-3718-4F79-AB7B-53F10B3B65B7}|Explorevia\\Explorevia.csproj|solutionrelative:explorevia\\repository\\adminrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0D1E884A-3718-4F79-AB7B-53F10B3B65B7}|Explorevia\\Explorevia.csproj|c:\\users\\reem\\downloads\\explorevia-my-part\\explorevia-my-part\\explorevia\\explorevia\\views\\account\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{0D1E884A-3718-4F79-AB7B-53F10B3B65B7}|Explorevia\\Explorevia.csproj|solutionrelative:explorevia\\views\\account\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0D1E884A-3718-4F79-AB7B-53F10B3B65B7}|Explorevia\\Explorevia.csproj|c:\\users\\reem\\downloads\\explorevia-my-part\\explorevia-my-part\\explorevia\\explorevia\\views\\shared\\adminindex.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{0D1E884A-3718-4F79-AB7B-53F10B3B65B7}|Explorevia\\Explorevia.csproj|solutionrelative:explorevia\\views\\shared\\adminindex.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0D1E884A-3718-4F79-AB7B-53F10B3B65B7}|Explorevia\\Explorevia.csproj|c:\\users\\reem\\downloads\\explorevia-my-part\\explorevia-my-part\\explorevia\\explorevia\\models\\hotelregistrationrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0D1E884A-3718-4F79-AB7B-53F10B3B65B7}|Explorevia\\Explorevia.csproj|solutionrelative:explorevia\\models\\hotelregistrationrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0D1E884A-3718-4F79-AB7B-53F10B3B65B7}|Explorevia\\Explorevia.csproj|c:\\users\\reem\\downloads\\explorevia-my-part\\explorevia-my-part\\explorevia\\explorevia\\views\\home\\explore.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{0D1E884A-3718-4F79-AB7B-53F10B3B65B7}|Explorevia\\Explorevia.csproj|solutionrelative:explorevia\\views\\home\\explore.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0D1E884A-3718-4F79-AB7B-53F10B3B65B7}|Explorevia\\Explorevia.csproj|c:\\users\\reem\\downloads\\explorevia-my-part\\explorevia-my-part\\explorevia\\explorevia\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{0D1E884A-3718-4F79-AB7B-53F10B3B65B7}|Explorevia\\Explorevia.csproj|solutionrelative:explorevia\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 7,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "HotelsController.cs",
+              "DocumentMoniker": "C:\\Users\\Reem\\Downloads\\Explorevia-my-part\\Explorevia-my-part\\Explorevia\\Explorevia\\Controllers\\HotelsController.cs",
+              "RelativeDocumentMoniker": "Explorevia\\Controllers\\HotelsController.cs",
+              "ToolTip": "C:\\Users\\Reem\\Downloads\\Explorevia-my-part\\Explorevia-my-part\\Explorevia\\Explorevia\\Controllers\\HotelsController.cs",
+              "RelativeToolTip": "Explorevia\\Controllers\\HotelsController.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAsAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-29T16:02:34.77Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "AuthRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Reem\\Downloads\\Explorevia-my-part\\Explorevia-my-part\\Explorevia\\Explorevia\\Repository\\AuthRepository.cs",
+              "RelativeDocumentMoniker": "Explorevia\\Repository\\AuthRepository.cs",
+              "ToolTip": "C:\\Users\\Reem\\Downloads\\Explorevia-my-part\\Explorevia-my-part\\Explorevia\\Explorevia\\Repository\\AuthRepository.cs",
+              "RelativeToolTip": "Explorevia\\Repository\\AuthRepository.cs",
+              "ViewState": "AgIAACQAAAAAAAAAAAAYwIEAAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-28T17:14:31.575Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "AccountController.cs",
+              "DocumentMoniker": "C:\\Users\\Reem\\Downloads\\Explorevia-my-part\\Explorevia-my-part\\Explorevia\\Explorevia\\Controllers\\AccountController.cs",
+              "RelativeDocumentMoniker": "Explorevia\\Controllers\\AccountController.cs",
+              "ToolTip": "C:\\Users\\Reem\\Downloads\\Explorevia-my-part\\Explorevia-my-part\\Explorevia\\Explorevia\\Controllers\\AccountController.cs",
+              "RelativeToolTip": "Explorevia\\Controllers\\AccountController.cs",
+              "ViewState": "AgIAAEMAAAAAAAAAAAAwwFEAAABrAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-28T17:21:07.088Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "AdminController.cs",
+              "DocumentMoniker": "C:\\Users\\Reem\\Downloads\\Explorevia-my-part\\Explorevia-my-part\\Explorevia\\Explorevia\\Controllers\\AdminController.cs",
+              "RelativeDocumentMoniker": "Explorevia\\Controllers\\AdminController.cs",
+              "ToolTip": "C:\\Users\\Reem\\Downloads\\Explorevia-my-part\\Explorevia-my-part\\Explorevia\\Explorevia\\Controllers\\AdminController.cs",
+              "RelativeToolTip": "Explorevia\\Controllers\\AdminController.cs",
+              "ViewState": "AgIAADcAAAAAAAAAAADwv0UAAAA3AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-28T15:55:50.282Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "BookingsController.cs",
+              "DocumentMoniker": "C:\\Users\\Reem\\Downloads\\Explorevia-my-part\\Explorevia-my-part\\Explorevia\\Explorevia\\Controllers\\BookingsController.cs",
+              "RelativeDocumentMoniker": "Explorevia\\Controllers\\BookingsController.cs",
+              "ToolTip": "C:\\Users\\Reem\\Downloads\\Explorevia-my-part\\Explorevia-my-part\\Explorevia\\Explorevia\\Controllers\\BookingsController.cs",
+              "RelativeToolTip": "Explorevia\\Controllers\\BookingsController.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-28T15:55:44.394Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Login.cshtml",
+              "DocumentMoniker": "C:\\Users\\Reem\\Downloads\\Explorevia-my-part\\Explorevia-my-part\\Explorevia\\Explorevia\\Views\\Account\\Login.cshtml",
+              "RelativeDocumentMoniker": "Explorevia\\Views\\Account\\Login.cshtml",
+              "ToolTip": "C:\\Users\\Reem\\Downloads\\Explorevia-my-part\\Explorevia-my-part\\Explorevia\\Explorevia\\Views\\Account\\Login.cshtml",
+              "RelativeToolTip": "Explorevia\\Views\\Account\\Login.cshtml",
+              "ViewState": "AgIAAFQAAAAAAAAAAAAAAIIAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-28T17:10:47.572Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Register.cshtml",
+              "DocumentMoniker": "C:\\Users\\Reem\\Downloads\\Explorevia-my-part\\Explorevia-my-part\\Explorevia\\Explorevia\\Views\\Account\\Register.cshtml",
+              "RelativeDocumentMoniker": "Explorevia\\Views\\Account\\Register.cshtml",
+              "ToolTip": "C:\\Users\\Reem\\Downloads\\Explorevia-my-part\\Explorevia-my-part\\Explorevia\\Explorevia\\Views\\Account\\Register.cshtml",
+              "RelativeToolTip": "Explorevia\\Views\\Account\\Register.cshtml",
+              "ViewState": "AgIAACEAAAAAAAAAAAAAAJUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-28T18:50:22.695Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\Reem\\Downloads\\Explorevia-my-part\\Explorevia-my-part\\Explorevia\\Explorevia\\appsettings.json",
+              "RelativeDocumentMoniker": "Explorevia\\appsettings.json",
+              "ToolTip": "C:\\Users\\Reem\\Downloads\\Explorevia-my-part\\Explorevia-my-part\\Explorevia\\Explorevia\\appsettings.json",
+              "RelativeToolTip": "Explorevia\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-11-28T14:45:23.374Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "_Navbar.cshtml",
+              "DocumentMoniker": "C:\\Users\\Reem\\Downloads\\Explorevia-my-part\\Explorevia-my-part\\Explorevia\\Explorevia\\Views\\Shared\\_Navbar.cshtml",
+              "RelativeDocumentMoniker": "Explorevia\\Views\\Shared\\_Navbar.cshtml",
+              "ToolTip": "C:\\Users\\Reem\\Downloads\\Explorevia-my-part\\Explorevia-my-part\\Explorevia\\Explorevia\\Views\\Shared\\_Navbar.cshtml",
+              "RelativeToolTip": "Explorevia\\Views\\Shared\\_Navbar.cshtml",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAIwD4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-28T15:15:42.617Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "AdminRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Reem\\Downloads\\Explorevia-my-part\\Explorevia-my-part\\Explorevia\\Explorevia\\Repository\\AdminRepository.cs",
+              "RelativeDocumentMoniker": "Explorevia\\Repository\\AdminRepository.cs",
+              "ToolTip": "C:\\Users\\Reem\\Downloads\\Explorevia-my-part\\Explorevia-my-part\\Explorevia\\Explorevia\\Repository\\AdminRepository.cs",
+              "RelativeToolTip": "Explorevia\\Repository\\AdminRepository.cs",
+              "ViewState": "AgIAAFQAAAAAAAAAAAAowFYAAAA8AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-29T16:01:17.708Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "UploadDocs.cshtml",
+              "DocumentMoniker": "C:\\Users\\Reem\\Downloads\\Explorevia-my-part\\Explorevia-my-part\\Explorevia\\Explorevia\\Views\\Hotels\\UploadDocs.cshtml",
+              "RelativeDocumentMoniker": "Explorevia\\Views\\Hotels\\UploadDocs.cshtml",
+              "ToolTip": "C:\\Users\\Reem\\Downloads\\Explorevia-my-part\\Explorevia-my-part\\Explorevia\\Explorevia\\Views\\Hotels\\UploadDocs.cshtml",
+              "RelativeToolTip": "Explorevia\\Views\\Hotels\\UploadDocs.cshtml",
+              "ViewState": "AgIAAFIAAAAAAAAAAAAAwF0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-29T16:10:03.389Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "AdminIndex.cshtml",
+              "DocumentMoniker": "C:\\Users\\Reem\\Downloads\\Explorevia-my-part\\Explorevia-my-part\\Explorevia\\Explorevia\\Views\\Shared\\AdminIndex.cshtml",
+              "RelativeDocumentMoniker": "Explorevia\\Views\\Shared\\AdminIndex.cshtml",
+              "ToolTip": "C:\\Users\\Reem\\Downloads\\Explorevia-my-part\\Explorevia-my-part\\Explorevia\\Explorevia\\Views\\Shared\\AdminIndex.cshtml",
+              "RelativeToolTip": "Explorevia\\Views\\Shared\\AdminIndex.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-29T15:49:58.979Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "HotelRegistrationRequest.cs",
+              "DocumentMoniker": "C:\\Users\\Reem\\Downloads\\Explorevia-my-part\\Explorevia-my-part\\Explorevia\\Explorevia\\Models\\HotelRegistrationRequest.cs",
+              "RelativeDocumentMoniker": "Explorevia\\Models\\HotelRegistrationRequest.cs",
+              "ToolTip": "C:\\Users\\Reem\\Downloads\\Explorevia-my-part\\Explorevia-my-part\\Explorevia\\Explorevia\\Models\\HotelRegistrationRequest.cs",
+              "RelativeToolTip": "Explorevia\\Models\\HotelRegistrationRequest.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-29T15:58:12.076Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\Users\\Reem\\Downloads\\Explorevia-my-part\\Explorevia-my-part\\Explorevia\\Explorevia\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "Explorevia\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\Users\\Reem\\Downloads\\Explorevia-my-part\\Explorevia-my-part\\Explorevia\\Explorevia\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "Explorevia\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACcAAAATAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-28T15:09:22.193Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "Explore.cshtml",
+              "DocumentMoniker": "C:\\Users\\Reem\\Downloads\\Explorevia-my-part\\Explorevia-my-part\\Explorevia\\Explorevia\\Views\\Home\\Explore.cshtml",
+              "RelativeDocumentMoniker": "Explorevia\\Views\\Home\\Explore.cshtml",
+              "ToolTip": "C:\\Users\\Reem\\Downloads\\Explorevia-my-part\\Explorevia-my-part\\Explorevia\\Explorevia\\Views\\Home\\Explore.cshtml",
+              "RelativeToolTip": "Explorevia\\Views\\Home\\Explore.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAC8AAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-28T15:01:40.051Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

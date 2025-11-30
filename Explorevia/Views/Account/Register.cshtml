@@ -1,0 +1,235 @@
+@model Explorevia.ViewModels.RegisterViewModel
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
+<style>
+    #toast-container {
+        top: 30px;
+        right: 30px;
+        z-index: 9999;
+    }
+
+        #toast-container .toast {
+            border-radius: 12px;
+            padding: 15px 20px;
+            font-family: 'Segoe UI', sans-serif;
+            font-weight: 600;
+            font-size: 16px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.25);
+            opacity: 0.95;
+        }
+
+        /* Success */
+        #toast-container .toast-success {
+            background-color: #003459; /* deep blue */
+            color: #fffcf0; /* light cream/gold text */
+            border-left: 5px solid #ffb703; /* gold accent */
+        }
+
+        /* Warning */
+        #toast-container .toast-warning {
+            background-color: #ffb703; /* gold */
+            color: #003459; /* deep blue text */
+            border-left: 5px solid #003459; /* deep blue accent */
+        }
+
+        /* Error */
+        #toast-container .toast-error {
+            background-color: #d62828; /* red */
+
+            border-left: 5px solid #8b0000; /* dark red accent */
+        }
+
+        /* Info */
+        #toast-container .toast-info {
+            background-color: #0077cc; /* light blue */
+            border-left: 5px solid #005fa3; /* darker blue accent */
+        }
+
+        /* Close button styling */
+        #toast-container .toast .toast-close-button {
+            opacity: 0.9;
+        }
+
+        /* Progress bar */
+        #toast-container .toast-progress {
+            height: 4px;
+            border-radius: 2px;
+        }
+        /* Move Toastr triangle/icon to the left without overlapping text */
+        #toast-container .toast .toast-message:before {
+            left: 10px !important; /* move it 10px from left */
+            top: 50% !important; /* vertically center */
+            transform: translateY(-50%) !important;
+        }
+
+        #toast-container .toast .toast-message {
+            padding-left: 25px !important; /* space for the icon */
+        }
+
+    body {
+        background: url('/images/bg5.webp') no-repeat center center fixed;
+        background-size: cover;
+        font-family: 'Segoe UI', sans-serif;
+    }
+
+    .register-card {
+        width: 400px;
+        background: rgba(255, 252, 240, 0.9);
+        border-radius: 20px;
+        padding: 35px;
+        margin: 100px auto;
+        box-shadow: 0 0 20px #003459;
+        border: 1px solid #003459;
+        position: relative;
+    }
+
+    .brand img {
+        width: 195px;
+        height: 95px;
+        border: 3px solid #003459;
+        box-shadow: 0 0 15px #003459;
+        display: block;
+        margin: 0 auto 15px;
+    }
+
+    .register-title {
+        text-align: center;
+        font-size: 28px;
+        color: #003459;
+        margin-bottom: 25px;
+        letter-spacing: 1px;
+    }
+
+    .form-control {
+        background: rgba(255, 252, 240);
+        border: 2px solid #444;
+        padding-right: 40px;
+    }
+
+        .form-control:focus {
+            border-color: #003459;
+            box-shadow: 0 0 5px #003459;
+        }
+
+    label {
+        color: #003459;
+        font-weight: 600;
+    }
+
+    .btn-gold {
+        background: #003459;
+        color: rgba(255, 252, 240);
+        font-weight: bold;
+        width: 100%;
+        padding: 12px;
+        border-radius: 8px;
+        transition: 0.3s;
+    }
+
+        .btn-gold:hover {
+            box-shadow: 0 0 15px #003459;
+        }
+
+    .footer-text {
+        text-align: center;
+        margin-top: 20px;
+        color: #919092;
+    }
+
+        .footer-text a {
+            color: #003459;
+            font-weight: 600;
+        }
+</style>
+
+<div class="register-card">
+    <div class="brand">
+        <img src="/images/ex-photo.png" alt="logo" />
+    </div>
+
+    <h3 class="register-title">ExploreVia Register</h3>
+
+    <form id="registerForm" asp-action="RegisterUser" method="post" novalidate>
+        
+
+        <div class="form-group mb-3">
+            <label asp-for="Name"></label>
+            <input asp-for="Name" class="form-control" />
+            <span asp-validation-for="Name" class="text-danger"></span>
+        </div>
+
+        <div class="form-group mb-3">
+            <label asp-for="Email"></label>
+            <input asp-for="Email" class="form-control" />
+            <span asp-validation-for="Email" class="text-danger"></span>
+        </div>
+
+        <div class="form-group mb-3 position-relative">
+            <label asp-for="Password"></label>
+            <input asp-for="Password" class="form-control" type="password" id="Password" />
+            <div class="form-check mt-1">
+                <input class="form-check-input" type="checkbox" id="showPass" onclick="togglePassword()" />
+                <label class="form-check-label" for="showPass">Show Password</label>
+            </div>
+            <span asp-validation-for="Password" class="text-danger"></span>
+        </div>
+
+        <div class="form-group mb-3 position-relative">
+            <label asp-for="ConfirmPassword"></label>
+            <input asp-for="ConfirmPassword" class="form-control" type="password" id="ConfirmPassword" />
+            <div class="form-check mt-1">
+                <input class="form-check-input" type="checkbox" id="showConfirmPass" onclick="toggleConfirmPassword()" />
+                <label class="form-check-label" for="showConfirmPass">Show Password</label>
+            </div>
+            <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+        </div>
+
+        <button type="submit" class="btn btn-gold mt-3">Register</button>
+
+        <div class="footer-text">
+            Already have an account? <a href="/Account/Login">Login</a>
+        </div>
+    </form>
+</div>
+
+@await Html.PartialAsync("_ValidationScriptsPartial")
+
+<script>
+    function togglePassword() {
+        var input = document.getElementById("Password");
+        input.type = input.type === "password" ? "text" : "password";
+    }
+
+    function toggleConfirmPassword() {
+        var input = document.getElementById("ConfirmPassword");
+        input.type = input.type === "password" ? "text" : "password";
+    }
+
+    // AJAX Submit with Toastr
+    $("#registerForm").submit(function(e){
+        e.preventDefault();
+        var form = $(this);
+        $.ajax({
+            url: form.attr("action"),
+            type: "POST",
+            data: form.serialize(),
+            success: function(response){
+                if(response.success){
+                    toastr.success(response.message, "Success");
+                    setTimeout(() => { window.location.href = response.redirectUrl; }, 1500);
+                } else {
+                    toastr.warning(response.message, "Warning");
+                }
+            },
+            error: function(){
+                toastr.error("Something went wrong. Please try again.", "Error");
+            }
+        });
+    });
+</script>
