@@ -1,0 +1,130 @@
+﻿<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+@model Explorevia.ViewModels.HotelVieModel
+
+
+<style>
+    body {
+        background: url('/images/pppp.jpg') no-repeat center center;
+        background-size: cover;
+        font-family: 'Segoe UI', sans-serif;
+    }
+
+    .dashboard-header {
+        background-color: #003459;
+        padding: 20px;
+        border-radius: 15px;
+        color: #fffcf0;
+        text-align: center;
+        margin-bottom: 30px;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+
+    .card-box {
+        background-color: white;
+        border-radius: 15px;
+        padding: 25px;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        border-top: 8px solid #003459;
+    }
+
+    .btn-main {
+        background-color: #003459;
+        color: #fffcf0;
+        border-radius: 10px;
+        padding: 12px;
+        font-weight: 600;
+    }
+
+        .btn-main:hover {
+            background-color: #00253d;
+            color: #fffcf0;
+        }
+
+    label {
+        color: #003459;
+        font-weight: 600;
+    }
+</style>
+
+<div class="container mt-4">
+
+    <!-- Header -->
+    <div class="dashboard-header">
+        <h2>Hotel Owner Dashboard</h2>
+        <p>Manage your hotel, update details & upload images</p>
+    </div>
+
+    <!-- Form Card -->
+    <div class="card-box">
+
+        <h4 class="mb-4">Add / Edit Your Hotel</h4>
+
+        <form method="post" enctype="multipart/form-data" asp-action="Edit" asp-controller="Hotels">
+            <input type="hidden" asp-for="HotelId" />
+
+
+            <div class="mb-3">
+                <label>Hotel Name</label>
+                <input type="text" asp-for="HotelName" name="HotelName" class="form-control" placeholder="Enter hotel name" required>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label>Price Per Night</label>
+                    <input type="number" asp-for="Price" name="Price" class="form-control" placeholder="e.g. 1500" required>
+                </div>
+
+                <div class="col-md-6 mb-3">
+                    <label>Rating</label>
+                    <select name="Rating" class="form-control" required asp-for="Rating">
+                        <option value="">Select Rating</option>
+                        <option value="1">1 Star</option>
+                        <option value="2">2 Stars</option>
+                        <option value="3">3 Stars</option>
+                        <option value="4">4 Stars</option>
+                        <option value="5">5 Stars</option>
+                        <option value="6">6 Stars</option>
+                        <option value="7">7 Stars</option>
+                    </select>
+
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <label>Description</label>
+                <textarea name="Description" asp-for="Description" class="form-control" rows="4" placeholder="Write a short description about your hotel"></textarea>
+            </div>
+
+            @* ExistingImages *@
+            <div class="mb-4">
+                <label class="form-label">Current Images</label>
+                <div class="row">
+                    @if (Model.ExistingImages != null && Model.ExistingImages.Any())
+                    {
+                        @foreach (var img in Model.ExistingImages)
+                        {
+                            <img src="@img.ImageUrl" style="width:140px;height:140px;border-radius:10px;" />
+                        }
+
+                    }
+                    else
+                    {
+                        <p>No images available</p>
+                    }
+
+                </div>
+            </div>
+
+			@* new Images Upload *@
+            <div class="mb-3">
+                <label class="form-label">Upload New Images (optional)</label>
+                <input type="file" name="Images" multiple class="form-control" accept="image/*" />
+            </div>
+
+            <button class="btn btn-primary w-100 mt-3">Save Changes</button>
+
+        </form>
+
+    </div>
+
+</div>

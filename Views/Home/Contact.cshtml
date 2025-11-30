@@ -1,0 +1,186 @@
+﻿<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+    body {
+        background: url('/images/pppp.jpg') no-repeat center center;
+        background-size: cover;
+        font-family: 'Segoe UI', sans-serif;
+    }
+
+    /* Header */
+    .contact-header {
+        background: linear-gradient(135deg, #003459, #005b8f);
+        padding: 40px;
+        border-radius: 20px;
+        color: white;
+        text-align: center;
+        margin-bottom: 40px;
+        box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+    }
+
+        .contact-header h2 {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+    /* Card Boxes */
+    .card-box {
+        background: white;
+        border-radius: 18px;
+        padding: 35px;
+        box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+        border-top: 6px solid #003459;
+        transition: 0.3s ease-in-out;
+    }
+
+        .card-box:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+        }
+
+    /* Icons Section */
+    .info-box {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        background: #f0f7fb;
+        padding: 15px;
+        border-radius: 12px;
+        margin-bottom: 12px;
+        border-left: 5px solid #003459;
+    }
+
+        .info-box i {
+            font-size: 26px;
+            color: #003459;
+        }
+
+    /* Inputs */
+    label {
+        color: #003459;
+        font-weight: 600;
+        margin-bottom: 5px;
+    }
+
+    .form-control {
+        border-radius: 10px;
+        padding: 12px;
+        border: 1px solid #cdd7e0;
+        transition: 0.2s;
+    }
+
+        .form-control:focus {
+            border-color: #003459;
+            box-shadow: 0 0 6px rgba(0,52,89,0.3);
+        }
+
+    /* Button */
+    .btn-main {
+        background-color: #003459;
+        color: #fffcf0;
+        border-radius: 12px;
+        padding: 14px;
+        font-weight: 600;
+        font-size: 16px;
+        transition: 0.3s;
+    }
+
+        .btn-main:hover {
+            background-color: #00253d;
+            color: #ffffff;
+        }
+
+    /* Success Message */
+    .success-box {
+        background: #d4f8d7;
+        padding: 15px;
+        border-left: 6px solid #28a745;
+        border-radius: 10px;
+        margin-bottom: 20px;
+        text-align: center;
+        font-weight: 600;
+        color: #1e7e34;
+    }
+</style>
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="container mt-5">
+
+    <!-- Success Message -->
+    @if (TempData["Success"] != null)
+    {
+        <div class="success-box">
+            <i class="fa-solid fa-circle-check"></i> @TempData["Success"]
+        </div>
+    }
+
+    <!-- Header -->
+    <div class="contact-header">
+        <h2>We're Here to Help</h2>
+        <p>Our support team replies quickly — your comfort is our priority.</p>
+    </div>
+
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+
+            <!-- Info Card -->
+            <div class="card-box mb-4">
+                <h4 class="mb-3" style="color:#003459; font-weight:700;">Get in Touch</h4>
+                <p style="color:#003459; font-size: 16px; line-height: 1.6;">
+                    Whether you have a question, feedback, or need help, we're always ready to assist you.
+                    Your satisfaction means everything to us — reach out anytime!
+                </p>
+
+                <!-- Icons Info -->
+                <div class="mt-4">
+                    <div class="info-box">
+                        <i class="fa-solid fa-envelope"></i>
+                        <span>support@Explorevia.com</span>
+                    </div>
+
+                    <div class="info-box">
+                        <i class="fa-solid fa-phone"></i>
+                        <span>+20 111 222 3333</span>
+                    </div>
+
+                    <div class="info-box">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <span>Cairo, Egypt</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Form Card -->
+            <div class="card-box">
+                <h4 class="mb-4" style="color:#003459; font-weight:700;">Send Us a Message</h4>
+
+                <form method="post" asp-action="SendContact" asp-controller="Home">
+
+                    <div class="mb-3">
+                        <label>Your Name</label>
+                        <input type="text" name="Name" class="form-control" placeholder="Enter your name" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label>Email Address</label>
+                        <input type="email" name="Email" class="form-control" placeholder="Enter your email" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label>Your Message</label>
+                        <textarea name="Message" class="form-control" rows="4" placeholder="Write your comment or question..." required></textarea>
+                    </div>
+
+                    <button class="btn btn-main w-100 mt-3">Send Message</button>
+
+                </form>
+            </div>
+
+        </div>
+    </div>
+
+</div>
