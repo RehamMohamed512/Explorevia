@@ -1,0 +1,15 @@
+﻿using Explorevia.ViewModels;
+using Explorevia.Models;
+using Explorevia.ViewModels;
+using Microsoft.AspNetCore.Mvc;
+
+namespace Explorevia.IRepository
+{
+    public interface IAuthRepository
+    {
+        Task<bool> RegisterUser(RegisterViewModel rdto);
+        Task<bool> SendHotelRegisterRequest(HotelOwnerRegisterViewModel hvm);
+        Task<string> Login(LoginViewModel ldto);
+        
+    }
+}
